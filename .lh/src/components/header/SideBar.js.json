@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 45,
+            "activePatchIndex": 57,
             "patches": [
                 {
                     "date": 1641554524665,
@@ -188,6 +188,54 @@
                 {
                     "date": 1641560342692,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,12 +6,14 @@\n const SideBar = (props) => {\n   return (\n     <div class=\"sidebar\">\n       <div class=\"logo-details\">\n-        <img\n-          src=\"../../resource/images/common/ico_btn-template.png\"\n-          alt=\"오더체크\"\n-        />\n+        <button type=\"button\" class=\"btn-side-open\">\n+          <img\n+            src=\"../../resource/images/common/ico_btn-template.png\"\n+            alt=\"오더체크\"\n+          />\n+        </button>\n         <h1 class=\"logo_name\">\n           <img\n             src=\"../../resource/images/common/ico_logo-name.png\"\n             alt=\"오더체크\"\n"
+                },
+                {
+                    "date": 1641562821888,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import React from \"react\";\n // import \"../../style/css/layout.css\";\n+import Logo from \"../../resource/images/common/ico_logo-mark.png\";\n \n import \"../../resource/css/layout.css\";\n \n const SideBar = (props) => {\n@@ -13,12 +14,9 @@\n             alt=\"오더체크\"\n           />\n         </button>\n         <h1 class=\"logo_name\">\n-          <img\n-            src=\"../../resource/images/common/ico_logo-name.png\"\n-            alt=\"오더체크\"\n-          />\n+          <img src={Logo} alt=\"오더체크\" />\n         </h1>\n       </div>\n \n       <ul class=\"nav-list\">\n"
+                },
+                {
+                    "date": 1641562837370,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,15 +8,15 @@\n   return (\n     <div class=\"sidebar\">\n       <div class=\"logo-details\">\n         <button type=\"button\" class=\"btn-side-open\">\n+          <img src={Logo} alt=\"오더체크\" />\n+        </button>\n+        <h1 class=\"logo_name\">\n           <img\n-            src=\"../../resource/images/common/ico_btn-template.png\"\n+            src=\"../../resource/images/common/ico_logo-name.png\"\n             alt=\"오더체크\"\n           />\n-        </button>\n-        <h1 class=\"logo_name\">\n-          <img src={Logo} alt=\"오더체크\" />\n         </h1>\n       </div>\n \n       <ul class=\"nav-list\">\n"
+                },
+                {
+                    "date": 1641562938077,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,22 +1,20 @@\n import React from \"react\";\n // import \"../../style/css/layout.css\";\n-import Logo from \"../../resource/images/common/ico_logo-mark.png\";\n+import logoMark from \"../../resource/images/common/ico_logo-mark.png\";\n+import logoName from \"../../resource/images/common/ico_logo-name.png\";\n \n import \"../../resource/css/layout.css\";\n \n const SideBar = (props) => {\n   return (\n     <div class=\"sidebar\">\n       <div class=\"logo-details\">\n         <button type=\"button\" class=\"btn-side-open\">\n-          <img src={Logo} alt=\"오더체크\" />\n+          <img src={logoMark} alt=\"오더체크\" />\n         </button>\n         <h1 class=\"logo_name\">\n-          <img\n-            src=\"../../resource/images/common/ico_logo-name.png\"\n-            alt=\"오더체크\"\n-          />\n+          <img src={logoName} alt=\"오더체크\" />\n         </h1>\n       </div>\n \n       <ul class=\"nav-list\">\n"
+                },
+                {
+                    "date": 1641564195789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n import \"../../resource/css/layout.css\";\n \n const SideBar = (props) => {\n   return (\n-    <div class=\"sidebar\">\n+    <div class=\"sidebar open\">\n       <div class=\"logo-details\">\n         <button type=\"button\" class=\"btn-side-open\">\n           <img src={logoMark} alt=\"오더체크\" />\n         </button>\n"
+                },
+                {
+                    "date": 1641564205721,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n import \"../../resource/css/layout.css\";\n \n const SideBar = (props) => {\n   return (\n-    <div class=\"sidebar open\">\n+    <div class=\"sidebar\">\n       <div class=\"logo-details\">\n         <button type=\"button\" class=\"btn-side-open\">\n           <img src={logoMark} alt=\"오더체크\" />\n         </button>\n"
+                },
+                {
+                    "date": 1641564381821,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,10 @@\n import logoMark from \"../../resource/images/common/ico_logo-mark.png\";\n import logoName from \"../../resource/images/common/ico_logo-name.png\";\n \n import \"../../resource/css/layout.css\";\n+import \"../../resource/css/layout.css\";\n+import \"../../resource/css/vendor/nice-select.css\";\n \n const SideBar = (props) => {\n   return (\n     <div class=\"sidebar\">\n"
+                },
+                {
+                    "date": 1641564388779,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,8 @@\n import logoMark from \"../../resource/images/common/ico_logo-mark.png\";\n import logoName from \"../../resource/images/common/ico_logo-name.png\";\n \n import \"../../resource/css/layout.css\";\n-import \"../../resource/css/layout.css\";\n-import \"../../resource/css/vendor/nice-select.css\";\n \n const SideBar = (props) => {\n   return (\n     <div class=\"sidebar\">\n"
+                },
+                {
+                    "date": 1641564397607,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n import logoMark from \"../../resource/images/common/ico_logo-mark.png\";\n import logoName from \"../../resource/images/common/ico_logo-name.png\";\n \n import \"../../resource/css/layout.css\";\n+import \"../../resource/css/contents.css\";\n \n const SideBar = (props) => {\n   return (\n     <div class=\"sidebar\">\n"
+                },
+                {
+                    "date": 1641564478655,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,11 +3,11 @@\n import logoMark from \"../../resource/images/common/ico_logo-mark.png\";\n import logoName from \"../../resource/images/common/ico_logo-name.png\";\n \n import \"../../resource/css/layout.css\";\n-import \"../../resource/css/contents.css\";\n \n const SideBar = (props) => {\n+  const sidebarState = React.useState(false);\n   return (\n     <div class=\"sidebar\">\n       <div class=\"logo-details\">\n         <button type=\"button\" class=\"btn-side-open\">\n"
+                },
+                {
+                    "date": 1641564658455,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,13 +5,17 @@\n \n import \"../../resource/css/layout.css\";\n \n const SideBar = (props) => {\n-  const sidebarState = React.useState(false);\n+  const [sidebarState, setSidebarState] = React.useState(false);\n+\n+  const handelSidebar = () => {\n+    setSidebarState(!sidebarState);\n+  };\n   return (\n     <div class=\"sidebar\">\n       <div class=\"logo-details\">\n-        <button type=\"button\" class=\"btn-side-open\">\n+        <button type=\"button\" class=\"btn-side-open\" onClick={handelSidebar}>\n           <img src={logoMark} alt=\"오더체크\" />\n         </button>\n         <h1 class=\"logo_name\">\n           <img src={logoName} alt=\"오더체크\" />\n"
+                },
+                {
+                    "date": 1641564708204,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n   const handelSidebar = () => {\n     setSidebarState(!sidebarState);\n   };\n   return (\n-    <div class=\"sidebar\">\n+    <div class={sidebarState ? \"sidebar\" : \"sidebar open\"}>\n       <div class=\"logo-details\">\n         <button type=\"button\" class=\"btn-side-open\" onClick={handelSidebar}>\n           <img src={logoMark} alt=\"오더체크\" />\n         </button>\n"
+                },
+                {
+                    "date": 1641564745727,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,9 +61,9 @@\n             <span class=\"links_name\">설정</span>\n           </a>\n         </li>\n       </ul>\n-      <button type=\"button\" class=\"btn-lnb-close\">\n+      <button type=\"button\" class=\"btn-lnb-close\" onClick={handelSidebar}>\n         <span class=\"hide\">메뉴 닫기</span>\n       </button>\n     </div>\n   );\n"
                 }
             ],
             "date": 1641554524665,

@@ -1,23 +1,24 @@
 import React from "react";
 // import "../../style/css/layout.css";
+import logoMark from "../../resource/images/common/ico_logo-mark.png";
+import logoName from "../../resource/images/common/ico_logo-name.png";
 
 import "../../resource/css/layout.css";
 
 const SideBar = (props) => {
+  const [sidebarState, setSidebarState] = React.useState(false);
+
+  const handelSidebar = () => {
+    setSidebarState(!sidebarState);
+  };
   return (
-    <div class="sidebar">
+    <div class={sidebarState ? "sidebar" : "sidebar open"}>
       <div class="logo-details">
-        <button type="button" class="btn-side-open">
-          <img
-            src="../../resource/images/common/ico_btn-template.png"
-            alt="오더체크"
-          />
+        <button type="button" class="btn-side-open" onClick={handelSidebar}>
+          <img src={logoMark} alt="오더체크" />
         </button>
         <h1 class="logo_name">
-          <img
-            src="../../resource/images/common/ico_logo-name.png"
-            alt="오더체크"
-          />
+          <img src={logoName} alt="오더체크" />
         </h1>
       </div>
 
@@ -61,7 +62,7 @@ const SideBar = (props) => {
           </a>
         </li>
       </ul>
-      <button type="button" class="btn-lnb-close">
+      <button type="button" class="btn-lnb-close" onClick={handelSidebar}>
         <span class="hide">메뉴 닫기</span>
       </button>
     </div>
