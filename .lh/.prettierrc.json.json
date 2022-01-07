@@ -1,0 +1,30 @@
+{
+    "sourceFile": ".prettierrc.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1641553880279,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1641554054467,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n   \"printWidth\": 80,\n   \"proseWrap\": \"preserve\",\n   \"quoteProps\": \"as-needed\",\n   \"requirePragma\": false,\n-  \"semi\": true,\n+  \"semi\": false,\n   \"singleQuote\": true,\n   \"tabWidth\": 2,\n   \"trailingComma\": \"all\",\n   \"useTabs\": false,\n"
+                },
+                {
+                    "date": 1641554508573,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n   \"printWidth\": 80,\n   \"proseWrap\": \"preserve\",\n   \"quoteProps\": \"as-needed\",\n   \"requirePragma\": false,\n-  \"semi\": false,\n+  \"semi\": true,\n   \"singleQuote\": true,\n   \"tabWidth\": 2,\n   \"trailingComma\": \"all\",\n   \"useTabs\": false,\n"
+                },
+                {
+                    "date": 1641554515250,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,8 @@\n   \"requirePragma\": false,\n   \"semi\": true,\n   \"singleQuote\": true,\n   \"tabWidth\": 2,\n-  \"trailingComma\": \"all\",\n+  \"trailingComma\": 'all',\n   \"useTabs\": false,\n   \"vueIndentScriptAndStyle\": false\n }\n"
+                }
+            ],
+            "date": 1641553880279,
+            "name": "Commit-0",
+            "content": "{\n  \"arrowParens\": \"always\",\n  \"bracketSpacing\": true,\n  \"htmlWhitespaceSensitivity\": \"css\",\n  \"insertPragma\": false,\n  \"bracketSameLine\": false,\n  \"jsxSingleQuote\": false,\n  \"printWidth\": 80,\n  \"proseWrap\": \"preserve\",\n  \"quoteProps\": \"as-needed\",\n  \"requirePragma\": false,\n  \"semi\": true,\n  \"singleQuote\": true,\n  \"tabWidth\": 2,\n  \"trailingComma\": \"all\",\n  \"useTabs\": false,\n  \"vueIndentScriptAndStyle\": false\n}\n"
+        }
+    ]
+}
