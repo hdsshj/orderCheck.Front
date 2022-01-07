@@ -1,0 +1,22 @@
+{
+    "sourceFile": ".prettierrc",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1641554957192,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1641555057265,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n   \"proseWrap\": \"preserve\",\n   \"quoteProps\": \"as-needed\",\n   \"requirePragma\": false,\n   \"semi\": true,\n-  \"singleQuote\": true,\n+  \"singleQuote\": false,\n   \"tabWidth\": 2,\n   \"trailingComma\": \"all\",\n   \"useTabs\": false,\n   \"vueIndentScriptAndStyle\": false\n"
+                }
+            ],
+            "date": 1641554957192,
+            "name": "Commit-0",
+            "content": "{\n  \"arrowParens\": \"always\",\n  \"bracketSpacing\": true,\n  \"htmlWhitespaceSensitivity\": \"css\",\n  \"insertPragma\": false,\n  \"bracketSameLine\": false,\n  \"jsxSingleQuote\": false,\n  \"printWidth\": 80,\n  \"proseWrap\": \"preserve\",\n  \"quoteProps\": \"as-needed\",\n  \"requirePragma\": false,\n  \"semi\": true,\n  \"singleQuote\": true,\n  \"tabWidth\": 2,\n  \"trailingComma\": \"all\",\n  \"useTabs\": false,\n  \"vueIndentScriptAndStyle\": false\n}\n"
+        }
+    ]
+}

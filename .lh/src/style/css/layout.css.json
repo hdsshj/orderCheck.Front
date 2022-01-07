@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/style/css/layout.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1641555448418,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1641555448418,
+            "name": "Commit-0",
+            "content": ".sidebar,\n.side-form {\n  top: 0;\n  height: 100%;\n  z-index: 99;\n  transition: all 0.4s ease;\n}\n\n.sidebar {\n  position: fixed;\n  width: 80px;\n  height: 100%;\n  left: 0;\n  background: #02164f;\n  padding: 6px 16px;\n  box-sizing: border-box;\n}\n.sidebar.open {\n  width: 218px;\n}\n.sidebar .logo-details {\n  height: 60px;\n  display: flex;\n  align-items: center;\n  position: relative;\n}\n.sidebar .logo-details .ico {\n  opacity: 0;\n  transition: all 0.5s ease;\n}\n.sidebar .logo-details .logo_name {\n  padding-left: 50px;\n  color: #fff;\n  font-size: 20px;\n  font-weight: 600;\n  opacity: 0;\n}\n.sidebar .logo-details .logo_name img {\n  vertical-align: middle;\n}\n.sidebar.open .logo-details .ico,\n.sidebar.open .logo-details .logo_name {\n  opacity: 1;\n}\n.sidebar .logo-details .btn-side-open {\n  position: absolute;\n  top: 5px;\n  left: 0;\n  width: 50px;\n  height: 50px;\n  font-size: 22px;\n  color: #fff;\n  z-index: 1;\n}\n.sidebar .nav-list {\n  margin-top: 34px;\n  height: 100%;\n}\n.sidebar .nav-list > li {\n  position: relative;\n  margin: 8px 0;\n  list-style: none;\n}\n.sidebar li a {\n  display: flex;\n  width: 42px;\n  height: 42px;\n  border-radius: 8px;\n  align-items: center;\n  text-decoration: none;\n  transition: all 0.4s ease;\n  background: #02164f;\n}\n.sidebar li a .ico {\n  min-width: 42px;\n  width: 42px;\n}\n\n.sidebar.open li a {\n  width: 100%;\n}\n.sidebar .nav-list li.on a {\n  background: #1d58ff;\n  color: #fff;\n}\n.sidebar.open ~ .content-section {\n  left: 218px;\n  width: calc(100% - 218px);\n}\n.sidebar .btm li.on a,\n.sidebar .btm li a:hover {\n  background: rgba(255, 255, 255, 0.26);\n  border-radius: 25px;\n}\n.sidebar .btn-lnb-close {\n  position: absolute;\n  right: -15px;\n  top: 106px;\n  z-index: 1;\n}\n.sidebar.open .ico {\n  width: 28px;\n  height: 28px;\n}\n.sidebar li a .links_name {\n  padding-left: 12px;\n  color: #fff;\n  font-size: 15px;\n  font-weight: 400;\n  white-space: nowrap;\n  opacity: 0;\n  pointer-events: none;\n  transition: 0.4s;\n}\n.sidebar.open li a .links_name {\n  opacity: 1;\n  pointer-events: auto;\n}\n.sidebar li a:hover .links_name {\n  transition: all 0.5s ease;\n}\n.sidebar .btm {\n  position: absolute;\n  width: calc(100% - 38px);\n  left: 19px;\n  bottom: 30px;\n  overflow: hidden;\n}\n\n.sidebar li .profile-details {\n  display: flex;\n  align-items: center;\n  flex-wrap: nowrap;\n}\n.sidebar li img {\n  width: 45px;\n  height: 45px;\n  object-fit: cover;\n  border-radius: 6px;\n  margin-right: 10px;\n}\n.sidebar .btm .name,\n.sidebar .btm .job {\n  font-size: 15px;\n  font-weight: 400;\n  color: #fff;\n  white-space: nowrap;\n}\n.sidebar .btm .job {\n  font-size: 12px;\n}\n"
+        }
+    ]
+}

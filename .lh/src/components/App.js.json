@@ -1,0 +1,70 @@
+{
+    "sourceFile": "src/components/App.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 13,
+            "patches": [
+                {
+                    "date": 1641554024842,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1641554071445,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from \"react\";\n \n function App() {\n   return (\n-    <div className='App'>\n+    <div className=\"App\">\n     </div>\n   );\n }\n \n"
+                },
+                {
+                    "date": 1641554487751,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from \"react\";\n \n function App() {\n   return (\n-    <div className=\"App\">\n+    <div className='App'>\n     </div>\n   );\n }\n \n"
+                },
+                {
+                    "date": 1641554656498,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from \"react\";\n \n function App() {\n   return (\n-    <div className='App'>\n+    <div className=\"App\">\n     </div>\n   );\n }\n \n"
+                },
+                {
+                    "date": 1641554662744,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,11 @@\n \n function App() {\n   return (\n     <div className=\"App\">\n+      <div>\n+        zzz\n+      </div>\n     </div>\n   );\n }\n \n"
+                },
+                {
+                    "date": 1641554685405,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,10 @@\n-import React from \"react\";\n+import React from 'react';\n \n function App() {\n   return (\n     <div className=\"App\">\n-      <div>\n-        zzz\n-      </div>\n+      <div>zzz</div>\n     </div>\n   );\n }\n \n"
+                },
+                {
+                    "date": 1641554946222,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\n \n function App() {\n   return (\n-    <div className=\"App\">\n+    <div className='App'>\n       <div>zzz</div>\n     </div>\n   );\n }\n"
+                },
+                {
+                    "date": 1641554986895,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\n \n function App() {\n   return (\n-    <div className='App'>\n+    <div className='App'ㅇ>\n       <div>zzz</div>\n     </div>\n   );\n }\n"
+                },
+                {
+                    "date": 1641554995054,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\n \n function App() {\n   return (\n-    <div className='App'ㅇ>\n+    <div className='App'>\n       <div>zzz</div>\n     </div>\n   );\n }\n"
+                },
+                {
+                    "date": 1641555044265,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\n \n function App() {\n   return (\n-    <div className='App'>\n+    <div className=\"App\">\n       <div>zzz</div>\n     </div>\n   );\n }\n"
+                },
+                {
+                    "date": 1641555071267,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import React from 'react';\n+import React from \"react\";\n \n function App() {\n   return (\n     <div className=\"App\">\n"
+                },
+                {
+                    "date": 1641555153510,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,9 @@\n import React from \"react\";\n \n+import Header from \"./header/Header\";\n+import SideBar from \"./header/SideBar\";\n+\n function App() {\n   return (\n     <div className=\"App\">\n       <div>zzz</div>\n"
+                },
+                {
+                    "date": 1641555181878,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,10 @@\n \n function App() {\n   return (\n     <div className=\"App\">\n-      <div>zzz</div>\n+      <Header />\n+      <SideBar />\n     </div>\n   );\n }\n \n"
+                },
+                {
+                    "date": 1641560394629,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n function App() {\n   return (\n     <div className=\"App\">\n       <Header />\n-      <SideBar />\n+      {/* <SideBar /> */}\n     </div>\n   );\n }\n \n"
+                }
+            ],
+            "date": 1641554024842,
+            "name": "Commit-0",
+            "content": "import React from \"react\";\n\nfunction App() {\n  return (\n    <div className='App'>\n    </div>\n  );\n}\n\nexport default App;\n"
+        }
+    ]
+}
