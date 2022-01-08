@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/pages/FileStorage.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1641645045414,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1641645112257,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n const FileStorage = (props) => {\n   return (\n     <div>\n-      <div>파일스토리지 페이지</div>\n+      <div>FileStorage Page</div>\n     </div>\n   );\n };\n \n"
+                }
+            ],
+            "date": 1641645045414,
+            "name": "Commit-0",
+            "content": "import React from \"react\";\n\nconst FileStorage = (props) => {\n  return (\n    <div>\n      <div>파일스토리지 페이지</div>\n    </div>\n  );\n};\n\nexport default FileStorage;\n"
+        }
+    ]
+}

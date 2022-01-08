@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/pages/CustomManage.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1641645089024,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1641645089024,
+            "name": "Commit-0",
+            "content": "import React from \"react\";\n\nconst CustomManage = (props) => {\n  return (\n    <div>\n      <div>customManage Page</div>\n    </div>\n  );\n};\n\nexport default CustomManage;\n"
+        }
+    ]
+}
