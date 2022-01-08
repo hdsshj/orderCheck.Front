@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 45,
+            "activePatchIndex": 264,
             "patches": [
                 {
                     "date": 1641554524665,
@@ -188,6 +188,882 @@
                 {
                     "date": 1641560342692,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,12 +6,14 @@\n const SideBar = (props) => {\n   return (\n     <div class=\"sidebar\">\n       <div class=\"logo-details\">\n-        <img\n-          src=\"../../resource/images/common/ico_btn-template.png\"\n-          alt=\"오더체크\"\n-        />\n+        <button type=\"button\" class=\"btn-side-open\">\n+          <img\n+            src=\"../../resource/images/common/ico_btn-template.png\"\n+            alt=\"오더체크\"\n+          />\n+        </button>\n         <h1 class=\"logo_name\">\n           <img\n             src=\"../../resource/images/common/ico_logo-name.png\"\n             alt=\"오더체크\"\n"
+                },
+                {
+                    "date": 1641562821888,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import React from \"react\";\n // import \"../../style/css/layout.css\";\n+import Logo from \"../../resource/images/common/ico_logo-mark.png\";\n \n import \"../../resource/css/layout.css\";\n \n const SideBar = (props) => {\n@@ -13,12 +14,9 @@\n             alt=\"오더체크\"\n           />\n         </button>\n         <h1 class=\"logo_name\">\n-          <img\n-            src=\"../../resource/images/common/ico_logo-name.png\"\n-            alt=\"오더체크\"\n-          />\n+          <img src={Logo} alt=\"오더체크\" />\n         </h1>\n       </div>\n \n       <ul class=\"nav-list\">\n"
+                },
+                {
+                    "date": 1641562837370,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,15 +8,15 @@\n   return (\n     <div class=\"sidebar\">\n       <div class=\"logo-details\">\n         <button type=\"button\" class=\"btn-side-open\">\n+          <img src={Logo} alt=\"오더체크\" />\n+        </button>\n+        <h1 class=\"logo_name\">\n           <img\n-            src=\"../../resource/images/common/ico_btn-template.png\"\n+            src=\"../../resource/images/common/ico_logo-name.png\"\n             alt=\"오더체크\"\n           />\n-        </button>\n-        <h1 class=\"logo_name\">\n-          <img src={Logo} alt=\"오더체크\" />\n         </h1>\n       </div>\n \n       <ul class=\"nav-list\">\n"
+                },
+                {
+                    "date": 1641562938077,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,22 +1,20 @@\n import React from \"react\";\n // import \"../../style/css/layout.css\";\n-import Logo from \"../../resource/images/common/ico_logo-mark.png\";\n+import logoMark from \"../../resource/images/common/ico_logo-mark.png\";\n+import logoName from \"../../resource/images/common/ico_logo-name.png\";\n \n import \"../../resource/css/layout.css\";\n \n const SideBar = (props) => {\n   return (\n     <div class=\"sidebar\">\n       <div class=\"logo-details\">\n         <button type=\"button\" class=\"btn-side-open\">\n-          <img src={Logo} alt=\"오더체크\" />\n+          <img src={logoMark} alt=\"오더체크\" />\n         </button>\n         <h1 class=\"logo_name\">\n-          <img\n-            src=\"../../resource/images/common/ico_logo-name.png\"\n-            alt=\"오더체크\"\n-          />\n+          <img src={logoName} alt=\"오더체크\" />\n         </h1>\n       </div>\n \n       <ul class=\"nav-list\">\n"
+                },
+                {
+                    "date": 1641564195789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n import \"../../resource/css/layout.css\";\n \n const SideBar = (props) => {\n   return (\n-    <div class=\"sidebar\">\n+    <div class=\"sidebar open\">\n       <div class=\"logo-details\">\n         <button type=\"button\" class=\"btn-side-open\">\n           <img src={logoMark} alt=\"오더체크\" />\n         </button>\n"
+                },
+                {
+                    "date": 1641564205721,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n import \"../../resource/css/layout.css\";\n \n const SideBar = (props) => {\n   return (\n-    <div class=\"sidebar open\">\n+    <div class=\"sidebar\">\n       <div class=\"logo-details\">\n         <button type=\"button\" class=\"btn-side-open\">\n           <img src={logoMark} alt=\"오더체크\" />\n         </button>\n"
+                },
+                {
+                    "date": 1641564381821,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,10 @@\n import logoMark from \"../../resource/images/common/ico_logo-mark.png\";\n import logoName from \"../../resource/images/common/ico_logo-name.png\";\n \n import \"../../resource/css/layout.css\";\n+import \"../../resource/css/layout.css\";\n+import \"../../resource/css/vendor/nice-select.css\";\n \n const SideBar = (props) => {\n   return (\n     <div class=\"sidebar\">\n"
+                },
+                {
+                    "date": 1641564388779,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,8 @@\n import logoMark from \"../../resource/images/common/ico_logo-mark.png\";\n import logoName from \"../../resource/images/common/ico_logo-name.png\";\n \n import \"../../resource/css/layout.css\";\n-import \"../../resource/css/layout.css\";\n-import \"../../resource/css/vendor/nice-select.css\";\n \n const SideBar = (props) => {\n   return (\n     <div class=\"sidebar\">\n"
+                },
+                {
+                    "date": 1641564397607,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n import logoMark from \"../../resource/images/common/ico_logo-mark.png\";\n import logoName from \"../../resource/images/common/ico_logo-name.png\";\n \n import \"../../resource/css/layout.css\";\n+import \"../../resource/css/contents.css\";\n \n const SideBar = (props) => {\n   return (\n     <div class=\"sidebar\">\n"
+                },
+                {
+                    "date": 1641564478655,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,11 +3,11 @@\n import logoMark from \"../../resource/images/common/ico_logo-mark.png\";\n import logoName from \"../../resource/images/common/ico_logo-name.png\";\n \n import \"../../resource/css/layout.css\";\n-import \"../../resource/css/contents.css\";\n \n const SideBar = (props) => {\n+  const sidebarState = React.useState(false);\n   return (\n     <div class=\"sidebar\">\n       <div class=\"logo-details\">\n         <button type=\"button\" class=\"btn-side-open\">\n"
+                },
+                {
+                    "date": 1641564658455,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,13 +5,17 @@\n \n import \"../../resource/css/layout.css\";\n \n const SideBar = (props) => {\n-  const sidebarState = React.useState(false);\n+  const [sidebarState, setSidebarState] = React.useState(false);\n+\n+  const handelSidebar = () => {\n+    setSidebarState(!sidebarState);\n+  };\n   return (\n     <div class=\"sidebar\">\n       <div class=\"logo-details\">\n-        <button type=\"button\" class=\"btn-side-open\">\n+        <button type=\"button\" class=\"btn-side-open\" onClick={handelSidebar}>\n           <img src={logoMark} alt=\"오더체크\" />\n         </button>\n         <h1 class=\"logo_name\">\n           <img src={logoName} alt=\"오더체크\" />\n"
+                },
+                {
+                    "date": 1641564708204,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n   const handelSidebar = () => {\n     setSidebarState(!sidebarState);\n   };\n   return (\n-    <div class=\"sidebar\">\n+    <div class={sidebarState ? \"sidebar\" : \"sidebar open\"}>\n       <div class=\"logo-details\">\n         <button type=\"button\" class=\"btn-side-open\" onClick={handelSidebar}>\n           <img src={logoMark} alt=\"오더체크\" />\n         </button>\n"
+                },
+                {
+                    "date": 1641564745727,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,9 +61,9 @@\n             <span class=\"links_name\">설정</span>\n           </a>\n         </li>\n       </ul>\n-      <button type=\"button\" class=\"btn-lnb-close\">\n+      <button type=\"button\" class=\"btn-lnb-close\" onClick={handelSidebar}>\n         <span class=\"hide\">메뉴 닫기</span>\n       </button>\n     </div>\n   );\n"
+                },
+                {
+                    "date": 1641564831482,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,5 @@\n import React from \"react\";\n-// import \"../../style/css/layout.css\";\n import logoMark from \"../../resource/images/common/ico_logo-mark.png\";\n import logoName from \"../../resource/images/common/ico_logo-name.png\";\n \n import \"../../resource/css/layout.css\";\n"
+                },
+                {
+                    "date": 1641564971769,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n   const handelSidebar = () => {\n     setSidebarState(!sidebarState);\n   };\n   return (\n-    <div class={sidebarState ? \"sidebar\" : \"sidebar open\"}>\n+    <div class={sidebarState ? \"sidebar open\" : \"sidebar\"}>\n       <div class=\"logo-details\">\n         <button type=\"button\" class=\"btn-side-open\" onClick={handelSidebar}>\n           <img src={logoMark} alt=\"오더체크\" />\n         </button>\n"
+                },
+                {
+                    "date": 1641565053382,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,9 @@\n \n   const handelSidebar = () => {\n     setSidebarState(!sidebarState);\n   };\n+\n   return (\n     <div class={sidebarState ? \"sidebar open\" : \"sidebar\"}>\n       <div class=\"logo-details\">\n         <button type=\"button\" class=\"btn-side-open\" onClick={handelSidebar}>\n"
+                },
+                {
+                    "date": 1641565731321,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,60 +11,60 @@\n     setSidebarState(!sidebarState);\n   };\n \n   return (\n-    <div class={sidebarState ? \"sidebar open\" : \"sidebar\"}>\n-      <div class=\"logo-details\">\n-        <button type=\"button\" class=\"btn-side-open\" onClick={handelSidebar}>\n+    <div className={sidebarState ? \"sidebar open\" : \"sidebar\"}>\n+      <div className=\"logo-details\">\n+        <button type=\"button\" className=\"btn-side-open\" onClick={handelSidebar}>\n           <img src={logoMark} alt=\"오더체크\" />\n         </button>\n-        <h1 class=\"logo_name\">\n+        <h1 className=\"logo_name\">\n           <img src={logoName} alt=\"오더체크\" />\n         </h1>\n       </div>\n \n-      <ul class=\"nav-list\">\n+      <ul className=\"nav-list\">\n         <li>\n           <a href=\"dashboard.html\">\n-            <i class=\"ico home\"></i>\n-            <span class=\"links_name\">홈</span>\n+            <i className=\"ico home\"></i>\n+            <span className=\"links_name\">홈</span>\n           </a>\n         </li>\n-        <li class=\"on\">\n+        <li className=\"on\">\n           <a href=\"customManage_list.html\">\n-            <i class=\"ico user\"></i>\n-            <span class=\"links_name\">고객 관리</span>\n+            <i className=\"ico user\"></i>\n+            <span className=\"links_name\">고객 관리</span>\n           </a>\n         </li>\n         <li>\n           <a href=\"file_storage.html\">\n-            <i class=\"ico file\"></i>\n-            <span class=\"links_name\">파일 보관함</span>\n+            <i className=\"ico file\"></i>\n+            <span className=\"links_name\">파일 보관함</span>\n           </a>\n         </li>\n         <li>\n           <a href=\"form_list.html\">\n-            <i class=\"ico form\"></i>\n-            <span class=\"links_name\">상담 신청폼</span>\n+            <i className=\"ico form\"></i>\n+            <span className=\"links_name\">상담 신청폼</span>\n           </a>\n         </li>\n       </ul>\n-      <ul class=\"btm\">\n+      <ul className=\"btm\">\n         <li>\n           <a href=\"#\">\n-            <i class=\"ico help\"></i>\n-            <span class=\"links_name\">자주 묻는 질문</span>\n+            <i className=\"ico help\"></i>\n+            <span className=\"links_name\">자주 묻는 질문</span>\n           </a>\n         </li>\n         <li>\n           <a href=\"setting_company-info.html\">\n-            <i class=\"ico setting\"></i>\n-            <span class=\"links_name\">설정</span>\n+            <i className=\"ico setting\"></i>\n+            <span className=\"links_name\">설정</span>\n           </a>\n         </li>\n       </ul>\n-      <button type=\"button\" class=\"btn-lnb-close\" onClick={handelSidebar}>\n-        <span class=\"hide\">메뉴 닫기</span>\n+      <button type=\"button\" className=\"btn-lnb-close\" onClick={handelSidebar}>\n+        <span className=\"hide\">메뉴 닫기</span>\n       </button>\n     </div>\n   );\n };\n"
+                },
+                {
+                    "date": 1641566795087,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import React from \"react\";\n import logoMark from \"../../resource/images/common/ico_logo-mark.png\";\n import logoName from \"../../resource/images/common/ico_logo-name.png\";\n+import styled from \"styled-components\";\n \n import \"../../resource/css/layout.css\";\n \n const SideBar = (props) => {\n"
+                },
+                {
+                    "date": 1641567980557,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,5 +69,7 @@\n     </div>\n   );\n };\n \n+const Sidebar = styled.div``;\n+\n export default SideBar;\n"
+                },
+                {
+                    "date": 1641567996135,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,7 +69,15 @@\n     </div>\n   );\n };\n \n-const Sidebar = styled.div``;\n+const Sidebar = styled.div`\n+  position: fixed;\n+  width: 80px;\n+  height: 100%;\n+  left: 0;\n+  background: #02164f;\n+  padding: 6px 16px;\n+  box-sizing: border-box;\n+`;\n \n export default SideBar;\n"
+                },
+                {
+                    "date": 1641568003456,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     setSidebarState(!sidebarState);\n   };\n \n   return (\n-    <div className={sidebarState ? \"sidebar open\" : \"sidebar\"}>\n+    <Sidebar className={sidebarState ? \"sidebar open\" : \"sidebar\"}>\n       <div className=\"logo-details\">\n         <button type=\"button\" className=\"btn-side-open\" onClick={handelSidebar}>\n           <img src={logoMark} alt=\"오더체크\" />\n         </button>\n@@ -65,9 +65,9 @@\n       </ul>\n       <button type=\"button\" className=\"btn-lnb-close\" onClick={handelSidebar}>\n         <span className=\"hide\">메뉴 닫기</span>\n       </button>\n-    </div>\n+    </Sidebar>\n   );\n };\n \n const Sidebar = styled.div`\n"
+                },
+                {
+                    "date": 1641568012978,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import logoMark from \"../../resource/images/common/ico_logo-mark.png\";\n import logoName from \"../../resource/images/common/ico_logo-name.png\";\n import styled from \"styled-components\";\n \n-import \"../../resource/css/layout.css\";\n+// import \"../../resource/css/layout.css\";\n \n const SideBar = (props) => {\n   const [sidebarState, setSidebarState] = React.useState(false);\n \n"
+                },
+                {
+                    "date": 1641568035027,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,14 +70,14 @@\n   );\n };\n \n const Sidebar = styled.div`\n-  position: fixed;\n+  /* position: fixed;\n   width: 80px;\n   height: 100%;\n   left: 0;\n   background: #02164f;\n   padding: 6px 16px;\n-  box-sizing: border-box;\n+  box-sizing: border-box; */\n `;\n \n export default SideBar;\n"
+                },
+                {
+                    "date": 1641568041763,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,14 +70,14 @@\n   );\n };\n \n const Sidebar = styled.div`\n-  /* position: fixed;\n+  position: fixed;\n   width: 80px;\n   height: 100%;\n   left: 0;\n   background: #02164f;\n   padding: 6px 16px;\n-  box-sizing: border-box; */\n+  box-sizing: border-box;\n `;\n \n export default SideBar;\n"
+                },
+                {
+                    "date": 1641568087423,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,15 +69,15 @@\n     </Sidebar>\n   );\n };\n \n-const Sidebar = styled.div`\n-  position: fixed;\n-  width: 80px;\n-  height: 100%;\n-  left: 0;\n-  background: #02164f;\n-  padding: 6px 16px;\n-  box-sizing: border-box;\n-`;\n+// const Sidebar = styled.div`\n+//   position: fixed;\n+//   width: 80px;\n+//   height: 100%;\n+//   left: 0;\n+//   background: #02164f;\n+//   padding: 6px 16px;\n+//   box-sizing: border-box;\n+// `;\n \n export default SideBar;\n"
+                },
+                {
+                    "date": 1641568095175,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,15 +69,15 @@\n     </Sidebar>\n   );\n };\n \n-// const Sidebar = styled.div`\n-//   position: fixed;\n-//   width: 80px;\n-//   height: 100%;\n-//   left: 0;\n-//   background: #02164f;\n-//   padding: 6px 16px;\n-//   box-sizing: border-box;\n-// `;\n+const Sidebar = styled.div`\n+  /* position: fixed;\n+  width: 80px;\n+  height: 100%;\n+  left: 0;\n+  background: #02164f;\n+  padding: 6px 16px;\n+  box-sizing: border-box; */\n+`;\n \n export default SideBar;\n"
+                },
+                {
+                    "date": 1641568172309,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,8 +70,9 @@\n   );\n };\n \n const Sidebar = styled.div`\n+  width: 2000px;\n   /* position: fixed;\n   width: 80px;\n   height: 100%;\n   left: 0;\n"
+                },
+                {
+                    "date": 1641568177870,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,9 +70,8 @@\n   );\n };\n \n const Sidebar = styled.div`\n-  width: 2000px;\n   /* position: fixed;\n   width: 80px;\n   height: 100%;\n   left: 0;\n"
+                },
+                {
+                    "date": 1641568238248,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,14 +70,14 @@\n   );\n };\n \n const Sidebar = styled.div`\n-  /* position: fixed;\n+  position: fixed;\n   width: 80px;\n   height: 100%;\n   left: 0;\n   background: #02164f;\n   padding: 6px 16px;\n-  box-sizing: border-box; */\n+  box-sizing: border-box;\n `;\n \n export default SideBar;\n"
+                },
+                {
+                    "date": 1641568311651,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,7 +77,10 @@\n   left: 0;\n   background: #02164f;\n   padding: 6px 16px;\n   box-sizing: border-box;\n+  .sidebar .open {\n+    width: 218px;\n+  }\n `;\n \n export default SideBar;\n"
+                },
+                {
+                    "date": 1641568330203,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,9 +77,9 @@\n   left: 0;\n   background: #02164f;\n   padding: 6px 16px;\n   box-sizing: border-box;\n-  .sidebar .open {\n+  .sideba.open {\n     width: 218px;\n   }\n `;\n \n"
+                },
+                {
+                    "date": 1641568340738,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,9 +77,9 @@\n   left: 0;\n   background: #02164f;\n   padding: 6px 16px;\n   box-sizing: border-box;\n-  .sideba.open {\n+  .sidebar .open {\n     width: 218px;\n   }\n `;\n \n"
+                },
+                {
+                    "date": 1641568377125,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -80,7 +80,81 @@\n   box-sizing: border-box;\n   .sidebar .open {\n     width: 218px;\n   }\n+  .sidebar .logo-details {\n+    height: 60px;\n+    display: flex;\n+    align-items: center;\n+    position: relative;\n+  }\n+  .sidebar .logo-details .ico {\n+    opacity: 0;\n+    transition: all 0.5s ease;\n+  }\n+  .sidebar .logo-details .logo_name {\n+    padding-left: 50px;\n+    color: #fff;\n+    font-size: 20px;\n+    font-weight: 600;\n+    opacity: 0;\n+  }\n+  .sidebar .logo-details .logo_name img {\n+    vertical-align: middle;\n+  }\n+  .sidebar.open .logo-details .ico,\n+  .sidebar.open .logo-details .logo_name {\n+    opacity: 1;\n+  }\n+  .sidebar .logo-details .btn-side-open {\n+    position: absolute;\n+    top: 5px;\n+    left: 0;\n+    width: 50px;\n+    height: 50px;\n+    font-size: 22px;\n+    color: #fff;\n+    z-index: 1;\n+  }\n+  .sidebar .nav-list {\n+    margin-top: 34px;\n+    height: 100%;\n+  }\n+  .sidebar .nav-list > li {\n+    position: relative;\n+    margin: 8px 0;\n+    list-style: none;\n+  }\n+  .sidebar li a {\n+    display: flex;\n+    width: 42px;\n+    height: 42px;\n+    border-radius: 8px;\n+    align-items: center;\n+    text-decoration: none;\n+    transition: all 0.4s ease;\n+    background: #02164f;\n+  }\n+  .sidebar li a .ico {\n+    min-width: 42px;\n+    width: 42px;\n+  }\n+\n+  .sidebar.open li a {\n+    width: 100%;\n+  }\n+  .sidebar .nav-list li.on a {\n+    background: #1d58ff;\n+    color: #fff;\n+  }\n+  .sidebar.open ~ .content-section {\n+    left: 218px;\n+    width: calc(100% - 218px);\n+  }\n+  .sidebar .btm li.on a,\n+  .sidebar .btm li a:hover {\n+    background: rgba(255, 255, 255, 0.26);\n+    border-radius: 25px;\n+  }\n `;\n \n export default SideBar;\n"
+                },
+                {
+                    "date": 1641568405501,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -154,7 +154,13 @@\n   .sidebar .btm li a:hover {\n     background: rgba(255, 255, 255, 0.26);\n     border-radius: 25px;\n   }\n+  .sidebar .btn-lnb-close {\n+    position: absolute;\n+    right: -15px;\n+    top: 106px;\n+    z-index: 1;\n+  }\n `;\n \n export default SideBar;\n"
+                },
+                {
+                    "date": 1641568480558,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -123,17 +123,19 @@\n     position: relative;\n     margin: 8px 0;\n     list-style: none;\n   }\n-  .sidebar li a {\n-    display: flex;\n-    width: 42px;\n-    height: 42px;\n-    border-radius: 8px;\n-    align-items: center;\n-    text-decoration: none;\n-    transition: all 0.4s ease;\n-    background: #02164f;\n+  li {\n+    a {\n+      display: flex;\n+      width: 42px;\n+      height: 42px;\n+      border-radius: 8px;\n+      align-items: center;\n+      text-decoration: none;\n+      transition: all 0.4s ease;\n+      background: #02164f;\n+    }\n   }\n   .sidebar li a .ico {\n     min-width: 42px;\n     width: 42px;\n"
+                },
+                {
+                    "date": 1641568511977,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,92 +77,7 @@\n   left: 0;\n   background: #02164f;\n   padding: 6px 16px;\n   box-sizing: border-box;\n-  .sidebar .open {\n-    width: 218px;\n-  }\n-  .sidebar .logo-details {\n-    height: 60px;\n-    display: flex;\n-    align-items: center;\n-    position: relative;\n-  }\n-  .sidebar .logo-details .ico {\n-    opacity: 0;\n-    transition: all 0.5s ease;\n-  }\n-  .sidebar .logo-details .logo_name {\n-    padding-left: 50px;\n-    color: #fff;\n-    font-size: 20px;\n-    font-weight: 600;\n-    opacity: 0;\n-  }\n-  .sidebar .logo-details .logo_name img {\n-    vertical-align: middle;\n-  }\n-  .sidebar.open .logo-details .ico,\n-  .sidebar.open .logo-details .logo_name {\n-    opacity: 1;\n-  }\n-  .sidebar .logo-details .btn-side-open {\n-    position: absolute;\n-    top: 5px;\n-    left: 0;\n-    width: 50px;\n-    height: 50px;\n-    font-size: 22px;\n-    color: #fff;\n-    z-index: 1;\n-  }\n-  .sidebar .nav-list {\n-    margin-top: 34px;\n-    height: 100%;\n-  }\n-  .sidebar .nav-list > li {\n-    position: relative;\n-    margin: 8px 0;\n-    list-style: none;\n-  }\n-  li {\n-    a {\n-      display: flex;\n-      width: 42px;\n-      height: 42px;\n-      border-radius: 8px;\n-      align-items: center;\n-      text-decoration: none;\n-      transition: all 0.4s ease;\n-      background: #02164f;\n-    }\n-  }\n-  .sidebar li a .ico {\n-    min-width: 42px;\n-    width: 42px;\n-  }\n-\n-  .sidebar.open li a {\n-    width: 100%;\n-  }\n-  .sidebar .nav-list li.on a {\n-    background: #1d58ff;\n-    color: #fff;\n-  }\n-  .sidebar.open ~ .content-section {\n-    left: 218px;\n-    width: calc(100% - 218px);\n-  }\n-  .sidebar .btm li.on a,\n-  .sidebar .btm li a:hover {\n-    background: rgba(255, 255, 255, 0.26);\n-    border-radius: 25px;\n-  }\n-  .sidebar .btn-lnb-close {\n-    position: absolute;\n-    right: -15px;\n-    top: 106px;\n-    z-index: 1;\n-  }\n `;\n \n export default SideBar;\n"
+                },
+                {
+                    "date": 1641568606764,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,9 +71,9 @@\n };\n \n const Sidebar = styled.div`\n   position: fixed;\n-  width: 80px;\n+  width: 218px;\n   height: 100%;\n   left: 0;\n   background: #02164f;\n   padding: 6px 16px;\n"
+                },
+                {
+                    "date": 1641568612090,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,9 +71,9 @@\n };\n \n const Sidebar = styled.div`\n   position: fixed;\n-  width: 218px;\n+  width: px;\n   height: 100%;\n   left: 0;\n   background: #02164f;\n   padding: 6px 16px;\n"
+                },
+                {
+                    "date": 1641569349493,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,13 +71,23 @@\n };\n \n const Sidebar = styled.div`\n   position: fixed;\n-  width: px;\n+  width: 80px;\n   height: 100%;\n   left: 0;\n   background: #02164f;\n   padding: 6px 16px;\n   box-sizing: border-box;\n `;\n \n+const LogoDetail = styled.div`\n+  position: fixed;\n+  width: 80px;\n+  height: 100%;\n+  left: 0;\n+  background: #02164f;\n+  padding: 6px 16px;\n+  box-sizing: border-box;\n+`;\n+\n export default SideBar;\n"
+                },
+                {
+                    "date": 1641569379155,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n   };\n \n   return (\n     <Sidebar className={sidebarState ? \"sidebar open\" : \"sidebar\"}>\n-      <div className=\"logo-details\">\n+      <LogoDetail>\n         <button type=\"button\" className=\"btn-side-open\" onClick={handelSidebar}>\n           <img src={logoMark} alt=\"오더체크\" />\n         </button>\n         <h1 className=\"logo_name\">\n@@ -80,14 +80,11 @@\n   box-sizing: border-box;\n `;\n \n const LogoDetail = styled.div`\n-  position: fixed;\n-  width: 80px;\n-  height: 100%;\n-  left: 0;\n-  background: #02164f;\n-  padding: 6px 16px;\n-  box-sizing: border-box;\n+  height: 60px;\n+  display: flex;\n+  align-items: center;\n+  position: relative;\n `;\n \n export default SideBar;\n"
+                },
+                {
+                    "date": 1641569396449,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,16 +13,16 @@\n   };\n \n   return (\n     <Sidebar className={sidebarState ? \"sidebar open\" : \"sidebar\"}>\n-      <LogoDetail>\n+      <LogoDetail className=\"logo-details\">\n         <button type=\"button\" className=\"btn-side-open\" onClick={handelSidebar}>\n           <img src={logoMark} alt=\"오더체크\" />\n         </button>\n         <h1 className=\"logo_name\">\n           <img src={logoName} alt=\"오더체크\" />\n         </h1>\n-      </div>\n+      </LogoDetail>\n \n       <ul className=\"nav-list\">\n         <li>\n           <a href=\"dashboard.html\">\n"
+                },
+                {
+                    "date": 1641577051097,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -84,7 +84,15 @@\n   height: 60px;\n   display: flex;\n   align-items: center;\n   position: relative;\n+\n+  .logo_name {\n+    padding-left: 50px;\n+    color: #fff;\n+    font-size: 20px;\n+    font-weight: 600;\n+    opacity: 0;\n+  }\n `;\n \n export default SideBar;\n"
+                },
+                {
+                    "date": 1641577064455,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -91,8 +91,11 @@\n     color: #fff;\n     font-size: 20px;\n     font-weight: 600;\n     opacity: 0;\n+\n+    img {\n+    }\n   }\n `;\n \n export default SideBar;\n"
+                },
+                {
+                    "date": 1641577077646,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -93,8 +93,9 @@\n     font-weight: 600;\n     opacity: 0;\n \n     img {\n+      vertical-align: middle;\n     }\n   }\n `;\n \n"
+                },
+                {
+                    "date": 1641577160337,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -92,8 +92,19 @@\n     font-size: 20px;\n     font-weight: 600;\n     opacity: 0;\n \n+    .btn-side-open {\n+      position: absolute;\n+      top: 5px;\n+      left: 0;\n+      width: 50px;\n+      height: 50px;\n+      font-size: 22px;\n+      color: #fff;\n+      z-index: 1;\n+    }\n+\n     img {\n       vertical-align: middle;\n     }\n   }\n"
+                },
+                {
+                    "date": 1641577241178,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -95,8 +95,9 @@\n \n     .btn-side-open {\n       position: absolute;\n       top: 5px;\n+      background-color: red;\n       left: 0;\n       width: 50px;\n       height: 50px;\n       font-size: 22px;\n"
+                },
+                {
+                    "date": 1641577312387,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -92,8 +92,11 @@\n     font-size: 20px;\n     font-weight: 600;\n     opacity: 0;\n \n+    img {\n+      vertical-align: middle;\n+    }\n     .btn-side-open {\n       position: absolute;\n       top: 5px;\n       background-color: red;\n@@ -103,12 +106,8 @@\n       font-size: 22px;\n       color: #fff;\n       z-index: 1;\n     }\n-\n-    img {\n-      vertical-align: middle;\n-    }\n   }\n `;\n \n export default SideBar;\n"
+                },
+                {
+                    "date": 1641577322556,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -95,19 +95,19 @@\n \n     img {\n       vertical-align: middle;\n     }\n-    .btn-side-open {\n-      position: absolute;\n-      top: 5px;\n-      background-color: red;\n-      left: 0;\n-      width: 50px;\n-      height: 50px;\n-      font-size: 22px;\n-      color: #fff;\n-      z-index: 1;\n-    }\n   }\n+  .btn-side-open {\n+    position: absolute;\n+    top: 5px;\n+    background-color: red;\n+    left: 0;\n+    width: 50px;\n+    height: 50px;\n+    font-size: 22px;\n+    color: #fff;\n+    z-index: 1;\n+  }\n `;\n \n export default SideBar;\n"
+                },
+                {
+                    "date": 1641577329443,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -96,8 +96,9 @@\n     img {\n       vertical-align: middle;\n     }\n   }\n+\n   .btn-side-open {\n     position: absolute;\n     top: 5px;\n     background-color: red;\n"
+                },
+                {
+                    "date": 1641577369639,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n   };\n \n   return (\n     <Sidebar className={sidebarState ? \"sidebar open\" : \"sidebar\"}>\n-      <LogoDetail className=\"logo-details\">\n+      <LogoDetail>\n         <button type=\"button\" className=\"btn-side-open\" onClick={handelSidebar}>\n           <img src={logoMark} alt=\"오더체크\" />\n         </button>\n         <h1 className=\"logo_name\">\n@@ -100,9 +100,8 @@\n \n   .btn-side-open {\n     position: absolute;\n     top: 5px;\n-    background-color: red;\n     left: 0;\n     width: 50px;\n     height: 50px;\n     font-size: 22px;\n"
+                },
+                {
+                    "date": 1641577378815,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n   };\n \n   return (\n     <Sidebar className={sidebarState ? \"sidebar open\" : \"sidebar\"}>\n-      <LogoDetail>\n+      <LogoDetail className=\"logo-details\">\n         <button type=\"button\" className=\"btn-side-open\" onClick={handelSidebar}>\n           <img src={logoMark} alt=\"오더체크\" />\n         </button>\n         <h1 className=\"logo_name\">\n"
+                },
+                {
+                    "date": 1641577531794,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     setSidebarState(!sidebarState);\n   };\n \n   return (\n-    <Sidebar className={sidebarState ? \"sidebar open\" : \"sidebar\"}>\n+    <Sidebar className={sidebarState ? \"sidebarOpen\" : \"sidebar\"}>\n       <LogoDetail className=\"logo-details\">\n         <button type=\"button\" className=\"btn-side-open\" onClick={handelSidebar}>\n           <img src={logoMark} alt=\"오더체크\" />\n         </button>\n"
+                },
+                {
+                    "date": 1641577551482,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -107,7 +107,10 @@\n     font-size: 22px;\n     color: #fff;\n     z-index: 1;\n   }\n+\n+  .sidebarOpen {\n+  }\n `;\n \n export default SideBar;\n"
+                },
+                {
+                    "date": 1641577559862,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -109,8 +109,9 @@\n     z-index: 1;\n   }\n \n   .sidebarOpen {\n+    width: 218px;\n   }\n `;\n \n export default SideBar;\n"
+                },
+                {
+                    "date": 1641577586133,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,8 +77,11 @@\n   left: 0;\n   background: #02164f;\n   padding: 6px 16px;\n   box-sizing: border-box;\n+  .sidebarOpen {\n+    width: 218px;\n+  }\n `;\n \n const LogoDetail = styled.div`\n   height: 60px;\n@@ -107,11 +110,7 @@\n     font-size: 22px;\n     color: #fff;\n     z-index: 1;\n   }\n-\n-  .sidebarOpen {\n-    width: 218px;\n-  }\n `;\n \n export default SideBar;\n"
+                },
+                {
+                    "date": 1641577605379,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     setSidebarState(!sidebarState);\n   };\n \n   return (\n-    <Sidebar className={sidebarState ? \"sidebarOpen\" : \"sidebar\"}>\n+    <Sidebar className={sidebarState ? \"sidebar open\" : \"sidebar\"}>\n       <LogoDetail className=\"logo-details\">\n         <button type=\"button\" className=\"btn-side-open\" onClick={handelSidebar}>\n           <img src={logoMark} alt=\"오더체크\" />\n         </button>\n@@ -77,11 +77,8 @@\n   left: 0;\n   background: #02164f;\n   padding: 6px 16px;\n   box-sizing: border-box;\n-  .sidebarOpen {\n-    width: 218px;\n-  }\n `;\n \n const LogoDetail = styled.div`\n   height: 60px;\n"
+                },
+                {
+                    "date": 1641580451414,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -90,9 +90,9 @@\n     padding-left: 50px;\n     color: #fff;\n     font-size: 20px;\n     font-weight: 600;\n-    opacity: 0;\n+    opacity: 1;\n \n     img {\n       vertical-align: middle;\n     }\n"
+                },
+                {
+                    "date": 1641580495059,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n   };\n \n   return (\n     <Sidebar className={sidebarState ? \"sidebar open\" : \"sidebar\"}>\n-      <LogoDetail className=\"logo-details\">\n+      <LogoDetail className=\"logo-details\" state={sidebarState}>\n         <button type=\"button\" className=\"btn-side-open\" onClick={handelSidebar}>\n           <img src={logoMark} alt=\"오더체크\" />\n         </button>\n         <h1 className=\"logo_name\">\n@@ -90,9 +90,9 @@\n     padding-left: 50px;\n     color: #fff;\n     font-size: 20px;\n     font-weight: 600;\n-    opacity: 1;\n+    opacity: 0;\n \n     img {\n       vertical-align: middle;\n     }\n"
+                },
+                {
+                    "date": 1641580529816,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -90,9 +90,9 @@\n     padding-left: 50px;\n     color: #fff;\n     font-size: 20px;\n     font-weight: 600;\n-    opacity: 0;\n+    opacity: ${({ state }) => (state ? 0 : 1)};\n \n     img {\n       vertical-align: middle;\n     }\n"
+                },
+                {
+                    "date": 1641580535457,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -90,9 +90,9 @@\n     padding-left: 50px;\n     color: #fff;\n     font-size: 20px;\n     font-weight: 600;\n-    opacity: ${({ state }) => (state ? 0 : 1)};\n+    opacity: ${({ state }) => (state ? 1 : 0)};\n \n     img {\n       vertical-align: middle;\n     }\n"
+                },
+                {
+                    "date": 1641580547246,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,10 +12,13 @@\n     setSidebarState(!sidebarState);\n   };\n \n   return (\n-    <Sidebar className={sidebarState ? \"sidebar open\" : \"sidebar\"}>\n-      <LogoDetail className=\"logo-details\" state={sidebarState}>\n+    <Sidebar\n+      state={sidebarState}\n+      className={sidebarState ? \"sidebar open\" : \"sidebar\"}\n+    >\n+      <LogoDetail className=\"logo-details\">\n         <button type=\"button\" className=\"btn-side-open\" onClick={handelSidebar}>\n           <img src={logoMark} alt=\"오더체크\" />\n         </button>\n         <h1 className=\"logo_name\">\n"
+                },
+                {
+                    "date": 1641580623974,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,12 +12,9 @@\n     setSidebarState(!sidebarState);\n   };\n \n   return (\n-    <Sidebar\n-      state={sidebarState}\n-      className={sidebarState ? \"sidebar open\" : \"sidebar\"}\n-    >\n+    <Sidebar className={sidebarState ? \"sidebar open\" : \"sidebar\"}>\n       <LogoDetail className=\"logo-details\">\n         <button type=\"button\" className=\"btn-side-open\" onClick={handelSidebar}>\n           <img src={logoMark} alt=\"오더체크\" />\n         </button>\n"
+                },
+                {
+                    "date": 1641580639002,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -90,9 +90,9 @@\n     padding-left: 50px;\n     color: #fff;\n     font-size: 20px;\n     font-weight: 600;\n-    opacity: ${({ state }) => (state ? 1 : 0)};\n+    opacity: ${sidebarState ? 1 : 0};\n \n     img {\n       vertical-align: middle;\n     }\n"
+                },
+                {
+                    "date": 1641580699997,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,12 @@\n     setSidebarState(!sidebarState);\n   };\n \n   return (\n-    <Sidebar className={sidebarState ? \"sidebar open\" : \"sidebar\"}>\n+    <Sidebar\n+      state={sidebarState}\n+      className={sidebarState ? \"sidebar open\" : \"sidebar\"}\n+    >\n       <LogoDetail className=\"logo-details\">\n         <button type=\"button\" className=\"btn-side-open\" onClick={handelSidebar}>\n           <img src={logoMark} alt=\"오더체크\" />\n         </button>\n@@ -90,9 +93,9 @@\n     padding-left: 50px;\n     color: #fff;\n     font-size: 20px;\n     font-weight: 600;\n-    opacity: ${sidebarState ? 1 : 0};\n+    opacity: ${state ? 1 : 0};\n \n     img {\n       vertical-align: middle;\n     }\n"
+                },
+                {
+                    "date": 1641580714980,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -93,9 +93,9 @@\n     padding-left: 50px;\n     color: #fff;\n     font-size: 20px;\n     font-weight: 600;\n-    opacity: ${state ? 1 : 0};\n+    opacity: state ? 1 : 0;\n \n     img {\n       vertical-align: middle;\n     }\n"
+                },
+                {
+                    "date": 1641580732645,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -93,9 +93,9 @@\n     padding-left: 50px;\n     color: #fff;\n     font-size: 20px;\n     font-weight: 600;\n-    opacity: state ? 1 : 0;\n+    opacity: state ? 0 : 1;\n \n     img {\n       vertical-align: middle;\n     }\n"
+                },
+                {
+                    "date": 1641580739134,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -93,9 +93,9 @@\n     padding-left: 50px;\n     color: #fff;\n     font-size: 20px;\n     font-weight: 600;\n-    opacity: state ? 0 : 1;\n+    opacity: state ? 1 : 0;\n \n     img {\n       vertical-align: middle;\n     }\n"
+                },
+                {
+                    "date": 1641580754616,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -93,9 +93,9 @@\n     padding-left: 50px;\n     color: #fff;\n     font-size: 20px;\n     font-weight: 600;\n-    opacity: state ? 1 : 0;\n+    opacity: ${state ? 1 : 0};\n \n     img {\n       vertical-align: middle;\n     }\n"
+                },
+                {
+                    "date": 1641581611236,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,13 +12,10 @@\n     setSidebarState(!sidebarState);\n   };\n \n   return (\n-    <Sidebar\n-      state={sidebarState}\n-      className={sidebarState ? \"sidebar open\" : \"sidebar\"}\n-    >\n-      <LogoDetail className=\"logo-details\">\n+    <Sidebar className={sidebarState ? \"sidebar open\" : \"sidebar\"}>\n+      <LogoDetail className=\"logo-details\" state={sidebarState}>\n         <button type=\"button\" className=\"btn-side-open\" onClick={handelSidebar}>\n           <img src={logoMark} alt=\"오더체크\" />\n         </button>\n         <h1 className=\"logo_name\">\n"
+                },
+                {
+                    "date": 1641581629881,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -90,9 +90,9 @@\n     padding-left: 50px;\n     color: #fff;\n     font-size: 20px;\n     font-weight: 600;\n-    opacity: ${state ? 1 : 0};\n+    opacity: ${{ state } ? 1 : 0};\n \n     img {\n       vertical-align: middle;\n     }\n"
+                },
+                {
+                    "date": 1641581640789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -90,9 +90,9 @@\n     padding-left: 50px;\n     color: #fff;\n     font-size: 20px;\n     font-weight: 600;\n-    opacity: ${{ state } ? 1 : 0};\n+    opacity: ${({ state }) => (state ? 1 : 0)};\n \n     img {\n       vertical-align: middle;\n     }\n"
+                },
+                {
+                    "date": 1641583102458,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n   };\n \n   return (\n     <Sidebar className={sidebarState ? \"sidebar open\" : \"sidebar\"}>\n-      <LogoDetail className=\"logo-details\" state={sidebarState}>\n+      <LogoDetail state={sidebarState}>\n         <button type=\"button\" className=\"btn-side-open\" onClick={handelSidebar}>\n           <img src={logoMark} alt=\"오더체크\" />\n         </button>\n         <h1 className=\"logo_name\">\n"
+                },
+                {
+                    "date": 1641583146968,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     setSidebarState(!sidebarState);\n   };\n \n   return (\n-    <Sidebar className={sidebarState ? \"sidebar open\" : \"sidebar\"}>\n+    <Sidebar>\n       <LogoDetail state={sidebarState}>\n         <button type=\"button\" className=\"btn-side-open\" onClick={handelSidebar}>\n           <img src={logoMark} alt=\"오더체크\" />\n         </button>\n"
+                },
+                {
+                    "date": 1641583155098,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     setSidebarState(!sidebarState);\n   };\n \n   return (\n-    <Sidebar>\n+    <Sidebar className={sidebarState ? \"sidebar open\" : \"sidebar\"}>\n       <LogoDetail state={sidebarState}>\n         <button type=\"button\" className=\"btn-side-open\" onClick={handelSidebar}>\n           <img src={logoMark} alt=\"오더체크\" />\n         </button>\n"
+                },
+                {
+                    "date": 1641583198421,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,8 +77,15 @@\n   left: 0;\n   background: #02164f;\n   padding: 6px 16px;\n   box-sizing: border-box;\n+\n+  .side-form {\n+    top: 0;\n+    height: 100%;\n+    z-index: 99;\n+    transition: all 0.4s ease;\n+  }\n `;\n \n const LogoDetail = styled.div`\n   height: 60px;\n"
+                },
+                {
+                    "date": 1641583209178,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,23 +77,23 @@\n   left: 0;\n   background: #02164f;\n   padding: 6px 16px;\n   box-sizing: border-box;\n+`;\n \n+const LogoDetail = styled.div`\n+  height: 60px;\n+  display: flex;\n+  align-items: center;\n+  position: relative;\n+\n   .side-form {\n     top: 0;\n     height: 100%;\n     z-index: 99;\n     transition: all 0.4s ease;\n   }\n-`;\n \n-const LogoDetail = styled.div`\n-  height: 60px;\n-  display: flex;\n-  align-items: center;\n-  position: relative;\n-\n   .logo_name {\n     padding-left: 50px;\n     color: #fff;\n     font-size: 20px;\n"
+                },
+                {
+                    "date": 1641583215740,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -85,15 +85,8 @@\n   display: flex;\n   align-items: center;\n   position: relative;\n \n-  .side-form {\n-    top: 0;\n-    height: 100%;\n-    z-index: 99;\n-    transition: all 0.4s ease;\n-  }\n-\n   .logo_name {\n     padding-left: 50px;\n     color: #fff;\n     font-size: 20px;\n"
+                },
+                {
+                    "date": 1641583261892,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -109,5 +109,6 @@\n     z-index: 1;\n   }\n `;\n \n+const LogoDetail = styled.ul``;\n export default SideBar;\n"
+                },
+                {
+                    "date": 1641583277661,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n           <img src={logoName} alt=\"오더체크\" />\n         </h1>\n       </LogoDetail>\n \n-      <ul className=\"nav-list\">\n+      <NavList className=\"nav-list\">\n         <li>\n           <a href=\"dashboard.html\">\n             <i className=\"ico home\"></i>\n             <span className=\"links_name\">홈</span>\n@@ -47,9 +47,9 @@\n             <i className=\"ico form\"></i>\n             <span className=\"links_name\">상담 신청폼</span>\n           </a>\n         </li>\n-      </ul>\n+      </NavList>\n       <ul className=\"btm\">\n         <li>\n           <a href=\"#\">\n             <i className=\"ico help\"></i>\n@@ -109,6 +109,6 @@\n     z-index: 1;\n   }\n `;\n \n-const LogoDetail = styled.ul``;\n+const NavList = styled.ul``;\n export default SideBar;\n"
+                },
+                {
+                    "date": 1641583297968,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -109,6 +109,9 @@\n     z-index: 1;\n   }\n `;\n \n-const NavList = styled.ul``;\n+const NavList = styled.ul`\n+  margin-top: 34px;\n+  height: 100%;\n+`;\n export default SideBar;\n"
+                },
+                {
+                    "date": 1641583336286,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -112,6 +112,12 @@\n \n const NavList = styled.ul`\n   margin-top: 34px;\n   height: 100%;\n+\n+  li {\n+    position: relative;\n+    margin: 8px 0;\n+    list-style: none;\n+  }\n `;\n export default SideBar;\n"
+                },
+                {
+                    "date": 1641583361061,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -117,7 +117,18 @@\n   li {\n     position: relative;\n     margin: 8px 0;\n     list-style: none;\n+\n+    a {\n+      display: flex;\n+      width: 42px;\n+      height: 42px;\n+      border-radius: 8px;\n+      align-items: center;\n+      text-decoration: none;\n+      transition: all 0.4s ease;\n+      background: #02164f;\n+    }\n   }\n `;\n export default SideBar;\n"
+                },
+                {
+                    "date": 1641583394249,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -127,8 +127,13 @@\n       align-items: center;\n       text-decoration: none;\n       transition: all 0.4s ease;\n       background: #02164f;\n+\n+      .ico {\n+        min-width: 42px;\n+        width: 42px;\n+      }\n     }\n   }\n `;\n export default SideBar;\n"
+                },
+                {
+                    "date": 1641583469950,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -133,7 +133,12 @@\n         min-width: 42px;\n         width: 42px;\n       }\n     }\n+\n+    .on {\n+      a {\n+      }\n+    }\n   }\n `;\n export default SideBar;\n"
+                },
+                {
+                    "date": 1641583475366,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -136,8 +136,10 @@\n     }\n \n     .on {\n       a {\n+        background: #1d58ff;\n+        color: #fff;\n       }\n     }\n   }\n `;\n"
+                },
+                {
+                    "date": 1641583491925,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -127,20 +127,8 @@\n       align-items: center;\n       text-decoration: none;\n       transition: all 0.4s ease;\n       background: #02164f;\n-\n-      .ico {\n-        min-width: 42px;\n-        width: 42px;\n-      }\n     }\n-\n-    .on {\n-      a {\n-        background: #1d58ff;\n-        color: #fff;\n-      }\n-    }\n   }\n `;\n export default SideBar;\n"
+                },
+                {
+                    "date": 1641583541720,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,8 +77,21 @@\n   left: 0;\n   background: #02164f;\n   padding: 6px 16px;\n   box-sizing: border-box;\n+\n+  li {\n+    a {\n+      display: flex;\n+      width: 42px;\n+      height: 42px;\n+      border-radius: 8px;\n+      align-items: center;\n+      text-decoration: none;\n+      transition: all 0.4s ease;\n+      background: #02164f;\n+    }\n+  }\n `;\n \n const LogoDetail = styled.div`\n   height: 60px;\n"
+                },
+                {
+                    "date": 1641583657547,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -126,8 +126,13 @@\n const NavList = styled.ul`\n   margin-top: 34px;\n   height: 100%;\n \n+  .on {\n+    a {\n+    }\n+  }\n+\n   li {\n     position: relative;\n     margin: 8px 0;\n     list-style: none;\n"
+                },
+                {
+                    "date": 1641583740568,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,8 +77,12 @@\n   left: 0;\n   background: #02164f;\n   padding: 6px 16px;\n   box-sizing: border-box;\n+  .ico {\n+    min-width: 42px;\n+    width: 42px;\n+  }\n \n   li {\n     a {\n       display: flex;\n@@ -128,8 +132,10 @@\n   height: 100%;\n \n   .on {\n     a {\n+      background: #1d58ff;\n+      color: #fff;\n     }\n   }\n \n   li {\n"
+                },
+                {
+                    "date": 1641583751137,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,12 +77,8 @@\n   left: 0;\n   background: #02164f;\n   padding: 6px 16px;\n   box-sizing: border-box;\n-  .ico {\n-    min-width: 42px;\n-    width: 42px;\n-  }\n \n   li {\n     a {\n       display: flex;\n"
+                },
+                {
+                    "date": 1641583758773,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -78,8 +78,13 @@\n   background: #02164f;\n   padding: 6px 16px;\n   box-sizing: border-box;\n \n+  .ico {\n+    min-width: 42px;\n+    width: 42px;\n+  }\n+\n   li {\n     a {\n       display: flex;\n       width: 42px;\n"
+                },
+                {
+                    "date": 1641583790917,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n           <img src={logoName} alt=\"오더체크\" />\n         </h1>\n       </LogoDetail>\n \n-      <NavList className=\"nav-list\">\n+      <NavList state={sidebarState} className=\"nav-list\">\n         <li>\n           <a href=\"dashboard.html\">\n             <i className=\"ico home\"></i>\n             <span className=\"links_name\">홈</span>\n"
+                },
+                {
+                    "date": 1641583813706,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -145,9 +145,9 @@\n     list-style: none;\n \n     a {\n       display: flex;\n-      width: 42px;\n+      width: 100%;\n       height: 42px;\n       border-radius: 8px;\n       align-items: center;\n       text-decoration: none;\n"
+                },
+                {
+                    "date": 1641583852278,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -145,9 +145,9 @@\n     list-style: none;\n \n     a {\n       display: flex;\n-      width: 100%;\n+      width: ${({state}) => state ? 42px : 100%};\n       height: 42px;\n       border-radius: 8px;\n       align-items: center;\n       text-decoration: none;\n"
+                },
+                {
+                    "date": 1641583861117,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -145,9 +145,9 @@\n     list-style: none;\n \n     a {\n       display: flex;\n-      width: ${({state}) => state ? 42px : 100%};\n+      width: ${({ state }) => (state ? \"42px\" : \"100%\")};\n       height: 42px;\n       border-radius: 8px;\n       align-items: center;\n       text-decoration: none;\n"
+                },
+                {
+                    "date": 1641583980336,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -145,9 +145,9 @@\n     list-style: none;\n \n     a {\n       display: flex;\n-      width: ${({ state }) => (state ? \"42px\" : \"100%\")};\n+      width: ${({ state }) => console.log(state)};\n       height: 42px;\n       border-radius: 8px;\n       align-items: center;\n       text-decoration: none;\n"
+                },
+                {
+                    "date": 1641584014465,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -145,9 +145,9 @@\n     list-style: none;\n \n     a {\n       display: flex;\n-      width: ${({ state }) => console.log(state)};\n+      width: ${({ state }) => state ? 42px : 100%;\n       height: 42px;\n       border-radius: 8px;\n       align-items: center;\n       text-decoration: none;\n"
+                },
+                {
+                    "date": 1641584061226,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -145,9 +145,9 @@\n     list-style: none;\n \n     a {\n       display: flex;\n-      width: ${({ state }) => state ? 42px : 100%;\n+      width: ${({ state }) => state ? 42px;: 100 %;};\n       height: 42px;\n       border-radius: 8px;\n       align-items: center;\n       text-decoration: none;\n"
+                },
+                {
+                    "date": 1641584069406,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -145,9 +145,9 @@\n     list-style: none;\n \n     a {\n       display: flex;\n-      width: ${({ state }) => state ? 42px;: 100 %;};\n+      width: ${({ state }) => (state ? \"42px;\" : \"100 %;\")}\n       height: 42px;\n       border-radius: 8px;\n       align-items: center;\n       text-decoration: none;\n"
+                },
+                {
+                    "date": 1641584097718,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -145,9 +145,9 @@\n     list-style: none;\n \n     a {\n       display: flex;\n-      width: ${({ state }) => (state ? \"42px;\" : \"100 %;\")}\n+      ${({ state }) => (state ? \"width: 42px;\" : \"width: 100 %;\")}\n       height: 42px;\n       border-radius: 8px;\n       align-items: center;\n       text-decoration: none;\n"
+                },
+                {
+                    "date": 1641584113894,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -145,9 +145,9 @@\n     list-style: none;\n \n     a {\n       display: flex;\n-      ${({ state }) => (state ? \"width: 42px;\" : \"width: 100 %;\")}\n+      width: ${({ state }) => (state ? \"100%\" : \"42px\")}\n       height: 42px;\n       border-radius: 8px;\n       align-items: center;\n       text-decoration: none;\n"
+                },
+                {
+                    "date": 1641584120203,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -145,9 +145,9 @@\n     list-style: none;\n \n     a {\n       display: flex;\n-      width: ${({ state }) => (state ? \"100%\" : \"42px\")}\n+      width: ${({ state }) => (state ? \"100%\" : \"42px\")};\n       height: 42px;\n       border-radius: 8px;\n       align-items: center;\n       text-decoration: none;\n"
+                },
+                {
+                    "date": 1641584207399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -125,8 +125,13 @@\n     font-size: 22px;\n     color: #fff;\n     z-index: 1;\n   }\n+\n+  .ico {\n+    opacity: 0;\n+    transition: all 0.5s ease;\n+  }\n `;\n \n const NavList = styled.ul`\n   margin-top: 34px;\n"
+                },
+                {
+                    "date": 1641584243663,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,12 @@\n     setSidebarState(!sidebarState);\n   };\n \n   return (\n-    <Sidebar className={sidebarState ? \"sidebar open\" : \"sidebar\"}>\n+    <Sidebar\n+      state={sidebarState}\n+      className={sidebarState ? \"sidebar open\" : \"sidebar\"}\n+    >\n       <LogoDetail state={sidebarState}>\n         <button type=\"button\" className=\"btn-side-open\" onClick={handelSidebar}>\n           <img src={logoMark} alt=\"오더체크\" />\n         </button>\n"
+                },
+                {
+                    "date": 1641584276630,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -74,9 +74,9 @@\n };\n \n const Sidebar = styled.div`\n   position: fixed;\n-  width: 80px;\n+  width: ${({ state }) => (state ? \"100%\" : \"80px\")};\n   height: 100%;\n   left: 0;\n   background: #02164f;\n   padding: 6px 16px;\n"
+                },
+                {
+                    "date": 1641584286128,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,12 +12,9 @@\n     setSidebarState(!sidebarState);\n   };\n \n   return (\n-    <Sidebar\n-      state={sidebarState}\n-      className={sidebarState ? \"sidebar open\" : \"sidebar\"}\n-    >\n+    <Sidebar state={sidebarState}>\n       <LogoDetail state={sidebarState}>\n         <button type=\"button\" className=\"btn-side-open\" onClick={handelSidebar}>\n           <img src={logoMark} alt=\"오더체크\" />\n         </button>\n"
+                },
+                {
+                    "date": 1641584307301,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,12 @@\n     setSidebarState(!sidebarState);\n   };\n \n   return (\n-    <Sidebar state={sidebarState}>\n+    <Sidebar\n+      state={sidebarState}\n+      className={sidebarState ? \"sidebar open\" : \"sidebar\"}\n+    >\n       <LogoDetail state={sidebarState}>\n         <button type=\"button\" className=\"btn-side-open\" onClick={handelSidebar}>\n           <img src={logoMark} alt=\"오더체크\" />\n         </button>\n@@ -71,9 +74,9 @@\n };\n \n const Sidebar = styled.div`\n   position: fixed;\n-  width: ${({ state }) => (state ? \"100%\" : \"80px\")};\n+  width: ${({ state }) => (state ? \"218px\" : \"80px\")};\n   height: 100%;\n   left: 0;\n   background: #02164f;\n   padding: 6px 16px;\n"
+                },
+                {
+                    "date": 1641584313364,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,12 +12,9 @@\n     setSidebarState(!sidebarState);\n   };\n \n   return (\n-    <Sidebar\n-      state={sidebarState}\n-      className={sidebarState ? \"sidebar open\" : \"sidebar\"}\n-    >\n+    <Sidebar state={sidebarState}>\n       <LogoDetail state={sidebarState}>\n         <button type=\"button\" className=\"btn-side-open\" onClick={handelSidebar}>\n           <img src={logoMark} alt=\"오더체크\" />\n         </button>\n"
+                },
+                {
+                    "date": 1641584321394,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,12 @@\n     setSidebarState(!sidebarState);\n   };\n \n   return (\n-    <Sidebar state={sidebarState}>\n+    <Sidebar\n+      state={sidebarState}\n+      className={sidebarState ? \"sidebar open\" : \"sidebar\"}\n+    >\n       <LogoDetail state={sidebarState}>\n         <button type=\"button\" className=\"btn-side-open\" onClick={handelSidebar}>\n           <img src={logoMark} alt=\"오더체크\" />\n         </button>\n"
+                },
+                {
+                    "date": 1641584352574,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -84,8 +84,10 @@\n \n   .ico {\n     min-width: 42px;\n     width: 42px;\n+    opacity: 0;\n+    transition: all 0.5s ease;\n   }\n \n   li {\n     a {\n@@ -130,10 +132,8 @@\n     z-index: 1;\n   }\n \n   .ico {\n-    opacity: 0;\n-    transition: all 0.5s ease;\n   }\n `;\n \n const NavList = styled.ul`\n"
+                },
+                {
+                    "date": 1641584360945,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -84,10 +84,8 @@\n \n   .ico {\n     min-width: 42px;\n     width: 42px;\n-    opacity: 0;\n-    transition: all 0.5s ease;\n   }\n \n   li {\n     a {\n@@ -132,8 +130,10 @@\n     z-index: 1;\n   }\n \n   .ico {\n+    opacity: 0;\n+    transition: all 0.5s ease;\n   }\n `;\n \n const NavList = styled.ul`\n"
+                },
+                {
+                    "date": 1641584636435,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -81,8 +81,14 @@\n   background: #02164f;\n   padding: 6px 16px;\n   box-sizing: border-box;\n \n+  .btn-lnb-close {\n+    width: 30px;\n+    height: 30px;\n+    background: url(../images/nav/ico_lnb-open.png) no-repeat center;\n+  }\n+\n   .ico {\n     min-width: 42px;\n     width: 42px;\n   }\n"
+                },
+                {
+                    "date": 1641584671691,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -84,9 +84,9 @@\n \n   .btn-lnb-close {\n     width: 30px;\n     height: 30px;\n-    background: url(../images/nav/ico_lnb-open.png) no-repeat center;\n+    background: url(../../resource/images/nav/ico_lnb-open.png) no-repeat center;\n   }\n \n   .ico {\n     min-width: 42px;\n"
+                },
+                {
+                    "date": 1641584806421,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import React from \"react\";\n import logoMark from \"../../resource/images/common/ico_logo-mark.png\";\n import logoName from \"../../resource/images/common/ico_logo-name.png\";\n+import openBtn from \"../../resource/images/nav/ico_lnb-open.png\";\n import styled from \"styled-components\";\n \n // import \"../../resource/css/layout.css\";\n \n@@ -84,9 +85,9 @@\n \n   .btn-lnb-close {\n     width: 30px;\n     height: 30px;\n-    background: url(../../resource/images/nav/ico_lnb-open.png) no-repeat center;\n+    background: url(${openBtn}) no-repeat center;\n   }\n \n   .ico {\n     min-width: 42px;\n"
+                },
+                {
+                    "date": 1641584855088,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import React from \"react\";\n import logoMark from \"../../resource/images/common/ico_logo-mark.png\";\n import logoName from \"../../resource/images/common/ico_logo-name.png\";\n import openBtn from \"../../resource/images/nav/ico_lnb-open.png\";\n+import closeBtn from \"../../resource/images/nav/ico_lnb-close.png\";\n import styled from \"styled-components\";\n \n // import \"../../resource/css/layout.css\";\n \n@@ -85,9 +86,9 @@\n \n   .btn-lnb-close {\n     width: 30px;\n     height: 30px;\n-    background: url(${openBtn}) no-repeat center;\n+    background: url(${state ? openBtn : closeBtn}) no-repeat center;\n   }\n \n   .ico {\n     min-width: 42px;\n"
+                },
+                {
+                    "date": 1641584874441,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -86,9 +86,10 @@\n \n   .btn-lnb-close {\n     width: 30px;\n     height: 30px;\n-    background: url(${state ? openBtn : closeBtn}) no-repeat center;\n+    background: url(${({ state }) => (state ? openBtn : closeBtn)}) no-repeat\n+      center;\n   }\n \n   .ico {\n     min-width: 42px;\n"
+                },
+                {
+                    "date": 1641584886786,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -86,9 +86,9 @@\n \n   .btn-lnb-close {\n     width: 30px;\n     height: 30px;\n-    background: url(${({ state }) => (state ? openBtn : closeBtn)}) no-repeat\n+    background: url(${({ state }) => (state ? closeBtn : openBtn)}) no-repeat\n       center;\n   }\n \n   .ico {\n"
+                },
+                {
+                    "date": 1641584980363,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,11 @@\n import React from \"react\";\n+import styled from \"styled-components\";\n+\n import logoMark from \"../../resource/images/common/ico_logo-mark.png\";\n import logoName from \"../../resource/images/common/ico_logo-name.png\";\n import openBtn from \"../../resource/images/nav/ico_lnb-open.png\";\n import closeBtn from \"../../resource/images/nav/ico_lnb-close.png\";\n-import styled from \"styled-components\";\n \n // import \"../../resource/css/layout.css\";\n \n const SideBar = (props) => {\n"
+                },
+                {
+                    "date": 1641585113356,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -85,8 +85,15 @@\n   padding: 6px 16px;\n   box-sizing: border-box;\n \n   .btn-lnb-close {\n+    position: absolute;\n+    right: -15px;\n+    top: 106px;\n+    z-index: 1;\n+  }\n+\n+  .btn-lnb-close {\n     width: 30px;\n     height: 30px;\n     background: url(${({ state }) => (state ? closeBtn : openBtn)}) no-repeat\n       center;\n"
+                },
+                {
+                    "date": 1641585129030,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -89,17 +89,17 @@\n     position: absolute;\n     right: -15px;\n     top: 106px;\n     z-index: 1;\n-  }\n-\n-  .btn-lnb-close {\n     width: 30px;\n     height: 30px;\n     background: url(${({ state }) => (state ? closeBtn : openBtn)}) no-repeat\n       center;\n   }\n \n+  .btn-lnb-close {\n+  }\n+\n   .ico {\n     min-width: 42px;\n     width: 42px;\n   }\n"
+                },
+                {
+                    "date": 1641585140598,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -95,11 +95,8 @@\n     background: url(${({ state }) => (state ? closeBtn : openBtn)}) no-repeat\n       center;\n   }\n \n-  .btn-lnb-close {\n-  }\n-\n   .ico {\n     min-width: 42px;\n     width: 42px;\n   }\n"
+                },
+                {
+                    "date": 1641585212126,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n \n   return (\n     <Sidebar\n       state={sidebarState}\n-      className={sidebarState ? \"sidebar open\" : \"sidebar\"}\n+      className='side=form'}\n     >\n       <LogoDetail state={sidebarState}>\n         <button type=\"button\" className=\"btn-side-open\" onClick={handelSidebar}>\n           <img src={logoMark} alt=\"오더체크\" />\n"
+                },
+                {
+                    "date": 1641585222750,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n \n   return (\n     <Sidebar\n       state={sidebarState}\n-      className='side=form'}\n+      className='side-form'}\n     >\n       <LogoDetail state={sidebarState}>\n         <button type=\"button\" className=\"btn-side-open\" onClick={handelSidebar}>\n           <img src={logoMark} alt=\"오더체크\" />\n"
+                },
+                {
+                    "date": 1641585237361,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,12 +15,9 @@\n     setSidebarState(!sidebarState);\n   };\n \n   return (\n-    <Sidebar\n-      state={sidebarState}\n-      className='side-form'}\n-    >\n+    <Sidebar state={sidebarState} className=\"side-form\">\n       <LogoDetail state={sidebarState}>\n         <button type=\"button\" className=\"btn-side-open\" onClick={handelSidebar}>\n           <img src={logoMark} alt=\"오더체크\" />\n         </button>\n"
+                },
+                {
+                    "date": 1641585254162,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -81,8 +81,15 @@\n   background: #02164f;\n   padding: 6px 16px;\n   box-sizing: border-box;\n \n+  .side-form {\n+    top: 0;\n+    height: 100%;\n+    z-index: 99;\n+    transition: all 0.4s ease;\n+  }\n+\n   .btn-lnb-close {\n     position: absolute;\n     right: -15px;\n     top: 106px;\n"
+                },
+                {
+                    "date": 1641585275060,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,12 @@\n     setSidebarState(!sidebarState);\n   };\n \n   return (\n-    <Sidebar state={sidebarState} className=\"side-form\">\n+    <Sidebar\n+      state={sidebarState}\n+      className={sidebarState ? \"sidebar open\" : \"sidebar\"}\n+    >\n       <LogoDetail state={sidebarState}>\n         <button type=\"button\" className=\"btn-side-open\" onClick={handelSidebar}>\n           <img src={logoMark} alt=\"오더체크\" />\n         </button>\n@@ -81,15 +84,8 @@\n   background: #02164f;\n   padding: 6px 16px;\n   box-sizing: border-box;\n \n-  .side-form {\n-    top: 0;\n-    height: 100%;\n-    z-index: 99;\n-    transition: all 0.4s ease;\n-  }\n-\n   .btn-lnb-close {\n     position: absolute;\n     right: -15px;\n     top: 106px;\n"
+                },
+                {
+                    "date": 1641585503516,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -83,8 +83,12 @@\n   left: 0;\n   background: #02164f;\n   padding: 6px 16px;\n   box-sizing: border-box;\n+  top: 0;\n+  height: 100%;\n+  z-index: 99;\n+  transition: all 0.4s ease;\n \n   .btn-lnb-close {\n     position: absolute;\n     right: -15px;\n"
+                },
+                {
+                    "date": 1641585529159,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -79,14 +79,13 @@\n const Sidebar = styled.div`\n   position: fixed;\n   width: ${({ state }) => (state ? \"218px\" : \"80px\")};\n   height: 100%;\n+  top: 0;\n   left: 0;\n   background: #02164f;\n   padding: 6px 16px;\n   box-sizing: border-box;\n-  top: 0;\n-  height: 100%;\n   z-index: 99;\n   transition: all 0.4s ease;\n \n   .btn-lnb-close {\n"
+                },
+                {
+                    "date": 1641585577595,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,12 +15,9 @@\n     setSidebarState(!sidebarState);\n   };\n \n   return (\n-    <Sidebar\n-      state={sidebarState}\n-      className={sidebarState ? \"sidebar open\" : \"sidebar\"}\n-    >\n+    <Sidebar state={sidebarState}>\n       <LogoDetail state={sidebarState}>\n         <button type=\"button\" className=\"btn-side-open\" onClick={handelSidebar}>\n           <img src={logoMark} alt=\"오더체크\" />\n         </button>\n"
+                },
+                {
+                    "date": 1641585585614,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,12 @@\n     setSidebarState(!sidebarState);\n   };\n \n   return (\n-    <Sidebar state={sidebarState}>\n+    <Sidebar\n+      state={sidebarState}\n+      className={sidebarState ? \"sidebar open\" : \"sidebar\"}\n+    >\n       <LogoDetail state={sidebarState}>\n         <button type=\"button\" className=\"btn-side-open\" onClick={handelSidebar}>\n           <img src={logoMark} alt=\"오더체크\" />\n         </button>\n"
+                },
+                {
+                    "date": 1641617185621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -179,6 +179,10 @@\n       transition: all 0.4s ease;\n       background: #02164f;\n     }\n   }\n+\n+  span {\n+    opacity: ${({ state }) => (state ? 1 : 0)};\n+  }\n `;\n export default SideBar;\n"
+                },
+                {
+                    "date": 1641617224381,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -181,8 +181,15 @@\n     }\n   }\n \n   span {\n+    padding-left: 12px;\n+    color: #fff;\n+    font-size: 15px;\n+    font-weight: 400;\n+    white-space: nowrap;\n+    pointer-events: none;\n+    transition: 0.4s;\n     opacity: ${({ state }) => (state ? 1 : 0)};\n   }\n `;\n export default SideBar;\n"
+                },
+                {
+                    "date": 1641617276771,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -189,7 +189,8 @@\n     white-space: nowrap;\n     pointer-events: none;\n     transition: 0.4s;\n     opacity: ${({ state }) => (state ? 1 : 0)};\n+    ${({ state }) => state && \"pointer-events: auto;\"}\n   }\n `;\n export default SideBar;\n"
+                },
+                {
+                    "date": 1641617335462,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -189,8 +189,11 @@\n     white-space: nowrap;\n     pointer-events: none;\n     transition: 0.4s;\n     opacity: ${({ state }) => (state ? 1 : 0)};\n-    ${({ state }) => state && \"pointer-events: auto;\"}\n+    ${({ state }) => state && \"pointer-events: auto\"};\n+\n+    &:hover {\n+    }\n   }\n `;\n export default SideBar;\n"
+                },
+                {
+                    "date": 1641617350872,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -192,8 +192,9 @@\n     opacity: ${({ state }) => (state ? 1 : 0)};\n     ${({ state }) => state && \"pointer-events: auto\"};\n \n     &:hover {\n+      transition: all 0.5s ease;\n     }\n   }\n `;\n export default SideBar;\n"
+                },
+                {
+                    "date": 1641617362331,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -192,9 +192,8 @@\n     opacity: ${({ state }) => (state ? 1 : 0)};\n     ${({ state }) => state && \"pointer-events: auto\"};\n \n     &:hover {\n-      transition: all 0.5s ease;\n     }\n   }\n `;\n export default SideBar;\n"
+                },
+                {
+                    "date": 1641617372169,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -192,8 +192,9 @@\n     opacity: ${({ state }) => (state ? 1 : 0)};\n     ${({ state }) => state && \"pointer-events: auto\"};\n \n     &:hover {\n+      transition: all 0.5s ease;\n     }\n   }\n `;\n export default SideBar;\n"
+                },
+                {
+                    "date": 1641617379904,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -192,9 +192,8 @@\n     opacity: ${({ state }) => (state ? 1 : 0)};\n     ${({ state }) => state && \"pointer-events: auto\"};\n \n     &:hover {\n-      transition: all 0.5s ease;\n     }\n   }\n `;\n export default SideBar;\n"
+                },
+                {
+                    "date": 1641617387339,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -190,10 +190,7 @@\n     pointer-events: none;\n     transition: 0.4s;\n     opacity: ${({ state }) => (state ? 1 : 0)};\n     ${({ state }) => state && \"pointer-events: auto\"};\n-\n-    &:hover {\n-    }\n   }\n `;\n export default SideBar;\n"
+                },
+                {
+                    "date": 1641617448431,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -177,20 +177,20 @@\n       align-items: center;\n       text-decoration: none;\n       transition: all 0.4s ease;\n       background: #02164f;\n+\n+      .links_name {\n+        padding-left: 12px;\n+        color: #fff;\n+        font-size: 15px;\n+        font-weight: 400;\n+        white-space: nowrap;\n+        pointer-events: none;\n+        transition: 0.4s;\n+        opacity: ${({ state }) => (state ? 1 : 0)};\n+        ${({ state }) => state && \"pointer-events: auto\"};\n+      }\n     }\n   }\n-\n-  span {\n-    padding-left: 12px;\n-    color: #fff;\n-    font-size: 15px;\n-    font-weight: 400;\n-    white-space: nowrap;\n-    pointer-events: none;\n-    transition: 0.4s;\n-    opacity: ${({ state }) => (state ? 1 : 0)};\n-    ${({ state }) => state && \"pointer-events: auto\"};\n-  }\n `;\n export default SideBar;\n"
+                },
+                {
+                    "date": 1641617538591,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -113,8 +113,20 @@\n       align-items: center;\n       text-decoration: none;\n       transition: all 0.4s ease;\n       background: #02164f;\n+\n+      .links_name {\n+        padding-left: 12px;\n+        color: #fff;\n+        font-size: 15px;\n+        font-weight: 400;\n+        white-space: nowrap;\n+        pointer-events: none;\n+        transition: 0.4s;\n+        opacity: ${({ state }) => (state ? 1 : 0)};\n+        ${({ state }) => state && \"pointer-events: auto\"};\n+      }\n     }\n   }\n `;\n \n@@ -177,20 +189,8 @@\n       align-items: center;\n       text-decoration: none;\n       transition: all 0.4s ease;\n       background: #02164f;\n-\n-      .links_name {\n-        padding-left: 12px;\n-        color: #fff;\n-        font-size: 15px;\n-        font-weight: 400;\n-        white-space: nowrap;\n-        pointer-events: none;\n-        transition: 0.4s;\n-        opacity: ${({ state }) => (state ? 1 : 0)};\n-        ${({ state }) => state && \"pointer-events: auto\"};\n-      }\n     }\n   }\n `;\n export default SideBar;\n"
+                },
+                {
+                    "date": 1641618325044,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -125,8 +125,13 @@\n         transition: 0.4s;\n         opacity: ${({ state }) => (state ? 1 : 0)};\n         ${({ state }) => state && \"pointer-events: auto\"};\n       }\n+\n+      .ico.file:hover,\n+      .on .ico.file {\n+        background-image: url(../images/nav/ico_file-hover.png);\n+      }\n     }\n   }\n `;\n \n"
+                },
+                {
+                    "date": 1641618349840,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -126,11 +126,13 @@\n         opacity: ${({ state }) => (state ? 1 : 0)};\n         ${({ state }) => state && \"pointer-events: auto\"};\n       }\n \n-      .ico.file:hover,\n-      .on .ico.file {\n-        background-image: url(../images/nav/ico_file-hover.png);\n+      .ico.file{\n+        &:hover{\n+          background-image: url(../images/nav/ico_file-hover.png);\n+        }\n+      },\n       }\n     }\n   }\n `;\n"
+                },
+                {
+                    "date": 1641618404684,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n import logoMark from \"../../resource/images/common/ico_logo-mark.png\";\n import logoName from \"../../resource/images/common/ico_logo-name.png\";\n import openBtn from \"../../resource/images/nav/ico_lnb-open.png\";\n import closeBtn from \"../../resource/images/nav/ico_lnb-close.png\";\n+import icoFile from \"../../resource/images/common/ico\";\n \n // import \"../../resource/css/layout.css\";\n \n const SideBar = (props) => {\n@@ -131,9 +132,8 @@\n         &:hover{\n           background-image: url(../images/nav/ico_file-hover.png);\n         }\n       },\n-      }\n     }\n   }\n `;\n \n"
+                },
+                {
+                    "date": 1641618426696,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import logoMark from \"../../resource/images/common/ico_logo-mark.png\";\n import logoName from \"../../resource/images/common/ico_logo-name.png\";\n import openBtn from \"../../resource/images/nav/ico_lnb-open.png\";\n import closeBtn from \"../../resource/images/nav/ico_lnb-close.png\";\n-import icoFile from \"../../resource/images/common/ico\";\n+import icoFile from \"../../resource/images/nav/ico_file.png\";\n \n // import \"../../resource/css/layout.css\";\n \n const SideBar = (props) => {\n"
+                },
+                {
+                    "date": 1641618441429,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import logoMark from \"../../resource/images/common/ico_logo-mark.png\";\n import logoName from \"../../resource/images/common/ico_logo-name.png\";\n import openBtn from \"../../resource/images/nav/ico_lnb-open.png\";\n import closeBtn from \"../../resource/images/nav/ico_lnb-close.png\";\n-import icoFile from \"../../resource/images/nav/ico_file.png\";\n+import icoFile from \"../../resource/images/nav/ico_file-hover.png\";\n \n // import \"../../resource/css/layout.css\";\n \n const SideBar = (props) => {\n@@ -129,9 +129,9 @@\n       }\n \n       .ico.file{\n         &:hover{\n-          background-image: url(../images/nav/ico_file-hover.png);\n+          background-image: url{icoFile};\n         }\n       },\n     }\n   }\n"
+                },
+                {
+                    "date": 1641618522711,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -129,9 +129,9 @@\n       }\n \n       .ico.file{\n         &:hover{\n-          background-image: url{icoFile};\n+          background-image: url('../../resource/images/nav/ico_file-hover.png');\n         }\n       },\n     }\n   }\n"
+                },
+                {
+                    "date": 1641618606344,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -129,9 +129,9 @@\n       }\n \n       .ico.file{\n         &:hover{\n-          background-image: url('../../resource/images/nav/ico_file-hover.png');\n+          background-image: url(img/ico_file-hover);\n         }\n       },\n     }\n   }\n"
+                },
+                {
+                    "date": 1641618619873,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -129,9 +129,9 @@\n       }\n \n       .ico.file{\n         &:hover{\n-          background-image: url(img/ico_file-hover);\n+          background-image: url(/img/ico_file-hover);\n         }\n       },\n     }\n   }\n"
+                },
+                {
+                    "date": 1641618630130,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -129,9 +129,9 @@\n       }\n \n       .ico.file{\n         &:hover{\n-          background-image: url(/img/ico_file-hover);\n+          background-image: url('img/ico_file-hover');\n         }\n       },\n     }\n   }\n"
+                },
+                {
+                    "date": 1641618640146,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -129,9 +129,9 @@\n       }\n \n       .ico.file{\n         &:hover{\n-          background-image: url('img/ico_file-hover');\n+          background-image: url('img/ico_file-hover.png');\n         }\n       },\n     }\n   }\n"
+                },
+                {
+                    "date": 1641618646964,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -129,9 +129,9 @@\n       }\n \n       .ico.file{\n         &:hover{\n-          background-image: url('img/ico_file-hover.png');\n+          background-image: url(img/ico_file-hover.png);\n         }\n       },\n     }\n   }\n"
+                },
+                {
+                    "date": 1641618680943,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -129,9 +129,9 @@\n       }\n \n       .ico.file{\n         &:hover{\n-          background-image: url(img/ico_file-hover.png);\n+          background-image: url('../../resource/images/nav/ico_file-hover.png');\n         }\n       },\n     }\n   }\n"
+                },
+                {
+                    "date": 1641618724847,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -129,9 +129,9 @@\n       }\n \n       .ico.file{\n         &:hover{\n-          background-image: url('../../resource/images/nav/ico_file-hover.png');\n+          background-image: url(img/ico_file-hover.png);\n         }\n       },\n     }\n   }\n"
+                },
+                {
+                    "date": 1641618773174,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -129,9 +129,9 @@\n       }\n \n       .ico.file{\n         &:hover{\n-          background-image: url(img/ico_file-hover.png);\n+          background-image: url(resource/images/ico_file-hover.png);\n         }\n       },\n     }\n   }\n"
+                },
+                {
+                    "date": 1641618810118,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,8 @@\n import logoMark from \"../../resource/images/common/ico_logo-mark.png\";\n import logoName from \"../../resource/images/common/ico_logo-name.png\";\n import openBtn from \"../../resource/images/nav/ico_lnb-open.png\";\n import closeBtn from \"../../resource/images/nav/ico_lnb-close.png\";\n-import icoFile from \"../../resource/images/nav/ico_file-hover.png\";\n \n // import \"../../resource/css/layout.css\";\n \n const SideBar = (props) => {\n"
+                },
+                {
+                    "date": 1641618941089,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,12 +21,12 @@\n       className={sidebarState ? \"sidebar open\" : \"sidebar\"}\n     >\n       <LogoDetail state={sidebarState}>\n         <button type=\"button\" className=\"btn-side-open\" onClick={handelSidebar}>\n-          <img src={logoMark} alt=\"오더체크\" />\n+          <img src=\"resource/images/common/ico_logo-mark.png\" alt=\"오더체크\" />\n         </button>\n         <h1 className=\"logo_name\">\n-          <img src={logoName} alt=\"오더체크\" />\n+          <img src=\"resource/images/common/ico_logo-name.png\" alt=\"오더체크\" />\n         </h1>\n       </LogoDetail>\n \n       <NavList state={sidebarState} className=\"nav-list\">\n"
+                },
+                {
+                    "date": 1641619171485,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n import logoMark from \"../../resource/images/common/ico_logo-mark.png\";\n import logoName from \"../../resource/images/common/ico_logo-name.png\";\n import openBtn from \"../../resource/images/nav/ico_lnb-open.png\";\n import closeBtn from \"../../resource/images/nav/ico_lnb-close.png\";\n+import icoFileHover from \"../../resource/images/nav/ico_file-hover.png\";\n \n // import \"../../resource/css/layout.css\";\n \n const SideBar = (props) => {\n@@ -21,12 +22,12 @@\n       className={sidebarState ? \"sidebar open\" : \"sidebar\"}\n     >\n       <LogoDetail state={sidebarState}>\n         <button type=\"button\" className=\"btn-side-open\" onClick={handelSidebar}>\n-          <img src=\"resource/images/common/ico_logo-mark.png\" alt=\"오더체크\" />\n+          <img src={logoMark} alt=\"오더체크\" />\n         </button>\n         <h1 className=\"logo_name\">\n-          <img src=\"resource/images/common/ico_logo-name.png\" alt=\"오더체크\" />\n+          <img src={logoName} alt=\"오더체크\" />\n         </h1>\n       </LogoDetail>\n \n       <NavList state={sidebarState} className=\"nav-list\">\n@@ -128,9 +129,9 @@\n       }\n \n       .ico.file{\n         &:hover{\n-          background-image: url(resource/images/ico_file-hover.png);\n+          background-image: url(${icoFileHover});\n         }\n       },\n     }\n   }\n"
+                },
+                {
+                    "date": 1641619178699,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -129,9 +129,8 @@\n       }\n \n       .ico.file{\n         &:hover{\n-          background-image: url(${icoFileHover});\n         }\n       },\n     }\n   }\n"
+                },
+                {
+                    "date": 1641619193233,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -129,8 +129,9 @@\n       }\n \n       .ico.file{\n         &:hover{\n+          background-image: url(icoFileHover);\n         }\n       },\n     }\n   }\n"
+                },
+                {
+                    "date": 1641619200573,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -129,9 +129,9 @@\n       }\n \n       .ico.file{\n         &:hover{\n-          background-image: url(icoFileHover);\n+          background-image: url(${icoFileHover});\n         }\n       },\n     }\n   }\n"
+                },
+                {
+                    "date": 1641619944570,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -157,9 +157,9 @@\n \n   .btn-side-open {\n     position: absolute;\n     top: 5px;\n-    left: 0;\n+    left: -1;\n     width: 50px;\n     height: 50px;\n     font-size: 22px;\n     color: #fff;\n"
+                },
+                {
+                    "date": 1641619971222,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -157,9 +157,9 @@\n \n   .btn-side-open {\n     position: absolute;\n     top: 5px;\n-    left: -1;\n+    left: 0;\n     width: 50px;\n     height: 50px;\n     font-size: 22px;\n     color: #fff;\n"
+                },
+                {
+                    "date": 1641620065501,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,11 @@\n import logoName from \"../../resource/images/common/ico_logo-name.png\";\n import openBtn from \"../../resource/images/nav/ico_lnb-open.png\";\n import closeBtn from \"../../resource/images/nav/ico_lnb-close.png\";\n import icoFileHover from \"../../resource/images/nav/ico_file-hover.png\";\n+import icoFileHover from \"../../resource/images/nav/ico_file-hover.png\";\n+import icoFileHover from \"../../resource/images/nav/ico_file-hover.png\";\n+import icoFileHover from \"../../resource/images/nav/ico_file-hover.png\";\n \n // import \"../../resource/css/layout.css\";\n \n const SideBar = (props) => {\n"
+                },
+                {
+                    "date": 1641620095775,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,12 +4,12 @@\n import logoMark from \"../../resource/images/common/ico_logo-mark.png\";\n import logoName from \"../../resource/images/common/ico_logo-name.png\";\n import openBtn from \"../../resource/images/nav/ico_lnb-open.png\";\n import closeBtn from \"../../resource/images/nav/ico_lnb-close.png\";\n+import icoHomeHover from \"../../resource/images/nav/ico_home-hover.png\";\n import icoFileHover from \"../../resource/images/nav/ico_file-hover.png\";\n+import icoFileHover from \"../../resource/images/nav/ico_user-hover.png\";\n import icoFileHover from \"../../resource/images/nav/ico_file-hover.png\";\n-import icoFileHover from \"../../resource/images/nav/ico_file-hover.png\";\n-import icoFileHover from \"../../resource/images/nav/ico_file-hover.png\";\n \n // import \"../../resource/css/layout.css\";\n \n const SideBar = (props) => {\n"
+                },
+                {
+                    "date": 1641620188171,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,10 +6,10 @@\n import openBtn from \"../../resource/images/nav/ico_lnb-open.png\";\n import closeBtn from \"../../resource/images/nav/ico_lnb-close.png\";\n import icoHomeHover from \"../../resource/images/nav/ico_home-hover.png\";\n import icoFileHover from \"../../resource/images/nav/ico_file-hover.png\";\n-import icoFileHover from \"../../resource/images/nav/ico_user-hover.png\";\n-import icoFileHover from \"../../resource/images/nav/ico_file-hover.png\";\n+import icoUserHover from \"../../resource/images/nav/ico_user-hover.png\";\n+import icoFormHover from \"../../resource/images/nav/ico_form-hover.png\";\n \n // import \"../../resource/css/layout.css\";\n \n const SideBar = (props) => {\n@@ -130,13 +130,31 @@\n         opacity: ${({ state }) => (state ? 1 : 0)};\n         ${({ state }) => state && \"pointer-events: auto\"};\n       }\n \n-      .ico.file{\n-        &:hover{\n+      .ico.home {\n+        &:hover {\n+          background-image: url(${icoHomeHover});\n+        }\n+      }\n+\n+      .ico.file {\n+        &:hover {\n           background-image: url(${icoFileHover});\n         }\n-      },\n+      }\n+\n+      .ico.user {\n+        &:hover {\n+          background-image: url(${icoUserHover});\n+        }\n+      }\n+\n+      .ico.form {\n+        &:hover {\n+          background-image: url(${icoFormHover});\n+        }\n+      }\n     }\n   }\n `;\n \n"
+                },
+                {
+                    "date": 1641620331334,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,12 @@\n import icoHomeHover from \"../../resource/images/nav/ico_home-hover.png\";\n import icoFileHover from \"../../resource/images/nav/ico_file-hover.png\";\n import icoUserHover from \"../../resource/images/nav/ico_user-hover.png\";\n import icoFormHover from \"../../resource/images/nav/ico_form-hover.png\";\n+import icoHome from \"../../resource/images/nav/ico_home.png\";\n+import icoFile from \"../../resource/images/nav/ico_file.png\";\n+import icoUser from \"../../resource/images/nav/ico_user.png\";\n+import icoForm from \"../../resource/images/nav/ico_form.png\";\n \n // import \"../../resource/css/layout.css\";\n \n const SideBar = (props) => {\n@@ -131,26 +135,30 @@\n         ${({ state }) => state && \"pointer-events: auto\"};\n       }\n \n       .ico.home {\n+        background-image: url(${icoHome});\n         &:hover {\n           background-image: url(${icoHomeHover});\n         }\n       }\n \n       .ico.file {\n+        background-image: url(${icoFile});\n         &:hover {\n           background-image: url(${icoFileHover});\n         }\n       }\n \n       .ico.user {\n+        background-image: url(${icoUome});\n         &:hover {\n           background-image: url(${icoUserHover});\n         }\n       }\n \n       .ico.form {\n+        background-image: url(${icoFome});\n         &:hover {\n           background-image: url(${icoFormHover});\n         }\n       }\n"
+                },
+                {
+                    "date": 1641620348182,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -149,16 +149,16 @@\n         }\n       }\n \n       .ico.user {\n-        background-image: url(${icoUome});\n+        background-image: url(${icoUser});\n         &:hover {\n           background-image: url(${icoUserHover});\n         }\n       }\n \n       .ico.form {\n-        background-image: url(${icoFome});\n+        background-image: url(${icoForm});\n         &:hover {\n           background-image: url(${icoFormHover});\n         }\n       }\n"
+                },
+                {
+                    "date": 1641621930384,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,12 +8,12 @@\n import icoHomeHover from \"../../resource/images/nav/ico_home-hover.png\";\n import icoFileHover from \"../../resource/images/nav/ico_file-hover.png\";\n import icoUserHover from \"../../resource/images/nav/ico_user-hover.png\";\n import icoFormHover from \"../../resource/images/nav/ico_form-hover.png\";\n-import icoHome from \"../../resource/images/nav/ico_home.png\";\n-import icoFile from \"../../resource/images/nav/ico_file.png\";\n-import icoUser from \"../../resource/images/nav/ico_user.png\";\n-import icoForm from \"../../resource/images/nav/ico_form.png\";\n+import icoHome from \"../../resource/images/nav/ico_home-hover.png\";\n+import icoFile from \"../../resource/images/nav/ico_file-hover.png\";\n+import icoUser from \"../../resource/images/nav/ico_user-hover.png\";\n+import icoForm from \"../../resource/images/nav/ico_form-hover.png\";\n \n // import \"../../resource/css/layout.css\";\n \n const SideBar = (props) => {\n@@ -135,30 +135,26 @@\n         ${({ state }) => state && \"pointer-events: auto\"};\n       }\n \n       .ico.home {\n-        background-image: url(${icoHome});\n         &:hover {\n           background-image: url(${icoHomeHover});\n         }\n       }\n \n       .ico.file {\n-        background-image: url(${icoFile});\n         &:hover {\n           background-image: url(${icoFileHover});\n         }\n       }\n \n       .ico.user {\n-        background-image: url(${icoUser});\n         &:hover {\n           background-image: url(${icoUserHover});\n         }\n       }\n \n       .ico.form {\n-        background-image: url(${icoForm});\n         &:hover {\n           background-image: url(${icoFormHover});\n         }\n       }\n"
+                },
+                {
+                    "date": 1641621940217,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,12 +8,8 @@\n import icoHomeHover from \"../../resource/images/nav/ico_home-hover.png\";\n import icoFileHover from \"../../resource/images/nav/ico_file-hover.png\";\n import icoUserHover from \"../../resource/images/nav/ico_user-hover.png\";\n import icoFormHover from \"../../resource/images/nav/ico_form-hover.png\";\n-import icoHome from \"../../resource/images/nav/ico_home-hover.png\";\n-import icoFile from \"../../resource/images/nav/ico_file-hover.png\";\n-import icoUser from \"../../resource/images/nav/ico_user-hover.png\";\n-import icoForm from \"../../resource/images/nav/ico_form-hover.png\";\n \n // import \"../../resource/css/layout.css\";\n \n const SideBar = (props) => {\n@@ -134,31 +130,13 @@\n         opacity: ${({ state }) => (state ? 1 : 0)};\n         ${({ state }) => state && \"pointer-events: auto\"};\n       }\n \n-      .ico.home {\n-        &:hover {\n-          background-image: url(${icoHomeHover});\n-        }\n-      }\n-\n       .ico.file {\n         &:hover {\n           background-image: url(${icoFileHover});\n         }\n       }\n-\n-      .ico.user {\n-        &:hover {\n-          background-image: url(${icoUserHover});\n-        }\n-      }\n-\n-      .ico.form {\n-        &:hover {\n-          background-image: url(${icoFormHover});\n-        }\n-      }\n     }\n   }\n `;\n \n"
+                },
+                {
+                    "date": 1641622032069,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -105,8 +105,15 @@\n \n   .ico {\n     min-width: 42px;\n     width: 42px;\n+    display: inline-block;\n+    min-width: 48px;\n+    width: 48px;\n+    height: 42px;\n+    background-repeat: no-repeat;\n+    background-position: center;\n+    transition: all 0.5s;\n   }\n \n   li {\n     a {\n"
+                },
+                {
+                    "date": 1641622066149,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -103,10 +103,10 @@\n       center;\n   }\n \n   .ico {\n-    min-width: 42px;\n-    width: 42px;\n+    /* min-width: 42px;\n+    width: 42px; */\n     display: inline-block;\n     min-width: 48px;\n     width: 48px;\n     height: 42px;\n@@ -141,8 +141,20 @@\n       .ico.file {\n         &:hover {\n           background-image: url(${icoFileHover});\n         }\n+        .ico.file {\n+        &:hover {\n+          background-image: url(${icoFileHover});\n+        }\n+        .ico.file {\n+        &:hover {\n+          background-image: url(${icoFileHover});\n+        }\n+        .ico.file {\n+        &:hover {\n+          background-image: url(${icoFileHover});\n+        }\n       }\n     }\n   }\n `;\n"
+                },
+                {
+                    "date": 1641622074035,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -141,21 +141,13 @@\n       .ico.file {\n         &:hover {\n           background-image: url(${icoFileHover});\n         }\n-        .ico.file {\n+      }\n+      .ico.file {\n         &:hover {\n           background-image: url(${icoFileHover});\n         }\n-        .ico.file {\n-        &:hover {\n-          background-image: url(${icoFileHover});\n-        }\n-        .ico.file {\n-        &:hover {\n-          background-image: url(${icoFileHover});\n-        }\n-      }\n     }\n   }\n `;\n \n"
+                },
+                {
+                    "date": 1641622107605,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -146,8 +146,19 @@\n       .ico.file {\n         &:hover {\n           background-image: url(${icoFileHover});\n         }\n+      }\n+      .ico.file {\n+        &:hover {\n+          background-image: url(${icoFileHover});\n+        }\n+      }\n+      .ico.file {\n+        &:hover {\n+          background-image: url(${icoFileHover});\n+        }\n+      }\n     }\n   }\n `;\n \n"
+                },
+                {
+                    "date": 1641622137006,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -137,26 +137,26 @@\n         opacity: ${({ state }) => (state ? 1 : 0)};\n         ${({ state }) => state && \"pointer-events: auto\"};\n       }\n \n-      .ico.file {\n+      .ico.home {\n         &:hover {\n-          background-image: url(${icoFileHover});\n+          background-image: url(${icoHomeHover});\n         }\n       }\n       .ico.file {\n         &:hover {\n           background-image: url(${icoFileHover});\n         }\n       }\n-      .ico.file {\n+      .ico.user {\n         &:hover {\n-          background-image: url(${icoFileHover});\n+          background-image: url(${icoUserHover});\n         }\n       }\n-      .ico.file {\n+      .ico.form {\n         &:hover {\n-          background-image: url(${icoFileHover});\n+          background-image: url(${icoFormHover});\n         }\n       }\n     }\n   }\n"
+                },
+                {
+                    "date": 1641622633938,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,9 @@\n // import \"../../resource/css/layout.css\";\n \n const SideBar = (props) => {\n   const [sidebarState, setSidebarState] = React.useState(false);\n+  const [selectIco, setSelectIco] = React.useState(false);\n \n   const handelSidebar = () => {\n     setSidebarState(!sidebarState);\n   };\n"
+                },
+                {
+                    "date": 1641622643598,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n \n       <NavList state={sidebarState} className=\"nav-list\">\n         <li>\n           <a href=\"dashboard.html\">\n-            <i className=\"ico home\"></i>\n+            <p className=\"ico home\"></p>\n             <span className=\"links_name\">홈</span>\n           </a>\n         </li>\n         <li className=\"on\">\n"
+                },
+                {
+                    "date": 1641622660077,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n \n       <NavList state={sidebarState} className=\"nav-list\">\n         <li>\n           <a href=\"dashboard.html\">\n-            <p className=\"ico home\"></p>\n+            <i className=\"ico home\"></i>\n             <span className=\"links_name\">홈</span>\n           </a>\n         </li>\n         <li className=\"on\">\n"
+                },
+                {
+                    "date": 1641622749188,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,12 +35,12 @@\n       </LogoDetail>\n \n       <NavList state={sidebarState} className=\"nav-list\">\n         <li>\n-          <a href=\"dashboard.html\">\n+          <button href=\"dashboard.html\">\n             <i className=\"ico home\"></i>\n             <span className=\"links_name\">홈</span>\n-          </a>\n+          </button>\n         </li>\n         <li className=\"on\">\n           <a href=\"customManage_list.html\">\n             <i className=\"ico user\"></i>\n"
+                },
+                {
+                    "date": 1641622757996,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -116,9 +116,9 @@\n     transition: all 0.5s;\n   }\n \n   li {\n-    a {\n+    button {\n       display: flex;\n       width: 42px;\n       height: 42px;\n       border-radius: 8px;\n"
+                },
+                {
+                    "date": 1641622766972,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,12 +35,12 @@\n       </LogoDetail>\n \n       <NavList state={sidebarState} className=\"nav-list\">\n         <li>\n-          <button href=\"dashboard.html\">\n+          <a href=\"dashboard.html\">\n             <i className=\"ico home\"></i>\n             <span className=\"links_name\">홈</span>\n-          </button>\n+          </a>\n         </li>\n         <li className=\"on\">\n           <a href=\"customManage_list.html\">\n             <i className=\"ico user\"></i>\n@@ -116,9 +116,9 @@\n     transition: all 0.5s;\n   }\n \n   li {\n-    button {\n+    a {\n       display: flex;\n       width: 42px;\n       height: 42px;\n       border-radius: 8px;\n"
+                },
+                {
+                    "date": 1641622784366,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n       </LogoDetail>\n \n       <NavList state={sidebarState} className=\"nav-list\">\n         <li>\n-          <a href=\"dashboard.html\">\n+          <a href=\"dashboard.html\" onClick={handelSidebar}>\n             <i className=\"ico home\"></i>\n             <span className=\"links_name\">홈</span>\n           </a>\n         </li>\n"
+                },
+                {
+                    "date": 1641622797986,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n       </LogoDetail>\n \n       <NavList state={sidebarState} className=\"nav-list\">\n         <li>\n-          <a href=\"dashboard.html\" onClick={handelSidebar}>\n+          <a href=\"dashboard.html\">\n             <i className=\"ico home\"></i>\n             <span className=\"links_name\">홈</span>\n           </a>\n         </li>\n"
+                },
+                {
+                    "date": 1641623416996,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,14 +13,29 @@\n // import \"../../resource/css/layout.css\";\n \n const SideBar = (props) => {\n   const [sidebarState, setSidebarState] = React.useState(false);\n-  const [selectIco, setSelectIco] = React.useState(false);\n+  const [selectHome, setSelectHome] = React.useState(false);\n+  const [selectFile, setSelectFile] = React.useState(false);\n+  const [selectUser, setSelectUser] = React.useState(false);\n+  const [selectForm, setSelectForm] = React.useState(false);\n \n   const handelSidebar = () => {\n     setSidebarState(!sidebarState);\n   };\n \n+  const handelSelectIco = (selectIco) => {\n+    if (selectIco === \"home\") {\n+      setSelectHome(true);\n+    } else if (selectIco === \"file\") {\n+      setSelectFile(true);\n+    } else if (selectIco === \"user\") {\n+      setSelectUser(true);\n+    } else if (selectIco === \"form\") {\n+      selectForm(true);\n+    }\n+  };\n+\n   return (\n     <Sidebar\n       state={sidebarState}\n       className={sidebarState ? \"sidebar open\" : \"sidebar\"}\n"
+                },
+                {
+                    "date": 1641623597493,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n       setSelectFile(true);\n     } else if (selectIco === \"user\") {\n       setSelectUser(true);\n     } else if (selectIco === \"form\") {\n-      selectForm(true);\n+      setSelectForm(true);\n     }\n   };\n \n   return (\n@@ -49,27 +49,27 @@\n         </h1>\n       </LogoDetail>\n \n       <NavList state={sidebarState} className=\"nav-list\">\n-        <li>\n+        <li onClick={handelSelectIco(\"home\")}>\n           <a href=\"dashboard.html\">\n             <i className=\"ico home\"></i>\n             <span className=\"links_name\">홈</span>\n           </a>\n         </li>\n-        <li className=\"on\">\n+        <li onClick={handelSelectIco(\"user\")}>\n           <a href=\"customManage_list.html\">\n             <i className=\"ico user\"></i>\n             <span className=\"links_name\">고객 관리</span>\n           </a>\n         </li>\n-        <li>\n+        <li onClick={handelSelectIco(\"file\")}>\n           <a href=\"file_storage.html\">\n             <i className=\"ico file\"></i>\n             <span className=\"links_name\">파일 보관함</span>\n           </a>\n         </li>\n-        <li>\n+        <li onClick={handelSelectIco(\"form\")}>\n           <a href=\"form_list.html\">\n             <i className=\"ico form\"></i>\n             <span className=\"links_name\">상담 신청폼</span>\n           </a>\n"
+                },
+                {
+                    "date": 1641623727100,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,14 +25,18 @@\n \n   const handelSelectIco = (selectIco) => {\n     if (selectIco === \"home\") {\n       setSelectHome(true);\n+      return;\n     } else if (selectIco === \"file\") {\n       setSelectFile(true);\n+      return;\n     } else if (selectIco === \"user\") {\n       setSelectUser(true);\n+      return;\n     } else if (selectIco === \"form\") {\n       setSelectForm(true);\n+      return;\n     }\n   };\n \n   return (\n"
+                },
+                {
+                    "date": 1641623778128,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,12 +13,8 @@\n // import \"../../resource/css/layout.css\";\n \n const SideBar = (props) => {\n   const [sidebarState, setSidebarState] = React.useState(false);\n-  const [selectHome, setSelectHome] = React.useState(false);\n-  const [selectFile, setSelectFile] = React.useState(false);\n-  const [selectUser, setSelectUser] = React.useState(false);\n-  const [selectForm, setSelectForm] = React.useState(false);\n \n   const handelSidebar = () => {\n     setSidebarState(!sidebarState);\n   };\n"
+                },
+                {
+                    "date": 1641623804135,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,24 +18,8 @@\n   const handelSidebar = () => {\n     setSidebarState(!sidebarState);\n   };\n \n-  const handelSelectIco = (selectIco) => {\n-    if (selectIco === \"home\") {\n-      setSelectHome(true);\n-      return;\n-    } else if (selectIco === \"file\") {\n-      setSelectFile(true);\n-      return;\n-    } else if (selectIco === \"user\") {\n-      setSelectUser(true);\n-      return;\n-    } else if (selectIco === \"form\") {\n-      setSelectForm(true);\n-      return;\n-    }\n-  };\n-\n   return (\n     <Sidebar\n       state={sidebarState}\n       className={sidebarState ? \"sidebar open\" : \"sidebar\"}\n@@ -49,27 +33,27 @@\n         </h1>\n       </LogoDetail>\n \n       <NavList state={sidebarState} className=\"nav-list\">\n-        <li onClick={handelSelectIco(\"home\")}>\n+        <li>\n           <a href=\"dashboard.html\">\n             <i className=\"ico home\"></i>\n             <span className=\"links_name\">홈</span>\n           </a>\n         </li>\n-        <li onClick={handelSelectIco(\"user\")}>\n+        <li className=\"on\">\n           <a href=\"customManage_list.html\">\n             <i className=\"ico user\"></i>\n             <span className=\"links_name\">고객 관리</span>\n           </a>\n         </li>\n-        <li onClick={handelSelectIco(\"file\")}>\n+        <li>\n           <a href=\"file_storage.html\">\n             <i className=\"ico file\"></i>\n             <span className=\"links_name\">파일 보관함</span>\n           </a>\n         </li>\n-        <li onClick={handelSelectIco(\"form\")}>\n+        <li>\n           <a href=\"form_list.html\">\n             <i className=\"ico form\"></i>\n             <span className=\"links_name\">상담 신청폼</span>\n           </a>\n"
+                },
+                {
+                    "date": 1641639497564,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n   return (\n     <Sidebar\n       state={sidebarState}\n       className={sidebarState ? \"sidebar open\" : \"sidebar\"}\n-    >\n+    \n       <LogoDetail state={sidebarState}>\n         <button type=\"button\" className=\"btn-side-open\" onClick={handelSidebar}>\n           <img src={logoMark} alt=\"오더체크\" />\n         </button>\n"
+                },
+                {
+                    "date": 1641639504699,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n   return (\n     <Sidebar\n       state={sidebarState}\n       className={sidebarState ? \"sidebar open\" : \"sidebar\"}\n-    \n+    >\n       <LogoDetail state={sidebarState}>\n         <button type=\"button\" className=\"btn-side-open\" onClick={handelSidebar}>\n           <img src={logoMark} alt=\"오더체크\" />\n         </button>\n"
+                },
+                {
+                    "date": 1641646604271,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import React from \"react\";\n import styled from \"styled-components\";\n+import { useHistory } from \"react-router\";\n \n import logoMark from \"../../resource/images/common/ico_logo-mark.png\";\n import logoName from \"../../resource/images/common/ico_logo-name.png\";\n import openBtn from \"../../resource/images/nav/ico_lnb-open.png\";\n@@ -13,8 +14,9 @@\n // import \"../../resource/css/layout.css\";\n \n const SideBar = (props) => {\n   const [sidebarState, setSidebarState] = React.useState(false);\n+  const history = useHistory();\n \n   const handelSidebar = () => {\n     setSidebarState(!sidebarState);\n   };\n@@ -33,9 +35,13 @@\n         </h1>\n       </LogoDetail>\n \n       <NavList state={sidebarState} className=\"nav-list\">\n-        <li>\n+        <li\n+          onClick={() => {\n+            history.push(\"/\");\n+          }}\n+        >\n           <a href=\"dashboard.html\">\n             <i className=\"ico home\"></i>\n             <span className=\"links_name\">홈</span>\n           </a>\n"
+                },
+                {
+                    "date": 1641646619903,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,12 +40,10 @@\n           onClick={() => {\n             history.push(\"/\");\n           }}\n         >\n-          <a href=\"dashboard.html\">\n-            <i className=\"ico home\"></i>\n-            <span className=\"links_name\">홈</span>\n-          </a>\n+          <i className=\"ico home\"></i>\n+          <span className=\"links_name\">홈</span>\n         </li>\n         <li className=\"on\">\n           <a href=\"customManage_list.html\">\n             <i className=\"ico user\"></i>\n"
+                },
+                {
+                    "date": 1641646644609,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,10 +40,12 @@\n           onClick={() => {\n             history.push(\"/\");\n           }}\n         >\n-          <i className=\"ico home\"></i>\n-          <span className=\"links_name\">홈</span>\n+          <a href=\"dashboard.html\">\n+            <i className=\"ico home\"></i>\n+            <span className=\"links_name\">홈</span>\n+          </a>\n         </li>\n         <li className=\"on\">\n           <a href=\"customManage_list.html\">\n             <i className=\"ico user\"></i>\n"
+                },
+                {
+                    "date": 1641646652612,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n           onClick={() => {\n             history.push(\"/\");\n           }}\n         >\n-          <a href=\"dashboard.html\">\n+          <a>\n             <i className=\"ico home\"></i>\n             <span className=\"links_name\">홈</span>\n           </a>\n         </li>\n"
+                },
+                {
+                    "date": 1641646814686,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,12 @@\n   const handelSidebar = () => {\n     setSidebarState(!sidebarState);\n   };\n \n+  const moveToPage = (param) => {\n+    history.push(`${param}`);\n+  };\n+\n   return (\n     <Sidebar\n       state={sidebarState}\n       className={sidebarState ? \"sidebar open\" : \"sidebar\"}\n@@ -35,13 +39,9 @@\n         </h1>\n       </LogoDetail>\n \n       <NavList state={sidebarState} className=\"nav-list\">\n-        <li\n-          onClick={() => {\n-            history.push(\"/\");\n-          }}\n-        >\n+        <li onClick={moveToPage(\"/\")}>\n           <a>\n             <i className=\"ico home\"></i>\n             <span className=\"links_name\">홈</span>\n           </a>\n"
+                },
+                {
+                    "date": 1641646847217,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,9 @@\n         </h1>\n       </LogoDetail>\n \n       <NavList state={sidebarState} className=\"nav-list\">\n-        <li onClick={moveToPage(\"/\")}>\n+        <li onClick={moveToPage(\"user\")}>\n           <a>\n             <i className=\"ico home\"></i>\n             <span className=\"links_name\">홈</span>\n           </a>\n"
+                },
+                {
+                    "date": 1641646862594,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,9 @@\n         </h1>\n       </LogoDetail>\n \n       <NavList state={sidebarState} className=\"nav-list\">\n-        <li onClick={moveToPage(\"user\")}>\n+        <li onClick={moveToPage}>\n           <a>\n             <i className=\"ico home\"></i>\n             <span className=\"links_name\">홈</span>\n           </a>\n"
+                },
+                {
+                    "date": 1641646909481,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,11 +39,11 @@\n         </h1>\n       </LogoDetail>\n \n       <NavList state={sidebarState} className=\"nav-list\">\n-        <li onClick={moveToPage}>\n+        <li>\n           <a>\n-            <i className=\"ico home\"></i>\n+            <i className=\"ico home\" onClick={moveToPage}></i>\n             <span className=\"links_name\">홈</span>\n           </a>\n         </li>\n         <li className=\"on\">\n"
+                },
+                {
+                    "date": 1641646918625,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n \n       <NavList state={sidebarState} className=\"nav-list\">\n         <li>\n           <a>\n-            <i className=\"ico home\" onClick={moveToPage}></i>\n+            <i className=\"ico home\" onClick={moveToPage(\"/\")}></i>\n             <span className=\"links_name\">홈</span>\n           </a>\n         </li>\n         <li className=\"on\">\n"
+                },
+                {
+                    "date": 1641646948562,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n \n       <NavList state={sidebarState} className=\"nav-list\">\n         <li>\n           <a>\n-            <i className=\"ico home\" onClick={moveToPage(\"/\")}></i>\n+            <i className=\"ico home\"></i>\n             <span className=\"links_name\">홈</span>\n           </a>\n         </li>\n         <li className=\"on\">\n"
+                },
+                {
+                    "date": 1641647332516,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,13 @@\n         </h1>\n       </LogoDetail>\n \n       <NavList state={sidebarState} className=\"nav-list\">\n-        <li>\n+        <li\n+          onClick={() => {\n+            moveToPage(\"/\");\n+          }}\n+        >\n           <a>\n             <i className=\"ico home\"></i>\n             <span className=\"links_name\">홈</span>\n           </a>\n"
+                },
+                {
+                    "date": 1641647400995,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,11 @@\n             <i className=\"ico home\"></i>\n             <span className=\"links_name\">홈</span>\n           </a>\n         </li>\n-        <li className=\"on\">\n+        <li className=\"on\" onClick={() => {\n+            moveToPage(\"custom_manage\");\n+          }>\n           <a href=\"customManage_list.html\">\n             <i className=\"ico user\"></i>\n             <span className=\"links_name\">고객 관리</span>\n           </a>\n"
+                },
+                {
+                    "date": 1641647413835,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,9 +50,9 @@\n             <span className=\"links_name\">홈</span>\n           </a>\n         </li>\n         <li className=\"on\" onClick={() => {\n-            moveToPage(\"custom_manage\");\n+            moveToPage(\"/custom_manage\");\n           }>\n           <a href=\"customManage_list.html\">\n             <i className=\"ico user\"></i>\n             <span className=\"links_name\">고객 관리</span>\n"
+                },
+                {
+                    "date": 1641647425832,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,11 +49,14 @@\n             <i className=\"ico home\"></i>\n             <span className=\"links_name\">홈</span>\n           </a>\n         </li>\n-        <li className=\"on\" onClick={() => {\n+        <li\n+          className=\"on\"\n+          onClick={() => {\n             moveToPage(\"/custom_manage\");\n-          }>\n+          }}\n+        >\n           <a href=\"customManage_list.html\">\n             <i className=\"ico user\"></i>\n             <span className=\"links_name\">고객 관리</span>\n           </a>\n"
+                },
+                {
+                    "date": 1641647469688,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,15 +60,23 @@\n             <i className=\"ico user\"></i>\n             <span className=\"links_name\">고객 관리</span>\n           </a>\n         </li>\n-        <li>\n+        <li\n+          onClick={() => {\n+            moveToPage(\"/file_storage\");\n+          }}\n+        >\n           <a href=\"file_storage.html\">\n             <i className=\"ico file\"></i>\n             <span className=\"links_name\">파일 보관함</span>\n           </a>\n         </li>\n-        <li>\n+        <li\n+          onClick={() => {\n+            moveToPage(\"/file_storage\");\n+          }}\n+        >\n           <a href=\"form_list.html\">\n             <i className=\"ico form\"></i>\n             <span className=\"links_name\">상담 신청폼</span>\n           </a>\n"
+                },
+                {
+                    "date": 1641647476391,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,9 +72,9 @@\n           </a>\n         </li>\n         <li\n           onClick={() => {\n-            moveToPage(\"/file_storage\");\n+            moveToPage(\"/setting\");\n           }}\n         >\n           <a href=\"form_list.html\">\n             <i className=\"ico form\"></i>\n"
+                },
+                {
+                    "date": 1641647492160,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,9 +72,9 @@\n           </a>\n         </li>\n         <li\n           onClick={() => {\n-            moveToPage(\"/setting\");\n+            moveToPage(\"/consulting_form\");\n           }}\n         >\n           <a href=\"form_list.html\">\n             <i className=\"ico form\"></i>\n"
+                },
+                {
+                    "date": 1641647507064,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,9 +65,9 @@\n           onClick={() => {\n             moveToPage(\"/file_storage\");\n           }}\n         >\n-          <a href=\"file_storage.html\">\n+          <a>\n             <i className=\"ico file\"></i>\n             <span className=\"links_name\">파일 보관함</span>\n           </a>\n         </li>\n"
+                },
+                {
+                    "date": 1641647531328,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,9 @@\n           onClick={() => {\n             moveToPage(\"/custom_manage\");\n           }}\n         >\n-          <a href=\"customManage_list.html\">\n+          <a>\n             <i className=\"ico user\"></i>\n             <span className=\"links_name\">고객 관리</span>\n           </a>\n         </li>\n@@ -75,9 +75,9 @@\n           onClick={() => {\n             moveToPage(\"/consulting_form\");\n           }}\n         >\n-          <a href=\"form_list.html\">\n+          <a>\n             <i className=\"ico form\"></i>\n             <span className=\"links_name\">상담 신청폼</span>\n           </a>\n         </li>\n"
+                },
+                {
+                    "date": 1641647636694,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -88,10 +88,14 @@\n             <i className=\"ico help\"></i>\n             <span className=\"links_name\">자주 묻는 질문</span>\n           </a>\n         </li>\n-        <li>\n-          <a href=\"setting_company-info.html\">\n+        <li\n+          onClick={() => {\n+            moveToPage(\"/setting\");\n+          }}\n+        >\n+          <a>\n             <i className=\"ico setting\"></i>\n             <span className=\"links_name\">설정</span>\n           </a>\n         </li>\n"
+                },
+                {
+                    "date": 1641649688185,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,43 +44,35 @@\n           onClick={() => {\n             moveToPage(\"/\");\n           }}\n         >\n-          <a>\n-            <i className=\"ico home\"></i>\n-            <span className=\"links_name\">홈</span>\n-          </a>\n+          <i className=\"ico home\"></i>\n+          <span className=\"links_name\">홈</span>\n         </li>\n         <li\n           className=\"on\"\n           onClick={() => {\n             moveToPage(\"/custom_manage\");\n           }}\n         >\n-          <a>\n-            <i className=\"ico user\"></i>\n-            <span className=\"links_name\">고객 관리</span>\n-          </a>\n+          <i className=\"ico user\"></i>\n+          <span className=\"links_name\">고객 관리</span>\n         </li>\n         <li\n           onClick={() => {\n             moveToPage(\"/file_storage\");\n           }}\n         >\n-          <a>\n-            <i className=\"ico file\"></i>\n-            <span className=\"links_name\">파일 보관함</span>\n-          </a>\n+          <i className=\"ico file\"></i>\n+          <span className=\"links_name\">파일 보관함</span>\n         </li>\n         <li\n           onClick={() => {\n             moveToPage(\"/consulting_form\");\n           }}\n         >\n-          <a>\n-            <i className=\"ico form\"></i>\n-            <span className=\"links_name\">상담 신청폼</span>\n-          </a>\n+          <i className=\"ico form\"></i>\n+          <span className=\"links_name\">상담 신청폼</span>\n         </li>\n       </NavList>\n       <ul className=\"btm\">\n         <li>\n@@ -93,12 +85,10 @@\n           onClick={() => {\n             moveToPage(\"/setting\");\n           }}\n         >\n-          <a>\n-            <i className=\"ico setting\"></i>\n-            <span className=\"links_name\">설정</span>\n-          </a>\n+          <i className=\"ico setting\"></i>\n+          <span className=\"links_name\">설정</span>\n         </li>\n       </ul>\n       <button type=\"button\" className=\"btn-lnb-close\" onClick={handelSidebar}>\n         <span className=\"hide\">메뉴 닫기</span>\n"
+                },
+                {
+                    "date": 1641649700933,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -132,49 +132,47 @@\n     transition: all 0.5s;\n   }\n \n   li {\n-    a {\n-      display: flex;\n-      width: 42px;\n-      height: 42px;\n-      border-radius: 8px;\n-      align-items: center;\n-      text-decoration: none;\n-      transition: all 0.4s ease;\n-      background: #02164f;\n+    display: flex;\n+    width: 42px;\n+    height: 42px;\n+    border-radius: 8px;\n+    align-items: center;\n+    text-decoration: none;\n+    transition: all 0.4s ease;\n+    background: #02164f;\n \n-      .links_name {\n-        padding-left: 12px;\n-        color: #fff;\n-        font-size: 15px;\n-        font-weight: 400;\n-        white-space: nowrap;\n-        pointer-events: none;\n-        transition: 0.4s;\n-        opacity: ${({ state }) => (state ? 1 : 0)};\n-        ${({ state }) => state && \"pointer-events: auto\"};\n-      }\n+    .links_name {\n+      padding-left: 12px;\n+      color: #fff;\n+      font-size: 15px;\n+      font-weight: 400;\n+      white-space: nowrap;\n+      pointer-events: none;\n+      transition: 0.4s;\n+      opacity: ${({ state }) => (state ? 1 : 0)};\n+      ${({ state }) => state && \"pointer-events: auto\"};\n+    }\n \n-      .ico.home {\n-        &:hover {\n-          background-image: url(${icoHomeHover});\n-        }\n+    .ico.home {\n+      &:hover {\n+        background-image: url(${icoHomeHover});\n       }\n-      .ico.file {\n-        &:hover {\n-          background-image: url(${icoFileHover});\n-        }\n+    }\n+    .ico.file {\n+      &:hover {\n+        background-image: url(${icoFileHover});\n       }\n-      .ico.user {\n-        &:hover {\n-          background-image: url(${icoUserHover});\n-        }\n+    }\n+    .ico.user {\n+      &:hover {\n+        background-image: url(${icoUserHover});\n       }\n-      .ico.form {\n-        &:hover {\n-          background-image: url(${icoFormHover});\n-        }\n+    }\n+    .ico.form {\n+      &:hover {\n+        background-image: url(${icoFormHover});\n       }\n     }\n   }\n `;\n"
+                },
+                {
+                    "date": 1641649708639,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -216,12 +216,10 @@\n   margin-top: 34px;\n   height: 100%;\n \n   .on {\n-    a {\n-      background: #1d58ff;\n-      color: #fff;\n-    }\n+    background: #1d58ff;\n+    color: #fff;\n   }\n \n   li {\n     position: relative;\n"
+                },
+                {
+                    "date": 1641649718379,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -225,17 +225,15 @@\n     position: relative;\n     margin: 8px 0;\n     list-style: none;\n \n-    a {\n-      display: flex;\n-      width: ${({ state }) => (state ? \"100%\" : \"42px\")};\n-      height: 42px;\n-      border-radius: 8px;\n-      align-items: center;\n-      text-decoration: none;\n-      transition: all 0.4s ease;\n-      background: #02164f;\n-    }\n+    display: flex;\n+    width: ${({ state }) => (state ? \"100%\" : \"42px\")};\n+    height: 42px;\n+    border-radius: 8px;\n+    align-items: center;\n+    text-decoration: none;\n+    transition: all 0.4s ease;\n+    background: #02164f;\n   }\n `;\n export default SideBar;\n"
+                },
+                {
+                    "date": 1641649810715,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React from \"react\";\n import styled from \"styled-components\";\n-import { useHistory } from \"react-router\";\n+import { useHistory, useParams } from \"react-router\";\n \n import logoMark from \"../../resource/images/common/ico_logo-mark.png\";\n import logoName from \"../../resource/images/common/ico_logo-name.png\";\n import openBtn from \"../../resource/images/nav/ico_lnb-open.png\";\n@@ -15,8 +15,10 @@\n \n const SideBar = (props) => {\n   const [sidebarState, setSidebarState] = React.useState(false);\n   const history = useHistory();\n+  const params = useParams();\n+  console.log(params);\n \n   const handelSidebar = () => {\n     setSidebarState(!sidebarState);\n   };\n"
+                },
+                {
+                    "date": 1641649846053,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React from \"react\";\n import styled from \"styled-components\";\n-import { useHistory, useParams } from \"react-router\";\n+import { useHistory, useLocation } from \"react-router\";\n \n import logoMark from \"../../resource/images/common/ico_logo-mark.png\";\n import logoName from \"../../resource/images/common/ico_logo-name.png\";\n import openBtn from \"../../resource/images/nav/ico_lnb-open.png\";\n@@ -15,10 +15,10 @@\n \n const SideBar = (props) => {\n   const [sidebarState, setSidebarState] = React.useState(false);\n   const history = useHistory();\n-  const params = useParams();\n-  console.log(params);\n+  const location = useLocation();\n+  console.log(location);\n \n   const handelSidebar = () => {\n     setSidebarState(!sidebarState);\n   };\n"
+                },
+                {
+                    "date": 1641649856693,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n const SideBar = (props) => {\n   const [sidebarState, setSidebarState] = React.useState(false);\n   const history = useHistory();\n   const location = useLocation();\n-  console.log(location);\n+  console.log(location.pathname);\n \n   const handelSidebar = () => {\n     setSidebarState(!sidebarState);\n   };\n"
+                },
+                {
+                    "date": 1641649951673,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,17 +13,22 @@\n \n // import \"../../resource/css/layout.css\";\n \n const SideBar = (props) => {\n-  const [sidebarState, setSidebarState] = React.useState(false);\n   const history = useHistory();\n   const location = useLocation();\n+\n+  const [sidebarState, setSidebarState] = React.useState(false);\n+  const [selectPage, setSelectPage] = React.useState(location.pathname);\n+  \n   console.log(location.pathname);\n \n-  const handelSidebar = () => {\n+  const handleSidebar = () => {\n     setSidebarState(!sidebarState);\n   };\n \n+  const handle\n+\n   const moveToPage = (param) => {\n     history.push(`${param}`);\n   };\n \n@@ -32,9 +37,9 @@\n       state={sidebarState}\n       className={sidebarState ? \"sidebar open\" : \"sidebar\"}\n     >\n       <LogoDetail state={sidebarState}>\n-        <button type=\"button\" className=\"btn-side-open\" onClick={handelSidebar}>\n+        <button type=\"button\" className=\"btn-side-open\" onClick={handleSidebar}>\n           <img src={logoMark} alt=\"오더체크\" />\n         </button>\n         <h1 className=\"logo_name\">\n           <img src={logoName} alt=\"오더체크\" />\n"
+                },
+                {
+                    "date": 1641649957311,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -96,9 +96,9 @@\n           <i className=\"ico setting\"></i>\n           <span className=\"links_name\">설정</span>\n         </li>\n       </ul>\n-      <button type=\"button\" className=\"btn-lnb-close\" onClick={handelSidebar}>\n+      <button type=\"button\" className=\"btn-lnb-close\" onClick={handleSidebar}>\n         <span className=\"hide\">메뉴 닫기</span>\n       </button>\n     </Sidebar>\n   );\n"
+                },
+                {
+                    "date": 1641650270784,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,19 +18,23 @@\n   const location = useLocation();\n \n   const [sidebarState, setSidebarState] = React.useState(false);\n   const [selectPage, setSelectPage] = React.useState(location.pathname);\n-  \n+\n   console.log(location.pathname);\n \n   const handleSidebar = () => {\n     setSidebarState(!sidebarState);\n   };\n \n-  const handle\n+  const handleSelectPage = (path) => {\n+    if (path === \"/\") {\n+      setSelectPage(\"home\");\n+    }\n+  };\n \n-  const moveToPage = (param) => {\n-    history.push(`${param}`);\n+  const moveToPage = (path) => {\n+    history.push(`${path}`);\n   };\n \n   return (\n     <Sidebar\n"
                 }
             ],
             "date": 1641554524665,

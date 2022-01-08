@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/pages/Dashboard.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1641645136864,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1641645136864,
+            "name": "Commit-0",
+            "content": "import React from \"react\";\n\nconst Dashboard = (props) => {\n  return (\n    <div>\n      <div>Dashboard Page</div>\n    </div>\n  );\n};\n\nexport default Dashboard;\n"
+        }
+    ]
+}

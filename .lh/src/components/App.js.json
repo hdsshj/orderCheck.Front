@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 13,
+            "activePatchIndex": 36,
             "patches": [
                 {
                     "date": 1641554024842,
@@ -60,6 +60,98 @@
                 {
                     "date": 1641560394629,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n function App() {\n   return (\n     <div className=\"App\">\n       <Header />\n-      <SideBar />\n+      {/* <SideBar /> */}\n     </div>\n   );\n }\n \n"
+                },
+                {
+                    "date": 1641645349489,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,21 @@\n import React from \"react\";\n+import { Route } from \"react-router-dom\";\n \n import Header from \"./header/Header\";\n import SideBar from \"./header/SideBar\";\n+import Dashboard from \"../pages/Dashboard\";\n+import ConsultingForm from \"../pages/ConsultingForm\";\n+import CustomManage from \"../pages/CustomManage\";\n+import FileStorage from \"../pages/FileStorage\";\n+import Setting from \"../pages/Setting\";\n \n function App() {\n   return (\n     <div className=\"App\">\n       <Header />\n-      {/* <SideBar /> */}\n+      <SideBar />\n+      <Route />\n     </div>\n   );\n }\n \n"
+                },
+                {
+                    "date": 1641645451671,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n   return (\n     <div className=\"App\">\n       <Header />\n       <SideBar />\n-      <Route />\n+      <Route path=\"\" />\n     </div>\n   );\n }\n \n"
+                },
+                {
+                    "date": 1641645464384,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n   return (\n     <div className=\"App\">\n       <Header />\n       <SideBar />\n-      <Route path=\"\" />\n+      <Route path=\"/\" />\n     </div>\n   );\n }\n \n"
+                },
+                {
+                    "date": 1641645535716,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n   return (\n     <div className=\"App\">\n       <Header />\n       <SideBar />\n-      <Route path=\"/\" />\n+      <Route path=\"/\" component />\n     </div>\n   );\n }\n \n"
+                },
+                {
+                    "date": 1641645577860,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n   return (\n     <div className=\"App\">\n       <Header />\n       <SideBar />\n-      <Route path=\"/\" component />\n+      <Route path=\"/\" component={Dashboard} exi />\n     </div>\n   );\n }\n \n"
+                },
+                {
+                    "date": 1641645675479,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,13 @@\n   return (\n     <div className=\"App\">\n       <Header />\n       <SideBar />\n-      <Route path=\"/\" component={Dashboard} exi />\n+      <Route path=\"/\" component={Dashboard} exact />\n+      <Route path=\"/consulting_form\" component={ConsultingForm} exact />\n+      <Route path=\"/coustom_manage\" component={CustomManage} exact />\n+      <Route path=\"/file_storage\" component={FileStorage} exact />\n+      <Route path=\"/setting\" component={Setting} exact />\n     </div>\n   );\n }\n \n"
+                },
+                {
+                    "date": 1641645917777,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,13 +13,15 @@\n   return (\n     <div className=\"App\">\n       <Header />\n       <SideBar />\n-      <Route path=\"/\" component={Dashboard} exact />\n-      <Route path=\"/consulting_form\" component={ConsultingForm} exact />\n-      <Route path=\"/coustom_manage\" component={CustomManage} exact />\n-      <Route path=\"/file_storage\" component={FileStorage} exact />\n-      <Route path=\"/setting\" component={Setting} exact />\n+      <div>\n+        <Route path=\"/\" component={Dashboard} exact />\n+        <Route path=\"/consulting_form\" component={ConsultingForm} exact />\n+        <Route path=\"/coustom_manage\" component={CustomManage} exact />\n+        <Route path=\"/file_storage\" component={FileStorage} exact />\n+        <Route path=\"/setting\" component={Setting} exact />\n+      </div>\n     </div>\n   );\n }\n \n"
+                },
+                {
+                    "date": 1641645929328,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,15 +13,15 @@\n   return (\n     <div className=\"App\">\n       <Header />\n       <SideBar />\n-      <div>\n+      <Routes>\n         <Route path=\"/\" component={Dashboard} exact />\n         <Route path=\"/consulting_form\" component={ConsultingForm} exact />\n         <Route path=\"/coustom_manage\" component={CustomManage} exact />\n         <Route path=\"/file_storage\" component={FileStorage} exact />\n         <Route path=\"/setting\" component={Setting} exact />\n-      </div>\n+      </Routes>\n     </div>\n   );\n }\n \n"
+                },
+                {
+                    "date": 1641645938542,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import React from \"react\";\n-import { Route } from \"react-router-dom\";\n+import { Route, Routes } from \"react-router-dom\";\n \n import Header from \"./header/Header\";\n import SideBar from \"./header/SideBar\";\n import Dashboard from \"../pages/Dashboard\";\n"
+                },
+                {
+                    "date": 1641646024812,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,19 +10,17 @@\n import Setting from \"../pages/Setting\";\n \n function App() {\n   return (\n-    <div className=\"App\">\n+    <>\n       <Header />\n       <SideBar />\n-      <Routes>\n-        <Route path=\"/\" component={Dashboard} exact />\n-        <Route path=\"/consulting_form\" component={ConsultingForm} exact />\n-        <Route path=\"/coustom_manage\" component={CustomManage} exact />\n-        <Route path=\"/file_storage\" component={FileStorage} exact />\n-        <Route path=\"/setting\" component={Setting} exact />\n-      </Routes>\n-    </div>\n+      <Route path=\"/\" component={Dashboard} exact />\n+      <Route path=\"/consulting_form\" component={ConsultingForm} exact />\n+      <Route path=\"/coustom_manage\" component={CustomManage} exact />\n+      <Route path=\"/file_storage\" component={FileStorage} exact />\n+      <Route path=\"/setting\" component={Setting} exact />\n+    </>\n   );\n }\n \n export default App;\n"
+                },
+                {
+                    "date": 1641646058547,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,11 @@\n   return (\n     <>\n       <Header />\n       <SideBar />\n-      <Route path=\"/\" component={Dashboard} exact />\n+      <Route path=\"/\" exact>\n+        <Dashboard />\n+      </Route>\n       <Route path=\"/consulting_form\" component={ConsultingForm} exact />\n       <Route path=\"/coustom_manage\" component={CustomManage} exact />\n       <Route path=\"/file_storage\" component={FileStorage} exact />\n       <Route path=\"/setting\" component={Setting} exact />\n"
+                },
+                {
+                    "date": 1641646104930,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,10 +16,14 @@\n       <SideBar />\n       <Route path=\"/\" exact>\n         <Dashboard />\n       </Route>\n-      <Route path=\"/consulting_form\" component={ConsultingForm} exact />\n-      <Route path=\"/coustom_manage\" component={CustomManage} exact />\n+      <Route path=\"/consulting_form\" exact>\n+        <ConsultingForm />\n+      </Route>\n+      <Route path=\"/coustom_manage\" exact>\n+        <CustomManage />\n+      </Route>\n       <Route path=\"/file_storage\" component={FileStorage} exact />\n       <Route path=\"/setting\" component={Setting} exact />\n     </>\n   );\n"
+                },
+                {
+                    "date": 1641646136850,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,10 +22,14 @@\n       </Route>\n       <Route path=\"/coustom_manage\" exact>\n         <CustomManage />\n       </Route>\n-      <Route path=\"/file_storage\" component={FileStorage} exact />\n-      <Route path=\"/setting\" component={Setting} exact />\n+      <Route path=\"/file_storage\" exact>\n+        <FileStorage />\n+      </Route>\n+      <Route path=\"/setting\" exact>\n+        <Setting />\n+      </Route>\n     </>\n   );\n }\n \n"
+                },
+                {
+                    "date": 1641646199426,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import React from \"react\";\n-import { Route, Routes } from \"react-router-dom\";\n+import { Route, Switch } from \"react-router-dom\";\n \n import Header from \"./header/Header\";\n import SideBar from \"./header/SideBar\";\n import Dashboard from \"../pages/Dashboard\";\n@@ -10,9 +10,9 @@\n import Setting from \"../pages/Setting\";\n \n function App() {\n   return (\n-    <>\n+    <Switch>\n       <Header />\n       <SideBar />\n       <Route path=\"/\" exact>\n         <Dashboard />\n@@ -28,9 +28,9 @@\n       </Route>\n       <Route path=\"/setting\" exact>\n         <Setting />\n       </Route>\n-    </>\n+    <Switch/>\n   );\n }\n \n export default App;\n"
+                },
+                {
+                    "date": 1641646210233,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,9 @@\n import Setting from \"../pages/Setting\";\n \n function App() {\n   return (\n+    <>\n     <Switch>\n       <Header />\n       <SideBar />\n       <Route path=\"/\" exact>\n@@ -28,9 +29,10 @@\n       </Route>\n       <Route path=\"/setting\" exact>\n         <Setting />\n       </Route>\n-    <Switch/>\n+        <Switch />\n+        </>\n   );\n }\n \n export default App;\n"
+                },
+                {
+                    "date": 1641646243346,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import React from \"react\";\n-import { Route, Switch } from \"react-router-dom\";\n+import { Switch, Route} from \"react-router-dom\";\n \n import Header from \"./header/Header\";\n import SideBar from \"./header/SideBar\";\n import Dashboard from \"../pages/Dashboard\";\n"
+                },
+                {
+                    "date": 1641646256708,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n       </Route>\n       <Route path=\"/setting\" exact>\n         <Setting />\n       </Route>\n-        <Switch />\n+    <Switch />\n         </>\n   );\n }\n \n"
+                },
+                {
+                    "date": 1641646262136,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n import Setting from \"../pages/Setting\";\n \n function App() {\n   return (\n-    <>\n+  <>\n     <Switch>\n       <Header />\n       <SideBar />\n       <Route path=\"/\" exact>\n@@ -30,9 +30,9 @@\n       <Route path=\"/setting\" exact>\n         <Setting />\n       </Route>\n     <Switch />\n-        </>\n+  </>\n   );\n }\n \n export default App;\n"
+                },
+                {
+                    "date": 1641646272009,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import React from \"react\";\n-import { Switch, Route} from \"react-router-dom\";\n+import { Switch, Route } from \"react-router-dom\";\n \n import Header from \"./header/Header\";\n import SideBar from \"./header/SideBar\";\n import Dashboard from \"../pages/Dashboard\";\n@@ -10,29 +10,29 @@\n import Setting from \"../pages/Setting\";\n \n function App() {\n   return (\n-  <>\n-    <Switch>\n-      <Header />\n-      <SideBar />\n-      <Route path=\"/\" exact>\n-        <Dashboard />\n-      </Route>\n-      <Route path=\"/consulting_form\" exact>\n-        <ConsultingForm />\n-      </Route>\n-      <Route path=\"/coustom_manage\" exact>\n-        <CustomManage />\n-      </Route>\n-      <Route path=\"/file_storage\" exact>\n-        <FileStorage />\n-      </Route>\n-      <Route path=\"/setting\" exact>\n-        <Setting />\n-      </Route>\n-    <Switch />\n-  </>\n+    <>\n+      <Switch>\n+        <Header />\n+        <SideBar />\n+        <Route path=\"/\" exact>\n+          <Dashboard />\n+        </Route>\n+        <Route path=\"/consulting_form\" exact>\n+          <ConsultingForm />\n+        </Route>\n+        <Route path=\"/coustom_manage\" exact>\n+          <CustomManage />\n+        </Route>\n+        <Route path=\"/file_storage\" exact>\n+          <FileStorage />\n+        </Route>\n+        <Route path=\"/setting\" exact>\n+          <Setting />\n+        </Route>\n+      </Switch>\n+    </>\n   );\n }\n \n export default App;\n"
+                },
+                {
+                    "date": 1641646454211,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,27 +11,25 @@\n \n function App() {\n   return (\n     <>\n-      <Switch>\n-        <Header />\n-        <SideBar />\n-        <Route path=\"/\" exact>\n-          <Dashboard />\n-        </Route>\n-        <Route path=\"/consulting_form\" exact>\n-          <ConsultingForm />\n-        </Route>\n-        <Route path=\"/coustom_manage\" exact>\n-          <CustomManage />\n-        </Route>\n-        <Route path=\"/file_storage\" exact>\n-          <FileStorage />\n-        </Route>\n-        <Route path=\"/setting\" exact>\n-          <Setting />\n-        </Route>\n-      </Switch>\n+      <Header />\n+      <SideBar />\n+      <Route path=\"/\" exact>\n+        <Dashboard />\n+      </Route>\n+      <Route path=\"/consulting_form\" exact>\n+        <ConsultingForm />\n+      </Route>\n+      <Route path=\"/coustom_manage\" exact>\n+        <CustomManage />\n+      </Route>\n+      <Route path=\"/file_storage\" exact>\n+        <FileStorage />\n+      </Route>\n+      <Route path=\"/setting\" exact>\n+        <Setting />\n+      </Route>\n     </>\n   );\n }\n \n"
+                },
+                {
+                    "date": 1641646489061,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import React from \"react\";\n-import { Switch, Route } from \"react-router-dom\";\n+import { Route } from \"react-router-dom\";\n \n import Header from \"./header/Header\";\n import SideBar from \"./header/SideBar\";\n import Dashboard from \"../pages/Dashboard\";\n"
+                },
+                {
+                    "date": 1641646507315,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import React from \"react\";\n-import { Route } from \"react-router-dom\";\n+import { Route, Routes } from \"react-router-dom\";\n \n import Header from \"./header/Header\";\n import SideBar from \"./header/SideBar\";\n import Dashboard from \"../pages/Dashboard\";\n@@ -13,23 +13,13 @@\n   return (\n     <>\n       <Header />\n       <SideBar />\n-      <Route path=\"/\" exact>\n-        <Dashboard />\n-      </Route>\n-      <Route path=\"/consulting_form\" exact>\n-        <ConsultingForm />\n-      </Route>\n-      <Route path=\"/coustom_manage\" exact>\n-        <CustomManage />\n-      </Route>\n-      <Route path=\"/file_storage\" exact>\n-        <FileStorage />\n-      </Route>\n-      <Route path=\"/setting\" exact>\n-        <Setting />\n-      </Route>\n+      <Route path=\"/\" component={Dashboard} exact />\n+      <Route path=\"/consulting_form\" component={ConsultingForm} exact />\n+      <Route path=\"/coustom_manage\" component={CustomManage} exact />\n+      <Route path=\"/file_storage\" component={FileStorage} exact />\n+      <Route path=\"/setting\" component={Setting} exact />\n     </>\n   );\n }\n \n"
+                },
+                {
+                    "date": 1641647403579,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import React from \"react\";\n-import { Route, Routes } from \"react-router-dom\";\n+import { Route } from \"react-router-dom\";\n \n import Header from \"./header/Header\";\n import SideBar from \"./header/SideBar\";\n import Dashboard from \"../pages/Dashboard\";\n@@ -15,9 +15,9 @@\n       <Header />\n       <SideBar />\n       <Route path=\"/\" component={Dashboard} exact />\n       <Route path=\"/consulting_form\" component={ConsultingForm} exact />\n-      <Route path=\"/coustom_manage\" component={CustomManage} exact />\n+      <Route path=\"/custom_manage\" component={CustomManage} exact />\n       <Route path=\"/file_storage\" component={FileStorage} exact />\n       <Route path=\"/setting\" component={Setting} exact />\n     </>\n   );\n"
                 }
             ],
             "date": 1641554024842,

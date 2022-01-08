@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 8,
+            "activePatchIndex": 12,
             "patches": [
                 {
                     "date": 1641557906515,
@@ -40,6 +40,22 @@
                 {
                     "date": 1641558130461,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3476,8 +3476,9 @@\n   background-image: url(../images/common/ico_alarm-file.png);\n }\n .btn-alarm-item.type03:before {\n   /* background-image: url(../images/common/ico_alarm-check.png); */\n+  background-image: url(../images/common/);\n }\n .alarm-list > li.active .btn-alarm-item.type01:before {\n   background-image: url(../images/common/ico_alarm-customer-hover.png);\n }\n"
+                },
+                {
+                    "date": 1641566520087,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n }\n .content-section .title + .filter-box {\n   margin-top: 30px;\n }\n-.content-section .header {\n+.header {\n   height: 70px;\n   padding: 0 30px;\n }\n \n@@ -3474,12 +3474,8 @@\n }\n .btn-alarm-item.type02:before {\n   background-image: url(../images/common/ico_alarm-file.png);\n }\n-.btn-alarm-item.type03:before {\n-  /* background-image: url(../images/common/ico_alarm-check.png); */\n-  background-image: url(../images/common/);\n-}\n .alarm-list > li.active .btn-alarm-item.type01:before {\n   background-image: url(../images/common/ico_alarm-customer-hover.png);\n }\n .alarm-list > li.active .btn-alarm-item.type02:before {\n"
+                },
+                {
+                    "date": 1641566527426,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n   height: 70px;\n   padding: 0 30px;\n }\n \n-.content-section.setting {\n+setting {\n   padding-left: 200px;\n   min-width: 1600px;\n   width: calc(100% - 280px);\n }\n"
+                },
+                {
+                    "date": 1641566565021,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,14 +22,14 @@\n }\n .content-section .title + .filter-box {\n   margin-top: 30px;\n }\n-.header {\n+.content-section .header {\n   height: 70px;\n   padding: 0 30px;\n }\n \n-setting {\n+.content-section.setting {\n   padding-left: 200px;\n   min-width: 1600px;\n   width: calc(100% - 280px);\n }\n"
+                },
+                {
+                    "date": 1641566576020,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n }\n .content-section .title + .filter-box {\n   margin-top: 30px;\n }\n-.content-section .header {\n+.header {\n   height: 70px;\n   padding: 0 30px;\n }\n \n"
                 }
             ],
             "date": 1641557906515,
