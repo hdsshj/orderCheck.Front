@@ -1827,7 +1827,7 @@ display: inline-block; line-height: 1; text-transform: none; letter-spacing: nor
 
 /*===== layer =====*/
 .layer-pop {
-  display: none;
+  /* display: none; */
   width: 100%;
   height: 100%;
   position: fixed;

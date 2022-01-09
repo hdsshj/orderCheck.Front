@@ -1,8 +1,10 @@
 import React from "react";
 import { Route } from "react-router-dom";
 
-import Header from "./header/Header";
+import Toast from "./profile/Toast";
 import SideBar from "./header/SideBar";
+import Header from "./header/Header";
+import Content from "./profile/Content";
 import Dashboard from "../pages/Dashboard";
 import ConsultingForm from "../pages/ConsultingForm";
 import CustomManage from "../pages/CustomManage";
@@ -14,6 +16,7 @@ function App() {
     <>
       <Header />
       <SideBar />
+      <Content />
       <Route path="/" component={Dashboard} exact />
       <Route path="/consulting_form" component={ConsultingForm} exact />
       <Route path="/custom_manage" component={CustomManage} exact />
