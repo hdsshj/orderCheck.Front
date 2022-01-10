@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 37,
+            "activePatchIndex": 38,
             "patches": [
                 {
                     "date": 1641554024842,
@@ -156,6 +156,10 @@
                 {
                     "date": 1641737373625,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,11 @@\n import React from \"react\";\n import { Route } from \"react-router-dom\";\n \n+// import Toast from \"./profile/Toast\";\n+import SideBar from \"./header/SideBar\";\n import Header from \"./header/Header\";\n-import SideBar from \"./header/SideBar\";\n+import Content from \"./profile/Content\";\n import Dashboard from \"../pages/Dashboard\";\n import ConsultingForm from \"../pages/ConsultingForm\";\n import CustomManage from \"../pages/CustomManage\";\n import FileStorage from \"../pages/FileStorage\";\n@@ -13,8 +15,9 @@\n   return (\n     <>\n       <Header />\n       <SideBar />\n+      <Content />\n       <Route path=\"/\" component={Dashboard} exact />\n       <Route path=\"/consulting_form\" component={ConsultingForm} exact />\n       <Route path=\"/custom_manage\" component={CustomManage} exact />\n       <Route path=\"/file_storage\" component={FileStorage} exact />\n"
+                },
+                {
+                    "date": 1641807417190,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,7 @@\n import React from \"react\";\n import { Route } from \"react-router-dom\";\n \n-// import Toast from \"./profile/Toast\";\n import SideBar from \"./header/SideBar\";\n import Header from \"./header/Header\";\n import Content from \"./profile/Content\";\n import Dashboard from \"../pages/Dashboard\";\n"
                 }
             ],
             "date": 1641554024842,
