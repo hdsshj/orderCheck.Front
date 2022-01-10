@@ -1,7 +1,6 @@
 import React from "react";
 import { Route } from "react-router-dom";
 
-import Toast from "./profile/Toast";
 import SideBar from "./header/SideBar";
 import Header from "./header/Header";
 import Content from "./profile/Content";

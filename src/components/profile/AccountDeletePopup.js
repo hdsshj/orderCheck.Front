@@ -2,6 +2,9 @@ import React from "react";
 import "../../resource/css/layout.css";
 import "../../resource/css/vendor/nice-select.css";
 
+import Select from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
 const AccountDeletePopup = ({ accountDelete, setAccountDelete }) => {
   return (
     <>
@@ -20,16 +23,21 @@ const AccountDeletePopup = ({ accountDelete, setAccountDelete }) => {
                 <label for="user_phone" class="filter-title">
                   탈퇴 사유
                 </label>
-                <div class="inp-select type03">
+                <FormControl sx={{ width: "100%" }}>
+                  <Select>
+                    <MenuItem value={10}>1</MenuItem>
+                  </Select>
+                </FormControl>
+
+                {/* <div class="inp-select type03">
                   <select name="areaType" style={{ width: "100%" }}>
                     <option value="000" disabled selected>
                       탈퇴 사유를 선택해주세요
                     </option>
                     <option value="001">1</option>
                   </select>
-                </div>
+                </div> */}
                 <p class="warning-txt02">탈퇴 사유를 선택해주세요.</p>
-
                 <label for="user_auth" class="filter-title">
                   비밀번호
                 </label>
