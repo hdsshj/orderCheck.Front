@@ -1,12 +1,29 @@
 import React from "react";
 import styled from "styled-components";
+import { useLocation } from "react-router";
 
 import profile from "../../resource/images/profile.jpg";
 
 const Header = (props) => {
+  const location = useLocation();
+
+  const HeaderText = (path) => {
+    if (path === "/custom_manage") {
+      return "고객 관리";
+    } else if (path === "/file_storage") {
+      return "파일보관함";
+    } else if (path === "/consulting_form") {
+      return "상담 신청폼";
+    }
+  };
+
+  if (location.pathname === "/") {
+    return null;
+  }
+
   return (
     <HeaderWrap id="header" className="header">
-      <h2 className="title">프로필 설정</h2>
+      <h2 className="title">{HeaderText(location.pathname)}</h2>
       <ul className="menu">
         <li>
           <div className="searchbox">
@@ -54,7 +71,7 @@ const Header = (props) => {
             <i className="ico mail"></i>
           </button>
         </li>
-        <li>
+        <li style={{ marginLeft: "14px" }}>
           <button type="button" className="btn-menu" data-info="alarm">
             <i className="ico alarm"></i>
           </button>
@@ -69,20 +86,48 @@ const HeaderWrap = styled.div`
   background: #f7f8fb;
   top: 0;
   left: 80px;
-  width: calc(100% - 80px);
+  width: calc(100% - 140px);
   height: 70px;
+  padding: 0px 30px;
   z-index: 2;
 
-  .ico {
+  .menu {
+    display: flex;
+    align-items: center;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .title {
     display: inline-block;
-    min-width: 42px;
-    width: 42px;
+    color: #41495e;
+    line-height: 32px;
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+  .ico {
     /* min-width: 48px; */
-    /* width: 48px; */
-    height: 42px;
+    /* width: 30px; */
+    /* height: 42px; */
     background-repeat: no-repeat;
     background-position: center;
-    transition: all 0.5s;
+    display: inline-block;
+    min-width: 30px;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+  }
+
+  .button[class*="btn"] {
+    display: inline-block;
+  }
+
+  .btn-menu {
   }
 `;
 
