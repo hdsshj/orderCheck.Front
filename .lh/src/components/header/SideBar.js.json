@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 264,
+            "activePatchIndex": 380,
             "patches": [
                 {
                     "date": 1641554524665,
@@ -1064,6 +1064,470 @@
                 {
                     "date": 1641650270784,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,19 +18,23 @@\n   const location = useLocation();\n \n   const [sidebarState, setSidebarState] = React.useState(false);\n   const [selectPage, setSelectPage] = React.useState(location.pathname);\n-  \n+\n   console.log(location.pathname);\n \n   const handleSidebar = () => {\n     setSidebarState(!sidebarState);\n   };\n \n-  const handle\n+  const handleSelectPage = (path) => {\n+    if (path === \"/\") {\n+      setSelectPage(\"home\");\n+    }\n+  };\n \n-  const moveToPage = (param) => {\n-    history.push(`${param}`);\n+  const moveToPage = (path) => {\n+    history.push(`${path}`);\n   };\n \n   return (\n     <Sidebar\n"
+                },
+                {
+                    "date": 1641671132706,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,20 @@\n   const history = useHistory();\n   const location = useLocation();\n \n   const [sidebarState, setSidebarState] = React.useState(false);\n-  const [selectPage, setSelectPage] = React.useState(location.pathname);\n+  const [selectHome, setSelectHome] = React.useState(\n+    location.pathname === \"/\" ? true : false,\n+  );\n+  const [selectUser, setSelectUser] = React.useState(\n+    location.pathname === \"/\" ? true : false,\n+  );\n+  const [selectFile, setSelectFile] = React.useState(\n+    location.pathname === \"/\" ? true : false,\n+  );\n+  const [selectForm, setSelectForm] = React.useState(\n+    location.pathname === \"/\" ? true : false,\n+  );\n \n   console.log(location.pathname);\n \n   const handleSidebar = () => {\n"
+                },
+                {
+                    "date": 1641671154574,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,13 +36,13 @@\n   const handleSidebar = () => {\n     setSidebarState(!sidebarState);\n   };\n \n-  const handleSelectPage = (path) => {\n-    if (path === \"/\") {\n-      setSelectPage(\"home\");\n-    }\n-  };\n+  // const handleSelectPage = (path) => {\n+  //   if (path === \"/\") {\n+  //     setSelectPage(\"home\");\n+  //   }\n+  // };\n \n   const moveToPage = (path) => {\n     history.push(`${path}`);\n   };\n"
+                },
+                {
+                    "date": 1641671189511,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n   const [selectHome, setSelectHome] = React.useState(\n     location.pathname === \"/\" ? true : false,\n   );\n   const [selectUser, setSelectUser] = React.useState(\n-    location.pathname === \"/\" ? true : false,\n+    location.pathname === \"/custom_manage\" ? true : false,\n   );\n   const [selectFile, setSelectFile] = React.useState(\n     location.pathname === \"/\" ? true : false,\n   );\n"
+                },
+                {
+                    "date": 1641671195781,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n   const [selectUser, setSelectUser] = React.useState(\n     location.pathname === \"/custom_manage\" ? true : false,\n   );\n   const [selectFile, setSelectFile] = React.useState(\n-    location.pathname === \"/\" ? true : false,\n+    location.pathname === \"/file_storage\" ? true : false,\n   );\n   const [selectForm, setSelectForm] = React.useState(\n     location.pathname === \"/\" ? true : false,\n   );\n"
+                },
+                {
+                    "date": 1641671203675,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n   const [selectFile, setSelectFile] = React.useState(\n     location.pathname === \"/file_storage\" ? true : false,\n   );\n   const [selectForm, setSelectForm] = React.useState(\n-    location.pathname === \"/\" ? true : false,\n+    location.pathname === \"/consulting_form\" ? true : false,\n   );\n \n   console.log(location.pathname);\n \n"
+                },
+                {
+                    "date": 1641671229357,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,12 @@\n   const [selectForm, setSelectForm] = React.useState(\n     location.pathname === \"/consulting_form\" ? true : false,\n   );\n \n-  console.log(location.pathname);\n+  console.log(selectHome);\n+  console.log(selectUser);\n+  console.log(selectFile);\n+  console.log(selectForm);\n \n   const handleSidebar = () => {\n     setSidebarState(!sidebarState);\n   };\n"
+                },
+                {
+                    "date": 1641671378818,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,13 +39,21 @@\n   const handleSidebar = () => {\n     setSidebarState(!sidebarState);\n   };\n \n-  // const handleSelectPage = (path) => {\n-  //   if (path === \"/\") {\n-  //     setSelectPage(\"home\");\n-  //   }\n-  // };\n+  const handleSelectPage = (selectPage) => {\n+    if (selectPage === \"home\") {\n+      setSelectHome(true);\n+      setSelectUser(false);\n+      setSelectFile(false);\n+      setSelectForm(false);\n+    } else if (selectPage === \"user\") {\n+      setSelectHome(false);\n+      setSelectUser(true);\n+      setSelectFile(false);\n+      setSelectForm(false);\n+    }\n+  };\n \n   const moveToPage = (path) => {\n     history.push(`${path}`);\n   };\n"
+                },
+                {
+                    "date": 1641671428928,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,8 +50,18 @@\n       setSelectHome(false);\n       setSelectUser(true);\n       setSelectFile(false);\n       setSelectForm(false);\n+    } else if (selectPage === \"file\") {\n+      setSelectHome(false);\n+      setSelectUser(false);\n+      setSelectFile(true);\n+      setSelectForm(false);\n+    } else if (selectPage === \"form\") {\n+      setSelectHome(false);\n+      setSelectUser(false);\n+      setSelectFile(false);\n+      setSelectForm(true);\n     }\n   };\n \n   const moveToPage = (path) => {\n"
+                },
+                {
+                    "date": 1641671460837,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -85,8 +85,9 @@\n       <NavList state={sidebarState} className=\"nav-list\">\n         <li\n           onClick={() => {\n             moveToPage(\"/\");\n+            handleSelectPage(\"home\");\n           }}\n         >\n           <i className=\"ico home\"></i>\n           <span className=\"links_name\">홈</span>\n@@ -94,24 +95,27 @@\n         <li\n           className=\"on\"\n           onClick={() => {\n             moveToPage(\"/custom_manage\");\n+            handleSelectPage(\"user\");\n           }}\n         >\n           <i className=\"ico user\"></i>\n           <span className=\"links_name\">고객 관리</span>\n         </li>\n         <li\n           onClick={() => {\n             moveToPage(\"/file_storage\");\n+            handleSelectPage(\"file\");\n           }}\n         >\n           <i className=\"ico file\"></i>\n           <span className=\"links_name\">파일 보관함</span>\n         </li>\n         <li\n           onClick={() => {\n             moveToPage(\"/consulting_form\");\n+            handleSelectPage(\"form\");\n           }}\n         >\n           <i className=\"ico form\"></i>\n           <span className=\"links_name\">상담 신청폼</span>\n"
+                },
+                {
+                    "date": 1641671621707,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -92,9 +92,9 @@\n           <i className=\"ico home\"></i>\n           <span className=\"links_name\">홈</span>\n         </li>\n         <li\n-          className=\"on\"\n+          className={selectHome && \"on\"}\n           onClick={() => {\n             moveToPage(\"/custom_manage\");\n             handleSelectPage(\"user\");\n           }}\n"
+                },
+                {
+                    "date": 1641671650588,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -92,9 +92,9 @@\n           <i className=\"ico home\"></i>\n           <span className=\"links_name\">홈</span>\n         </li>\n         <li\n-          className={selectHome && \"on\"}\n+          {selectHome && 'className=on'}\n           onClick={() => {\n             moveToPage(\"/custom_manage\");\n             handleSelectPage(\"user\");\n           }}\n"
+                },
+                {
+                    "date": 1641671663771,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -92,9 +92,9 @@\n           <i className=\"ico home\"></i>\n           <span className=\"links_name\">홈</span>\n         </li>\n         <li\n-          {selectHome && 'className=on'}\n+          className={selectHome ? \"on\" : \"off\"}\n           onClick={() => {\n             moveToPage(\"/custom_manage\");\n             handleSelectPage(\"user\");\n           }}\n"
+                },
+                {
+                    "date": 1641671681303,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -92,9 +92,9 @@\n           <i className=\"ico home\"></i>\n           <span className=\"links_name\">홈</span>\n         </li>\n         <li\n-          className={selectHome ? \"on\" : \"off\"}\n+          className={selectHome && \"on\"}\n           onClick={() => {\n             moveToPage(\"/custom_manage\");\n             handleSelectPage(\"user\");\n           }}\n"
+                },
+                {
+                    "date": 1641671714609,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -83,8 +83,9 @@\n       </LogoDetail>\n \n       <NavList state={sidebarState} className=\"nav-list\">\n         <li\n+          className={selectHome && \"on\"}\n           onClick={() => {\n             moveToPage(\"/\");\n             handleSelectPage(\"home\");\n           }}\n@@ -92,9 +93,9 @@\n           <i className=\"ico home\"></i>\n           <span className=\"links_name\">홈</span>\n         </li>\n         <li\n-          className={selectHome && \"on\"}\n+          className={selectUser && \"on\"}\n           onClick={() => {\n             moveToPage(\"/custom_manage\");\n             handleSelectPage(\"user\");\n           }}\n@@ -102,8 +103,9 @@\n           <i className=\"ico user\"></i>\n           <span className=\"links_name\">고객 관리</span>\n         </li>\n         <li\n+          className={selectFile && \"on\"}\n           onClick={() => {\n             moveToPage(\"/file_storage\");\n             handleSelectPage(\"file\");\n           }}\n@@ -111,8 +113,9 @@\n           <i className=\"ico file\"></i>\n           <span className=\"links_name\">파일 보관함</span>\n         </li>\n         <li\n+          className={selectForm && \"on\"}\n           onClick={() => {\n             moveToPage(\"/consulting_form\");\n             handleSelectPage(\"form\");\n           }}\n"
+                },
+                {
+                    "date": 1641706422797,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,8 +29,9 @@\n   );\n   const [selectForm, setSelectForm] = React.useState(\n     location.pathname === \"/consulting_form\" ? true : false,\n   );\n+  const [selectPage, setSelectPage] = React.useState(location.pathname);\n \n   console.log(selectHome);\n   console.log(selectUser);\n   console.log(selectFile);\n@@ -39,29 +40,41 @@\n   const handleSidebar = () => {\n     setSidebarState(!sidebarState);\n   };\n \n-  const handleSelectPage = (selectPage) => {\n-    if (selectPage === \"home\") {\n-      setSelectHome(true);\n-      setSelectUser(false);\n-      setSelectFile(false);\n-      setSelectForm(false);\n-    } else if (selectPage === \"user\") {\n-      setSelectHome(false);\n-      setSelectUser(true);\n-      setSelectFile(false);\n-      setSelectForm(false);\n-    } else if (selectPage === \"file\") {\n-      setSelectHome(false);\n-      setSelectUser(false);\n-      setSelectFile(true);\n-      setSelectForm(false);\n-    } else if (selectPage === \"form\") {\n-      setSelectHome(false);\n-      setSelectUser(false);\n-      setSelectFile(false);\n-      setSelectForm(true);\n+  // const handleSelectPage = (selectPage) => {\n+  //   if (selectPage === \"home\") {\n+  //     setSelectHome(true);\n+  //     setSelectUser(false);\n+  //     setSelectFile(false);\n+  //     setSelectForm(false);\n+  //   } else if (selectPage === \"user\") {\n+  //     setSelectHome(false);\n+  //     setSelectUser(true);\n+  //     setSelectFile(false);\n+  //     setSelectForm(false);\n+  //   } else if (selectPage === \"file\") {\n+  //     setSelectHome(false);\n+  //     setSelectUser(false);\n+  //     setSelectFile(true);\n+  //     setSelectForm(false);\n+  //   } else if (selectPage === \"form\") {\n+  //     setSelectHome(false);\n+  //     setSelectUser(false);\n+  //     setSelectFile(false);\n+  //     setSelectForm(true);\n+  //   }\n+  // };\n+\n+  const handleSelectPage = (path) => {\n+    if (path === \"/\") {\n+      setSelectPage(\"home\");\n+    } else if (path === \"/custom_manage\") {\n+      setSelectPage(\"user\");\n+    } else if (path === \"/file_storage\") {\n+      setSelectPage(\"file\");\n+    } else if (path === \"/consulting_form\") {\n+      setSelectPage(\"form\");\n     }\n   };\n \n   const moveToPage = (path) => {\n"
+                },
+                {
+                    "date": 1641706481488,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -96,9 +96,9 @@\n       </LogoDetail>\n \n       <NavList state={sidebarState} className=\"nav-list\">\n         <li\n-          className={selectHome && \"on\"}\n+          className={selectPage === \"home\" && \"on\"}\n           onClick={() => {\n             moveToPage(\"/\");\n             handleSelectPage(\"home\");\n           }}\n@@ -106,9 +106,9 @@\n           <i className=\"ico home\"></i>\n           <span className=\"links_name\">홈</span>\n         </li>\n         <li\n-          className={selectUser && \"on\"}\n+          className={selectPage === \"user\" && \"on\"}\n           onClick={() => {\n             moveToPage(\"/custom_manage\");\n             handleSelectPage(\"user\");\n           }}\n@@ -116,9 +116,9 @@\n           <i className=\"ico user\"></i>\n           <span className=\"links_name\">고객 관리</span>\n         </li>\n         <li\n-          className={selectFile && \"on\"}\n+          className={selectPage === \"file\" && \"on\"}\n           onClick={() => {\n             moveToPage(\"/file_storage\");\n             handleSelectPage(\"file\");\n           }}\n@@ -126,9 +126,9 @@\n           <i className=\"ico file\"></i>\n           <span className=\"links_name\">파일 보관함</span>\n         </li>\n         <li\n-          className={selectForm && \"on\"}\n+          className={selectPage === \"form\" && \"on\"}\n           onClick={() => {\n             moveToPage(\"/consulting_form\");\n             handleSelectPage(\"form\");\n           }}\n"
+                },
+                {
+                    "date": 1641706591793,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,20 +17,20 @@\n   const history = useHistory();\n   const location = useLocation();\n \n   const [sidebarState, setSidebarState] = React.useState(false);\n-  const [selectHome, setSelectHome] = React.useState(\n-    location.pathname === \"/\" ? true : false,\n-  );\n-  const [selectUser, setSelectUser] = React.useState(\n-    location.pathname === \"/custom_manage\" ? true : false,\n-  );\n-  const [selectFile, setSelectFile] = React.useState(\n-    location.pathname === \"/file_storage\" ? true : false,\n-  );\n-  const [selectForm, setSelectForm] = React.useState(\n-    location.pathname === \"/consulting_form\" ? true : false,\n-  );\n+  // const [selectHome, setSelectHome] = React.useState(\n+  //   location.pathname === \"/\" ? true : false,\n+  // );\n+  // const [selectUser, setSelectUser] = React.useState(\n+  //   location.pathname === \"/custom_manage\" ? true : false,\n+  // );\n+  // const [selectFile, setSelectFile] = React.useState(\n+  //   location.pathname === \"/file_storage\" ? true : false,\n+  // );\n+  // const [selectForm, setSelectForm] = React.useState(\n+  //   location.pathname === \"/consulting_form\" ? true : false,\n+  // );\n   const [selectPage, setSelectPage] = React.useState(location.pathname);\n \n   console.log(selectHome);\n   console.log(selectUser);\n"
+                },
+                {
+                    "date": 1641706602378,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,13 +31,8 @@\n   //   location.pathname === \"/consulting_form\" ? true : false,\n   // );\n   const [selectPage, setSelectPage] = React.useState(location.pathname);\n \n-  console.log(selectHome);\n-  console.log(selectUser);\n-  console.log(selectFile);\n-  console.log(selectForm);\n-\n   const handleSidebar = () => {\n     setSidebarState(!sidebarState);\n   };\n \n"
+                },
+                {
+                    "date": 1641706680009,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -94,9 +94,9 @@\n         <li\n           className={selectPage === \"home\" && \"on\"}\n           onClick={() => {\n             moveToPage(\"/\");\n-            handleSelectPage(\"home\");\n+            handleSelectPage(location.pathname);\n           }}\n         >\n           <i className=\"ico home\"></i>\n           <span className=\"links_name\">홈</span>\n@@ -104,9 +104,9 @@\n         <li\n           className={selectPage === \"user\" && \"on\"}\n           onClick={() => {\n             moveToPage(\"/custom_manage\");\n-            handleSelectPage(\"user\");\n+            handleSelectPage(location.pathname);\n           }}\n         >\n           <i className=\"ico user\"></i>\n           <span className=\"links_name\">고객 관리</span>\n@@ -114,9 +114,9 @@\n         <li\n           className={selectPage === \"file\" && \"on\"}\n           onClick={() => {\n             moveToPage(\"/file_storage\");\n-            handleSelectPage(\"file\");\n+            handleSelectPage(location.pathname);\n           }}\n         >\n           <i className=\"ico file\"></i>\n           <span className=\"links_name\">파일 보관함</span>\n@@ -124,9 +124,9 @@\n         <li\n           className={selectPage === \"form\" && \"on\"}\n           onClick={() => {\n             moveToPage(\"/consulting_form\");\n-            handleSelectPage(\"form\");\n+            handleSelectPage(location.pathname);\n           }}\n         >\n           <i className=\"ico form\"></i>\n           <span className=\"links_name\">상담 신청폼</span>\n"
+                },
+                {
+                    "date": 1641706762522,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,8 +31,10 @@\n   //   location.pathname === \"/consulting_form\" ? true : false,\n   // );\n   const [selectPage, setSelectPage] = React.useState(location.pathname);\n \n+  console.log(selectPage);\n+\n   const handleSidebar = () => {\n     setSidebarState(!sidebarState);\n   };\n \n"
+                },
+                {
+                    "date": 1641706883783,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,15 +62,15 @@\n   //   }\n   // };\n \n   const handleSelectPage = (path) => {\n-    if (path === \"/\") {\n+    if (path === \"home\") {\n       setSelectPage(\"home\");\n-    } else if (path === \"/custom_manage\") {\n+    } else if (path === \"user\") {\n       setSelectPage(\"user\");\n-    } else if (path === \"/file_storage\") {\n+    } else if (path === \"file\") {\n       setSelectPage(\"file\");\n-    } else if (path === \"/consulting_form\") {\n+    } else if (path === \"form\") {\n       setSelectPage(\"form\");\n     }\n   };\n \n@@ -96,18 +96,18 @@\n         <li\n           className={selectPage === \"home\" && \"on\"}\n           onClick={() => {\n             moveToPage(\"/\");\n-            handleSelectPage(location.pathname);\n+            handleSelectPage(\"home\");\n           }}\n         >\n           <i className=\"ico home\"></i>\n           <span className=\"links_name\">홈</span>\n         </li>\n         <li\n           className={selectPage === \"user\" && \"on\"}\n           onClick={() => {\n-            moveToPage(\"/custom_manage\");\n+            moveToPage(\"user\");\n             handleSelectPage(location.pathname);\n           }}\n         >\n           <i className=\"ico user\"></i>\n@@ -116,9 +116,9 @@\n         <li\n           className={selectPage === \"file\" && \"on\"}\n           onClick={() => {\n             moveToPage(\"/file_storage\");\n-            handleSelectPage(location.pathname);\n+            handleSelectPage(\"file\");\n           }}\n         >\n           <i className=\"ico file\"></i>\n           <span className=\"links_name\">파일 보관함</span>\n@@ -126,9 +126,9 @@\n         <li\n           className={selectPage === \"form\" && \"on\"}\n           onClick={() => {\n             moveToPage(\"/consulting_form\");\n-            handleSelectPage(location.pathname);\n+            handleSelectPage(\"form\");\n           }}\n         >\n           <i className=\"ico form\"></i>\n           <span className=\"links_name\">상담 신청폼</span>\n"
+                },
+                {
+                    "date": 1641706938088,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -105,10 +105,10 @@\n         </li>\n         <li\n           className={selectPage === \"user\" && \"on\"}\n           onClick={() => {\n-            moveToPage(\"user\");\n-            handleSelectPage(location.pathname);\n+            moveToPage(\"/custom_manage\");\n+            handleSelectPage(\"user\");\n           }}\n         >\n           <i className=\"ico user\"></i>\n           <span className=\"links_name\">고객 관리</span>\n"
+                },
+                {
+                    "date": 1641708379053,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,12 @@\n   // );\n   // const [selectForm, setSelectForm] = React.useState(\n   //   location.pathname === \"/consulting_form\" ? true : false,\n   // );\n-  const [selectPage, setSelectPage] = React.useState(location.pathname);\n+  React.useEffect(() => {\n+    const path = location.pathname;\n+  }, []);\n+  const [selectPage, setSelectPage] = React.useState(path);\n \n   console.log(selectPage);\n \n   const handleSidebar = () => {\n"
+                },
+                {
+                    "date": 1641708384543,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,8 +32,9 @@\n   // );\n   React.useEffect(() => {\n     const path = location.pathname;\n   }, []);\n+\n   const [selectPage, setSelectPage] = React.useState(path);\n \n   console.log(selectPage);\n \n"
+                },
+                {
+                    "date": 1641708405711,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,14 +29,10 @@\n   // );\n   // const [selectForm, setSelectForm] = React.useState(\n   //   location.pathname === \"/consulting_form\" ? true : false,\n   // );\n-  React.useEffect(() => {\n-    const path = location.pathname;\n-  }, []);\n+  const [selectPage, setSelectPage] = React.useState(location.pathname);\n \n-  const [selectPage, setSelectPage] = React.useState(path);\n-\n   console.log(selectPage);\n \n   const handleSidebar = () => {\n     setSidebarState(!sidebarState);\n"
+                },
+                {
+                    "date": 1641708581988,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,16 +61,28 @@\n   //     setSelectForm(true);\n   //   }\n   // };\n \n+  // const handleSelectPage = (path) => {\n+  //   if (path === \"home\") {\n+  //     setSelectPage(\"home\");\n+  //   } else if (path === \"user\") {\n+  //     setSelectPage(\"user\");\n+  //   } else if (path === \"file\") {\n+  //     setSelectPage(\"file\");\n+  //   } else if (path === \"form\") {\n+  //     setSelectPage(\"form\");\n+  //   }\n+  // };\n+\n   const handleSelectPage = (path) => {\n-    if (path === \"home\") {\n+    if (path === \"/\") {\n       setSelectPage(\"home\");\n-    } else if (path === \"user\") {\n+    } else if (path === \"/custom_manage\") {\n       setSelectPage(\"user\");\n-    } else if (path === \"file\") {\n+    } else if (path === \"/file_storage\") {\n       setSelectPage(\"file\");\n-    } else if (path === \"form\") {\n+    } else if (path === \"/consulting_form\") {\n       setSelectPage(\"form\");\n     }\n   };\n \n@@ -96,9 +108,9 @@\n         <li\n           className={selectPage === \"home\" && \"on\"}\n           onClick={() => {\n             moveToPage(\"/\");\n-            handleSelectPage(\"home\");\n+            handleSelectPage(location.pathname);\n           }}\n         >\n           <i className=\"ico home\"></i>\n           <span className=\"links_name\">홈</span>\n@@ -106,9 +118,9 @@\n         <li\n           className={selectPage === \"user\" && \"on\"}\n           onClick={() => {\n             moveToPage(\"/custom_manage\");\n-            handleSelectPage(\"user\");\n+            handleSelectPage(location.pathname);\n           }}\n         >\n           <i className=\"ico user\"></i>\n           <span className=\"links_name\">고객 관리</span>\n@@ -116,9 +128,9 @@\n         <li\n           className={selectPage === \"file\" && \"on\"}\n           onClick={() => {\n             moveToPage(\"/file_storage\");\n-            handleSelectPage(\"file\");\n+            handleSelectPage(location.pathname);\n           }}\n         >\n           <i className=\"ico file\"></i>\n           <span className=\"links_name\">파일 보관함</span>\n@@ -126,9 +138,9 @@\n         <li\n           className={selectPage === \"form\" && \"on\"}\n           onClick={() => {\n             moveToPage(\"/consulting_form\");\n-            handleSelectPage(\"form\");\n+            handleSelectPage(location.pathname);\n           }}\n         >\n           <i className=\"ico form\"></i>\n           <span className=\"links_name\">상담 신청폼</span>\n"
+                },
+                {
+                    "date": 1641708770125,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -105,9 +105,9 @@\n       </LogoDetail>\n \n       <NavList state={sidebarState} className=\"nav-list\">\n         <li\n-          className={selectPage === \"home\" && \"on\"}\n+          className={selectPage === \"home\" ? \"on\" : \"off\"}\n           onClick={() => {\n             moveToPage(\"/\");\n             handleSelectPage(location.pathname);\n           }}\n@@ -115,9 +115,9 @@\n           <i className=\"ico home\"></i>\n           <span className=\"links_name\">홈</span>\n         </li>\n         <li\n-          className={selectPage === \"user\" && \"on\"}\n+          className={selectPage === \"user\" ? \"on\" : \"off\"}\n           onClick={() => {\n             moveToPage(\"/custom_manage\");\n             handleSelectPage(location.pathname);\n           }}\n@@ -125,9 +125,9 @@\n           <i className=\"ico user\"></i>\n           <span className=\"links_name\">고객 관리</span>\n         </li>\n         <li\n-          className={selectPage === \"file\" && \"on\"}\n+          className={selectPage === \"file\" ? \"on\" : \"off\"}\n           onClick={() => {\n             moveToPage(\"/file_storage\");\n             handleSelectPage(location.pathname);\n           }}\n@@ -135,9 +135,9 @@\n           <i className=\"ico file\"></i>\n           <span className=\"links_name\">파일 보관함</span>\n         </li>\n         <li\n-          className={selectPage === \"form\" && \"on\"}\n+          className={selectPage === \"form\" ? \"on\" : \"off\"}\n           onClick={() => {\n             moveToPage(\"/consulting_form\");\n             handleSelectPage(location.pathname);\n           }}\n"
+                },
+                {
+                    "date": 1641709002150,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,8 +32,9 @@\n   // );\n   const [selectPage, setSelectPage] = React.useState(location.pathname);\n \n   console.log(selectPage);\n+  console.log(location.pathname);\n \n   const handleSidebar = () => {\n     setSidebarState(!sidebarState);\n   };\n"
+                },
+                {
+                    "date": 1641709101899,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -109,9 +109,9 @@\n         <li\n           className={selectPage === \"home\" ? \"on\" : \"off\"}\n           onClick={() => {\n             moveToPage(\"/\");\n-            handleSelectPage(location.pathname);\n+            handleSelectPage(\"/\");\n           }}\n         >\n           <i className=\"ico home\"></i>\n           <span className=\"links_name\">홈</span>\n@@ -119,9 +119,9 @@\n         <li\n           className={selectPage === \"user\" ? \"on\" : \"off\"}\n           onClick={() => {\n             moveToPage(\"/custom_manage\");\n-            handleSelectPage(location.pathname);\n+            handleSelectPage(\"/custom_manage\");\n           }}\n         >\n           <i className=\"ico user\"></i>\n           <span className=\"links_name\">고객 관리</span>\n@@ -129,9 +129,9 @@\n         <li\n           className={selectPage === \"file\" ? \"on\" : \"off\"}\n           onClick={() => {\n             moveToPage(\"/file_storage\");\n-            handleSelectPage(location.pathname);\n+            handleSelectPage(\"/file_storage\");\n           }}\n         >\n           <i className=\"ico file\"></i>\n           <span className=\"links_name\">파일 보관함</span>\n@@ -139,9 +139,9 @@\n         <li\n           className={selectPage === \"form\" ? \"on\" : \"off\"}\n           onClick={() => {\n             moveToPage(\"/consulting_form\");\n-            handleSelectPage(location.pathname);\n+            handleSelectPage(\"/consulting_form\");\n           }}\n         >\n           <i className=\"ico form\"></i>\n           <span className=\"links_name\">상담 신청폼</span>\n"
+                },
+                {
+                    "date": 1641709184649,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,8 +38,12 @@\n   const handleSidebar = () => {\n     setSidebarState(!sidebarState);\n   };\n \n+  React.useEffect(() => {\n+    handleSelectPage(location.pathname);\n+  }, []);\n+\n   // const handleSelectPage = (selectPage) => {\n   //   if (selectPage === \"home\") {\n   //     setSelectHome(true);\n   //     setSelectUser(false);\n"
+                },
+                {
+                    "date": 1641709203736,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,44 +42,8 @@\n   React.useEffect(() => {\n     handleSelectPage(location.pathname);\n   }, []);\n \n-  // const handleSelectPage = (selectPage) => {\n-  //   if (selectPage === \"home\") {\n-  //     setSelectHome(true);\n-  //     setSelectUser(false);\n-  //     setSelectFile(false);\n-  //     setSelectForm(false);\n-  //   } else if (selectPage === \"user\") {\n-  //     setSelectHome(false);\n-  //     setSelectUser(true);\n-  //     setSelectFile(false);\n-  //     setSelectForm(false);\n-  //   } else if (selectPage === \"file\") {\n-  //     setSelectHome(false);\n-  //     setSelectUser(false);\n-  //     setSelectFile(true);\n-  //     setSelectForm(false);\n-  //   } else if (selectPage === \"form\") {\n-  //     setSelectHome(false);\n-  //     setSelectUser(false);\n-  //     setSelectFile(false);\n-  //     setSelectForm(true);\n-  //   }\n-  // };\n-\n-  // const handleSelectPage = (path) => {\n-  //   if (path === \"home\") {\n-  //     setSelectPage(\"home\");\n-  //   } else if (path === \"user\") {\n-  //     setSelectPage(\"user\");\n-  //   } else if (path === \"file\") {\n-  //     setSelectPage(\"file\");\n-  //   } else if (path === \"form\") {\n-  //     setSelectPage(\"form\");\n-  //   }\n-  // };\n-\n   const handleSelectPage = (path) => {\n     if (path === \"/\") {\n       setSelectPage(\"home\");\n     } else if (path === \"/custom_manage\") {\n"
+                },
+                {
+                    "date": 1641709227825,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,33 +17,18 @@\n   const history = useHistory();\n   const location = useLocation();\n \n   const [sidebarState, setSidebarState] = React.useState(false);\n-  // const [selectHome, setSelectHome] = React.useState(\n-  //   location.pathname === \"/\" ? true : false,\n-  // );\n-  // const [selectUser, setSelectUser] = React.useState(\n-  //   location.pathname === \"/custom_manage\" ? true : false,\n-  // );\n-  // const [selectFile, setSelectFile] = React.useState(\n-  //   location.pathname === \"/file_storage\" ? true : false,\n-  // );\n-  // const [selectForm, setSelectForm] = React.useState(\n-  //   location.pathname === \"/consulting_form\" ? true : false,\n-  // );\n   const [selectPage, setSelectPage] = React.useState(location.pathname);\n \n-  console.log(selectPage);\n-  console.log(location.pathname);\n+  React.useEffect(() => {\n+    handleSelectPage(location.pathname);\n+  }, []);\n \n   const handleSidebar = () => {\n     setSidebarState(!sidebarState);\n   };\n \n-  React.useEffect(() => {\n-    handleSelectPage(location.pathname);\n-  }, []);\n-\n   const handleSelectPage = (path) => {\n     if (path === \"/\") {\n       setSelectPage(\"home\");\n     } else if (path === \"/custom_manage\") {\n"
+                },
+                {
+                    "date": 1641709437734,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,9 +59,9 @@\n       </LogoDetail>\n \n       <NavList state={sidebarState} className=\"nav-list\">\n         <li\n-          className={selectPage === \"home\" ? \"on\" : \"off\"}\n+          className={selectPage === \"home\" && \"on\"}\n           onClick={() => {\n             moveToPage(\"/\");\n             handleSelectPage(\"/\");\n           }}\n"
+                },
+                {
+                    "date": 1641709444295,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,9 +59,9 @@\n       </LogoDetail>\n \n       <NavList state={sidebarState} className=\"nav-list\">\n         <li\n-          className={selectPage === \"home\" && \"on\"}\n+          className={selectPage === \"home\" ? \"on\" : \"off\"}\n           onClick={() => {\n             moveToPage(\"/\");\n             handleSelectPage(\"/\");\n           }}\n"
+                },
+                {
+                    "date": 1641709579567,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,10 +10,8 @@\n import icoFileHover from \"../../resource/images/nav/ico_file-hover.png\";\n import icoUserHover from \"../../resource/images/nav/ico_user-hover.png\";\n import icoFormHover from \"../../resource/images/nav/ico_form-hover.png\";\n \n-// import \"../../resource/css/layout.css\";\n-\n const SideBar = (props) => {\n   const history = useHistory();\n   const location = useLocation();\n \n"
+                },
+                {
+                    "date": 1641709648659,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,8 +26,12 @@\n     setSidebarState(!sidebarState);\n   };\n \n   const handleSelectPage = (path) => {\n+    if (path === location.pathname) {\n+      return;\n+    }\n+\n     if (path === \"/\") {\n       setSelectPage(\"home\");\n     } else if (path === \"/custom_manage\") {\n       setSelectPage(\"user\");\n"
+                },
+                {
+                    "date": 1641709664882,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,12 +26,8 @@\n     setSidebarState(!sidebarState);\n   };\n \n   const handleSelectPage = (path) => {\n-    if (path === location.pathname) {\n-      return;\n-    }\n-\n     if (path === \"/\") {\n       setSelectPage(\"home\");\n     } else if (path === \"/custom_manage\") {\n       setSelectPage(\"user\");\n"
+                },
+                {
+                    "date": 1641709785676,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,8 +26,12 @@\n     setSidebarState(!sidebarState);\n   };\n \n   const handleSelectPage = (path) => {\n+    if (path === location.pathname) {\n+      console.log(\"이미 들어와있는데?\");\n+    }\n+\n     if (path === \"/\") {\n       setSelectPage(\"home\");\n     } else if (path === \"/custom_manage\") {\n       setSelectPage(\"user\");\n"
+                },
+                {
+                    "date": 1641709801251,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,8 +28,9 @@\n \n   const handleSelectPage = (path) => {\n     if (path === location.pathname) {\n       console.log(\"이미 들어와있는데?\");\n+      return;\n     }\n \n     if (path === \"/\") {\n       setSelectPage(\"home\");\n"
+                },
+                {
+                    "date": 1641709816554,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n \n   const handleSelectPage = (path) => {\n     if (path === location.pathname) {\n       console.log(\"이미 들어와있는데?\");\n-      return;\n+      return null;\n     }\n \n     if (path === \"/\") {\n       setSelectPage(\"home\");\n"
+                },
+                {
+                    "date": 1641709856416,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,8 +28,10 @@\n \n   const handleSelectPage = (path) => {\n     if (path === location.pathname) {\n       console.log(\"이미 들어와있는데?\");\n+      console.log(path);\n+      console.log(location.pathname);\n       return null;\n     }\n \n     if (path === \"/\") {\n"
+                },
+                {
+                    "date": 1641718000041,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,15 +26,8 @@\n     setSidebarState(!sidebarState);\n   };\n \n   const handleSelectPage = (path) => {\n-    if (path === location.pathname) {\n-      console.log(\"이미 들어와있는데?\");\n-      console.log(path);\n-      console.log(location.pathname);\n-      return null;\n-    }\n-\n     if (path === \"/\") {\n       setSelectPage(\"home\");\n     } else if (path === \"/custom_manage\") {\n       setSelectPage(\"user\");\n"
+                },
+                {
+                    "date": 1641718192363,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -179,9 +179,9 @@\n     }\n \n     .ico.home {\n       &:hover {\n-        background-image: url(${icoHomeHover});\n+        background-image: url(../src/resource/images/);\n       }\n     }\n     .ico.file {\n       &:hover {\n"
+                },
+                {
+                    "date": 1641718201737,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -179,9 +179,9 @@\n     }\n \n     .ico.home {\n       &:hover {\n-        background-image: url(../src/resource/images/);\n+        background-image: url(../src/resource/images/nav/);\n       }\n     }\n     .ico.file {\n       &:hover {\n"
+                },
+                {
+                    "date": 1641718216650,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -179,9 +179,9 @@\n     }\n \n     .ico.home {\n       &:hover {\n-        background-image: url(../src/resource/images/nav/);\n+        background-image: url(../src/resource/images/nav/ico_user.png);\n       }\n     }\n     .ico.file {\n       &:hover {\n"
+                },
+                {
+                    "date": 1641718241729,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -179,9 +179,9 @@\n     }\n \n     .ico.home {\n       &:hover {\n-        background-image: url(../src/resource/images/nav/ico_user.png);\n+        background-image: url(../../src/resource/images/nav/ico_user.png);\n       }\n     }\n     .ico.file {\n       &:hover {\n"
+                },
+                {
+                    "date": 1641718259450,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -179,9 +179,9 @@\n     }\n \n     .ico.home {\n       &:hover {\n-        background-image: url(../../src/resource/images/nav/ico_user.png);\n+        background-image: url(../src/resource/images/nav/ico_user.png);\n       }\n     }\n     .ico.file {\n       &:hover {\n"
+                },
+                {
+                    "date": 1641718279261,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -179,9 +179,9 @@\n     }\n \n     .ico.home {\n       &:hover {\n-        background-image: url(../src/resource/images/nav/ico_user.png);\n+        background-image: url(../src/resource/images/nav/ico_chat.png);\n       }\n     }\n     .ico.file {\n       &:hover {\n"
+                },
+                {
+                    "date": 1641718296886,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -179,9 +179,9 @@\n     }\n \n     .ico.home {\n       &:hover {\n-        background-image: url(../src/resource/images/nav/ico_chat.png);\n+        background-image: url(${icoHomeHover});\n       }\n     }\n     .ico.file {\n       &:hover {\n"
+                },
+                {
+                    "date": 1641718303616,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -179,9 +179,9 @@\n     }\n \n     .ico.home {\n       &:hover {\n-        background-image: url(${icoHomeHover});\n+        background-image: url(../src/resource/images/nav/ico_chat.png);\n       }\n     }\n     .ico.file {\n       &:hover {\n"
+                },
+                {
+                    "date": 1641718337522,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -177,11 +177,11 @@\n       opacity: ${({ state }) => (state ? 1 : 0)};\n       ${({ state }) => state && \"pointer-events: auto\"};\n     }\n \n-    .ico.home {\n+    .home {\n       &:hover {\n-        background-image: url(../src/resource/images/nav/ico_chat.png);\n+        background-image: url(${icoHomeHover});\n       }\n     }\n     .ico.file {\n       &:hover {\n"
+                },
+                {
+                    "date": 1641718349598,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -177,9 +177,9 @@\n       opacity: ${({ state }) => (state ? 1 : 0)};\n       ${({ state }) => state && \"pointer-events: auto\"};\n     }\n \n-    .home {\n+    .ico.home {\n       &:hover {\n         background-image: url(${icoHomeHover});\n       }\n     }\n"
+                },
+                {
+                    "date": 1641718570660,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -148,9 +148,9 @@\n     /* min-width: 42px;\n     width: 42px; */\n     display: inline-block;\n     min-width: 48px;\n-    width: 48px;\n+    width: 42px;\n     height: 42px;\n     background-repeat: no-repeat;\n     background-position: center;\n     transition: all 0.5s;\n"
+                },
+                {
+                    "date": 1641718630847,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -148,9 +148,9 @@\n     /* min-width: 42px;\n     width: 42px; */\n     display: inline-block;\n     min-width: 48px;\n-    width: 42px;\n+    width: 48px;\n     height: 42px;\n     background-repeat: no-repeat;\n     background-position: center;\n     transition: all 0.5s;\n@@ -246,9 +246,8 @@\n   }\n \n   li {\n     position: relative;\n-    margin: 8px 0;\n     list-style: none;\n \n     display: flex;\n     width: ${({ state }) => (state ? \"100%\" : \"42px\")};\n"
+                },
+                {
+                    "date": 1641718891738,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -144,13 +144,13 @@\n       center;\n   }\n \n   .ico {\n-    /* min-width: 42px;\n-    width: 42px; */\n+    min-width: 42px;\n+    width: 42px;\n     display: inline-block;\n-    min-width: 48px;\n-    width: 48px;\n+    /* min-width: 48px; */\n+    /* width: 48px; */\n     height: 42px;\n     background-repeat: no-repeat;\n     background-position: center;\n     transition: all 0.5s;\n@@ -246,8 +246,9 @@\n   }\n \n   li {\n     position: relative;\n+    margin: 8px 0;\n     list-style: none;\n \n     display: flex;\n     width: ${({ state }) => (state ? \"100%\" : \"42px\")};\n"
+                },
+                {
+                    "date": 1641719031525,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -179,8 +179,9 @@\n     }\n \n     .ico.home {\n       &:hover {\n+        .on .ico.home\n         background-image: url(${icoHomeHover});\n       }\n     }\n     .ico.file {\n"
+                },
+                {
+                    "date": 1641719038010,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -179,10 +179,11 @@\n     }\n \n     .ico.home {\n       &:hover {\n-        .on .ico.home\n-        background-image: url(${icoHomeHover});\n+        .on .ico.home {\n+          background-image: url(${icoHomeHover});\n+        }\n       }\n     }\n     .ico.file {\n       &:hover {\n"
+                },
+                {
+                    "date": 1641719120085,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -179,9 +179,9 @@\n     }\n \n     .ico.home {\n       &:hover {\n-        .on .ico.home {\n+        .ico.home {\n           background-image: url(${icoHomeHover});\n         }\n       }\n     }\n"
+                },
+                {
+                    "date": 1641719131160,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -179,9 +179,9 @@\n     }\n \n     .ico.home {\n       &:hover {\n-        .ico.home {\n+        .on {\n           background-image: url(${icoHomeHover});\n         }\n       }\n     }\n"
+                },
+                {
+                    "date": 1641723737163,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -179,11 +179,9 @@\n     }\n \n     .ico.home {\n       &:hover {\n-        .on {\n-          background-image: url(${icoHomeHover});\n-        }\n+        background-image: url(${icoHomeHover});\n       }\n     }\n     .ico.file {\n       &:hover {\n@@ -244,8 +242,20 @@\n \n   .on {\n     background: #1d58ff;\n     color: #fff;\n+    .ico.home {\n+      background-image: url(${icoHomeHover});\n+    }\n+    .ico.file {\n+      background-image: url(${icoFileHover});\n+    }\n+    .ico.user {\n+      background-image: url(${icoUserHover});\n+    }\n+    .ico.form {\n+      background-image: url(${icoFormHover});\n+    }\n   }\n \n   li {\n     position: relative;\n"
+                },
+                {
+                    "date": 1641723870332,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -177,12 +177,10 @@\n       opacity: ${({ state }) => (state ? 1 : 0)};\n       ${({ state }) => state && \"pointer-events: auto\"};\n     }\n \n-    .ico.home {\n-      &:hover {\n-        background-image: url(${icoHomeHover});\n-      }\n+    .ico.home:hover {\n+      background-image: url(${icoHomeHover});\n     }\n     .ico.file {\n       &:hover {\n         background-image: url(${icoFileHover});\n"
+                },
+                {
+                    "date": 1641723902933,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -177,9 +177,10 @@\n       opacity: ${({ state }) => (state ? 1 : 0)};\n       ${({ state }) => state && \"pointer-events: auto\"};\n     }\n \n-    .ico.home:hover {\n+    .ico.home:hover,\n+    .on .ico.home {\n       background-image: url(${icoHomeHover});\n     }\n     .ico.file {\n       &:hover {\n"
+                },
+                {
+                    "date": 1641723924294,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -241,20 +241,8 @@\n \n   .on {\n     background: #1d58ff;\n     color: #fff;\n-    .ico.home {\n-      background-image: url(${icoHomeHover});\n-    }\n-    .ico.file {\n-      background-image: url(${icoFileHover});\n-    }\n-    .ico.user {\n-      background-image: url(${icoUserHover});\n-    }\n-    .ico.form {\n-      background-image: url(${icoFormHover});\n-    }\n   }\n \n   li {\n     position: relative;\n"
+                },
+                {
+                    "date": 1641723969522,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -176,28 +176,8 @@\n       transition: 0.4s;\n       opacity: ${({ state }) => (state ? 1 : 0)};\n       ${({ state }) => state && \"pointer-events: auto\"};\n     }\n-\n-    .ico.home:hover,\n-    .on .ico.home {\n-      background-image: url(${icoHomeHover});\n-    }\n-    .ico.file {\n-      &:hover {\n-        background-image: url(${icoFileHover});\n-      }\n-    }\n-    .ico.user {\n-      &:hover {\n-        background-image: url(${icoUserHover});\n-      }\n-    }\n-    .ico.form {\n-      &:hover {\n-        background-image: url(${icoFormHover});\n-      }\n-    }\n   }\n `;\n \n const LogoDetail = styled.div`\n@@ -238,8 +218,28 @@\n const NavList = styled.ul`\n   margin-top: 34px;\n   height: 100%;\n \n+  .ico.home:hover,\n+  .on .ico.home {\n+    background-image: url(${icoHomeHover});\n+  }\n+  .ico.file {\n+    &:hover {\n+      background-image: url(${icoFileHover});\n+    }\n+  }\n+  .ico.user {\n+    &:hover {\n+      background-image: url(${icoUserHover});\n+    }\n+  }\n+  .ico.form {\n+    &:hover {\n+      background-image: url(${icoFormHover});\n+    }\n+  }\n+\n   .on {\n     background: #1d58ff;\n     color: #fff;\n   }\n"
+                },
+                {
+                    "date": 1641723999799,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -223,21 +223,15 @@\n   .on .ico.home {\n     background-image: url(${icoHomeHover});\n   }\n   .ico.file {\n-    &:hover {\n-      background-image: url(${icoFileHover});\n-    }\n+    background-image: url(${icoFileHover});\n   }\n   .ico.user {\n-    &:hover {\n-      background-image: url(${icoUserHover});\n-    }\n+    background-image: url(${icoUserHover});\n   }\n   .ico.form {\n-    &:hover {\n-      background-image: url(${icoFormHover});\n-    }\n+    background-image: url(${icoFormHover});\n   }\n \n   .on {\n     background: #1d58ff;\n"
+                },
+                {
+                    "date": 1641724009344,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -218,8 +218,13 @@\n const NavList = styled.ul`\n   margin-top: 34px;\n   height: 100%;\n \n+  .on {\n+    background: #1d58ff;\n+    color: #fff;\n+  }\n+\n   .ico.home:hover,\n   .on .ico.home {\n     background-image: url(${icoHomeHover});\n   }\n@@ -232,13 +237,8 @@\n   .ico.form {\n     background-image: url(${icoFormHover});\n   }\n \n-  .on {\n-    background: #1d58ff;\n-    color: #fff;\n-  }\n-\n   li {\n     position: relative;\n     margin: 8px 0;\n     list-style: none;\n"
+                },
+                {
+                    "date": 1641724043142,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -227,9 +227,10 @@\n   .ico.home:hover,\n   .on .ico.home {\n     background-image: url(${icoHomeHover});\n   }\n-  .ico.file {\n+  .ico.file:hover,\n+  .on .ico.user {\n     background-image: url(${icoFileHover});\n   }\n   .ico.user {\n     background-image: url(${icoUserHover});\n"
+                },
+                {
+                    "date": 1641724076314,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -228,15 +228,17 @@\n   .on .ico.home {\n     background-image: url(${icoHomeHover});\n   }\n   .ico.file:hover,\n-  .on .ico.user {\n+  .on .ico.file {\n     background-image: url(${icoFileHover});\n   }\n-  .ico.user {\n+  .ico.user:hover,\n+  .on .ico.user {\n     background-image: url(${icoUserHover});\n   }\n-  .ico.form {\n+  .ico.form:hover,\n+  .on .ico.form {\n     background-image: url(${icoFormHover});\n   }\n \n   li {\n"
+                },
+                {
+                    "date": 1641724092836,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -227,16 +227,16 @@\n   .ico.home:hover,\n   .on .ico.home {\n     background-image: url(${icoHomeHover});\n   }\n+  .ico.user:hover,\n+  .on .ico.user {\n+    background-image: url(${icoUserHover});\n+  }\n   .ico.file:hover,\n   .on .ico.file {\n     background-image: url(${icoFileHover});\n   }\n-  .ico.user:hover,\n-  .on .ico.user {\n-    background-image: url(${icoUserHover});\n-  }\n   .ico.form:hover,\n   .on .ico.form {\n     background-image: url(${icoFormHover});\n   }\n"
+                },
+                {
+                    "date": 1641724184246,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,11 +5,15 @@\n import logoMark from \"../../resource/images/common/ico_logo-mark.png\";\n import logoName from \"../../resource/images/common/ico_logo-name.png\";\n import openBtn from \"../../resource/images/nav/ico_lnb-open.png\";\n import closeBtn from \"../../resource/images/nav/ico_lnb-close.png\";\n+import icoHome from \"../../resource/images/nav/ico_home.png\";\n import icoHomeHover from \"../../resource/images/nav/ico_home-hover.png\";\n+import icoFile from \"../../resource/images/nav/ico_file.png\";\n import icoFileHover from \"../../resource/images/nav/ico_file-hover.png\";\n+import icoUser from \"../../resource/images/nav/ico_user.png\";\n import icoUserHover from \"../../resource/images/nav/ico_user-hover.png\";\n+import icoForm from \"../../resource/images/nav/ico_form.png\";\n import icoFormHover from \"../../resource/images/nav/ico_form-hover.png\";\n \n const SideBar = (props) => {\n   const history = useHistory();\n"
+                },
+                {
+                    "date": 1641724311648,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -227,8 +227,21 @@\n     background: #1d58ff;\n     color: #fff;\n   }\n \n+  .ico.home {\n+    background-image: url(${icoHome});\n+  }\n+  .ico.user {\n+    background-image: url(${icoUser});\n+  }\n+  .ico.file {\n+    background-image: url(${icoFile});\n+  }\n+  .ico.form {\n+    background-image: url(${icoForm});\n+  }\n+\n   .ico.home:hover,\n   .on .ico.home {\n     background-image: url(${icoHomeHover});\n   }\n"
+                },
+                {
+                    "date": 1641724467488,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -160,8 +160,9 @@\n     transition: all 0.5s;\n   }\n \n   li {\n+    cursu\n     display: flex;\n     width: 42px;\n     height: 42px;\n     border-radius: 8px;\n"
+                },
+                {
+                    "date": 1641724476201,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -160,9 +160,9 @@\n     transition: all 0.5s;\n   }\n \n   li {\n-    cursu\n+    cursor: pointer;\n     display: flex;\n     width: 42px;\n     height: 42px;\n     border-radius: 8px;\n"
+                },
+                {
+                    "date": 1641724517333,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -169,8 +169,24 @@\n     align-items: center;\n     text-decoration: none;\n     transition: all 0.4s ease;\n     background: #02164f;\n+    .ico.home:hover,\n+    .on .ico.home {\n+      background-image: url(${icoHomeHover});\n+    }\n+    .ico.user:hover,\n+    .on .ico.user {\n+      background-image: url(${icoUserHover});\n+    }\n+    .ico.file:hover,\n+    .on .ico.file {\n+      background-image: url(${icoFileHover});\n+    }\n+    .ico.form:hover,\n+    .on .ico.form {\n+      background-image: url(${icoFormHover});\n+    }\n \n     .links_name {\n       padding-left: 12px;\n       color: #fff;\n@@ -241,25 +257,8 @@\n   .ico.form {\n     background-image: url(${icoForm});\n   }\n \n-  .ico.home:hover,\n-  .on .ico.home {\n-    background-image: url(${icoHomeHover});\n-  }\n-  .ico.user:hover,\n-  .on .ico.user {\n-    background-image: url(${icoUserHover});\n-  }\n-  .ico.file:hover,\n-  .on .ico.file {\n-    background-image: url(${icoFileHover});\n-  }\n-  .ico.form:hover,\n-  .on .ico.form {\n-    background-image: url(${icoFormHover});\n-  }\n-\n   li {\n     position: relative;\n     margin: 8px 0;\n     list-style: none;\n"
+                },
+                {
+                    "date": 1641724525616,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -169,24 +169,8 @@\n     align-items: center;\n     text-decoration: none;\n     transition: all 0.4s ease;\n     background: #02164f;\n-    .ico.home:hover,\n-    .on .ico.home {\n-      background-image: url(${icoHomeHover});\n-    }\n-    .ico.user:hover,\n-    .on .ico.user {\n-      background-image: url(${icoUserHover});\n-    }\n-    .ico.file:hover,\n-    .on .ico.file {\n-      background-image: url(${icoFileHover});\n-    }\n-    .ico.form:hover,\n-    .on .ico.form {\n-      background-image: url(${icoFormHover});\n-    }\n \n     .links_name {\n       padding-left: 12px;\n       color: #fff;\n"
+                },
+                {
+                    "date": 1641724838616,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,14 +5,18 @@\n import logoMark from \"../../resource/images/common/ico_logo-mark.png\";\n import logoName from \"../../resource/images/common/ico_logo-name.png\";\n import openBtn from \"../../resource/images/nav/ico_lnb-open.png\";\n import closeBtn from \"../../resource/images/nav/ico_lnb-close.png\";\n+\n import icoHome from \"../../resource/images/nav/ico_home.png\";\n import icoHomeHover from \"../../resource/images/nav/ico_home-hover.png\";\n+\n import icoFile from \"../../resource/images/nav/ico_file.png\";\n import icoFileHover from \"../../resource/images/nav/ico_file-hover.png\";\n+\n import icoUser from \"../../resource/images/nav/ico_user.png\";\n import icoUserHover from \"../../resource/images/nav/ico_user-hover.png\";\n+\n import icoForm from \"../../resource/images/nav/ico_form.png\";\n import icoFormHover from \"../../resource/images/nav/ico_form-hover.png\";\n \n const SideBar = (props) => {\n@@ -241,8 +245,25 @@\n   .ico.form {\n     background-image: url(${icoForm});\n   }\n \n+  .ico.home:hover,\n+  .on .ico.home {\n+    background-image: url(${icoHomeHover});\n+  }\n+  .ico.user:hover,\n+  .on .ico.user {\n+    background-image: url(${icoUserHover});\n+  }\n+  .ico.file:hover,\n+  .on .ico.file {\n+    background-image: url(${icoFileHover});\n+  }\n+  .ico.form:hover,\n+  .on .ico.form {\n+    background-image: url(${icoFormHover});\n+  }\n+\n   li {\n     position: relative;\n     margin: 8px 0;\n     list-style: none;\n"
+                },
+                {
+                    "date": 1641724890824,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n import { useHistory, useLocation } from \"react-router\";\n \n import logoMark from \"../../resource/images/common/ico_logo-mark.png\";\n import logoName from \"../../resource/images/common/ico_logo-name.png\";\n+\n import openBtn from \"../../resource/images/nav/ico_lnb-open.png\";\n import closeBtn from \"../../resource/images/nav/ico_lnb-close.png\";\n \n import icoHome from \"../../resource/images/nav/ico_home.png\";\n@@ -147,10 +148,9 @@\n     top: 106px;\n     z-index: 1;\n     width: 30px;\n     height: 30px;\n-    background: url(${({ state }) => (state ? closeBtn : openBtn)}) no-repeat\n-      center;\n+    background: url(${({ state }) => (state ? closeBtn : openBtn)};\n   }\n \n   .ico {\n     min-width: 42px;\n"
+                },
+                {
+                    "date": 1641724904003,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -148,9 +148,9 @@\n     top: 106px;\n     z-index: 1;\n     width: 30px;\n     height: 30px;\n-    background: url(${({ state }) => (state ? closeBtn : openBtn)};\n+    background: url(${({ state }) => (state ? closeBtn : openBtn)});\n   }\n \n   .ico {\n     min-width: 42px;\n"
+                },
+                {
+                    "date": 1641724925299,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -148,9 +148,10 @@\n     top: 106px;\n     z-index: 1;\n     width: 30px;\n     height: 30px;\n-    background: url(${({ state }) => (state ? closeBtn : openBtn)});\n+    background: url(${({ state }) => (state ? closeBtn : openBtn)}) no-repeat\n+      center;\n   }\n \n   .ico {\n     min-width: 42px;\n"
+                },
+                {
+                    "date": 1641724956576,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -148,10 +148,8 @@\n     top: 106px;\n     z-index: 1;\n     width: 30px;\n     height: 30px;\n-    background: url(${({ state }) => (state ? closeBtn : openBtn)}) no-repeat\n-      center;\n   }\n \n   .ico {\n     min-width: 42px;\n"
+                },
+                {
+                    "date": 1641724966038,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -148,8 +148,9 @@\n     top: 106px;\n     z-index: 1;\n     width: 30px;\n     height: 30px;\n+    background: url(${({ state }) => (state ? closeBtn : openBtn)});\n   }\n \n   .ico {\n     min-width: 42px;\n"
+                },
+                {
+                    "date": 1641725077435,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -148,9 +148,10 @@\n     top: 106px;\n     z-index: 1;\n     width: 30px;\n     height: 30px;\n-    background: url(${({ state }) => (state ? closeBtn : openBtn)});\n+    background: url(${({ state }) => (state ? closeBtn : openBtn)}) no-repeat\n+      center;\n   }\n \n   .ico {\n     min-width: 42px;\n@@ -277,5 +278,8 @@\n     transition: all 0.4s ease;\n     background: #02164f;\n   }\n `;\n+\n+const Btm = styled.ul``;\n+\n export default SideBar;\n"
+                },
+                {
+                    "date": 1641725108713,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -106,9 +106,9 @@\n           <i className=\"ico form\"></i>\n           <span className=\"links_name\">상담 신청폼</span>\n         </li>\n       </NavList>\n-      <ul className=\"btm\">\n+      <Btm className=\"btm\">\n         <li>\n           <a href=\"#\">\n             <i className=\"ico help\"></i>\n             <span className=\"links_name\">자주 묻는 질문</span>\n@@ -121,9 +121,9 @@\n         >\n           <i className=\"ico setting\"></i>\n           <span className=\"links_name\">설정</span>\n         </li>\n-      </ul>\n+      </Btm>\n       <button type=\"button\" className=\"btn-lnb-close\" onClick={handleSidebar}>\n         <span className=\"hide\">메뉴 닫기</span>\n       </button>\n     </Sidebar>\n"
+                },
+                {
+                    "date": 1641725171043,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -279,7 +279,22 @@\n     background: #02164f;\n   }\n `;\n \n-const Btm = styled.ul``;\n+const Btm = styled.ul`\n+  li {\n+    position: relative;\n+    margin: 8px 0;\n+    list-style: none;\n \n+    display: flex;\n+    width: ${({ state }) => (state ? \"100%\" : \"42px\")};\n+    height: 42px;\n+    border-radius: 8px;\n+    align-items: center;\n+    text-decoration: none;\n+    transition: all 0.4s ease;\n+    background: #02164f;\n+  }\n+`;\n+\n export default SideBar;\n"
+                },
+                {
+                    "date": 1641725178129,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -286,9 +286,8 @@\n     margin: 8px 0;\n     list-style: none;\n \n     display: flex;\n-    width: ${({ state }) => (state ? \"100%\" : \"42px\")};\n     height: 42px;\n     border-radius: 8px;\n     align-items: center;\n     text-decoration: none;\n"
+                },
+                {
+                    "date": 1641725186697,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -284,16 +284,8 @@\n   li {\n     position: relative;\n     margin: 8px 0;\n     list-style: none;\n-\n-    display: flex;\n-    height: 42px;\n-    border-radius: 8px;\n-    align-items: center;\n-    text-decoration: none;\n-    transition: all 0.4s ease;\n-    background: #02164f;\n   }\n `;\n \n export default SideBar;\n"
+                },
+                {
+                    "date": 1641725270933,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -281,11 +281,10 @@\n `;\n \n const Btm = styled.ul`\n   li {\n-    position: relative;\n-    margin: 8px 0;\n-    list-style: none;\n+    min-width: 42px;\n+    width: 42px;\n   }\n `;\n \n export default SideBar;\n"
+                },
+                {
+                    "date": 1641725310401,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -167,9 +167,9 @@\n \n   li {\n     cursor: pointer;\n     display: flex;\n-    width: 42px;\n+    width: 48px;\n     height: 42px;\n     border-radius: 8px;\n     align-items: center;\n     text-decoration: none;\n"
+                },
+                {
+                    "date": 1641725329843,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -153,11 +153,11 @@\n       center;\n   }\n \n   .ico {\n+    display: inline-block;\n     min-width: 42px;\n     width: 42px;\n-    display: inline-block;\n     /* min-width: 48px; */\n     /* width: 48px; */\n     height: 42px;\n     background-repeat: no-repeat;\n@@ -167,9 +167,9 @@\n \n   li {\n     cursor: pointer;\n     display: flex;\n-    width: 48px;\n+    width: 42px;\n     height: 42px;\n     border-radius: 8px;\n     align-items: center;\n     text-decoration: none;\n"
+                },
+                {
+                    "date": 1641725351087,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -108,12 +108,10 @@\n         </li>\n       </NavList>\n       <Btm className=\"btm\">\n         <li>\n-          <a href=\"#\">\n-            <i className=\"ico help\"></i>\n-            <span className=\"links_name\">자주 묻는 질문</span>\n-          </a>\n+          <i className=\"ico help\"></i>\n+          <span className=\"links_name\">자주 묻는 질문</span>\n         </li>\n         <li\n           onClick={() => {\n             moveToPage(\"/setting\");\n"
+                },
+                {
+                    "date": 1641725392013,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -139,19 +139,8 @@\n   box-sizing: border-box;\n   z-index: 99;\n   transition: all 0.4s ease;\n \n-  .btn-lnb-close {\n-    position: absolute;\n-    right: -15px;\n-    top: 106px;\n-    z-index: 1;\n-    width: 30px;\n-    height: 30px;\n-    background: url(${({ state }) => (state ? closeBtn : openBtn)}) no-repeat\n-      center;\n-  }\n-\n   .ico {\n     display: inline-block;\n     min-width: 42px;\n     width: 42px;\n@@ -184,8 +173,19 @@\n       transition: 0.4s;\n       opacity: ${({ state }) => (state ? 1 : 0)};\n       ${({ state }) => state && \"pointer-events: auto\"};\n     }\n+\n+    .btn-lnb-close {\n+      position: absolute;\n+      right: -15px;\n+      top: 106px;\n+      z-index: 1;\n+      width: 30px;\n+      height: 30px;\n+      background: url(${({ state }) => (state ? closeBtn : openBtn)}) no-repeat\n+        center;\n+    }\n   }\n `;\n \n const LogoDetail = styled.div`\n"
+                },
+                {
+                    "date": 1641725419321,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -277,12 +277,7 @@\n     background: #02164f;\n   }\n `;\n \n-const Btm = styled.ul`\n-  li {\n-    min-width: 42px;\n-    width: 42px;\n-  }\n-`;\n+const Btm = styled.ul``;\n \n export default SideBar;\n"
+                },
+                {
+                    "date": 1641725542633,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -277,7 +277,12 @@\n     background: #02164f;\n   }\n `;\n \n-const Btm = styled.ul``;\n+const Btm = styled.ul`\n+  li:hover {\n+    background: rgba(255, 255, 255, 0.26);\n+    border-radius: 25px;\n+  }\n+`;\n \n export default SideBar;\n"
+                },
+                {
+                    "date": 1641725609455,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -244,9 +244,9 @@\n   .ico.form {\n     background-image: url(${icoForm});\n   }\n \n-  .ico.home:hover,\n+  li:hover,\n   .on .ico.home {\n     background-image: url(${icoHomeHover});\n   }\n   .ico.user:hover,\n"
+                },
+                {
+                    "date": 1641725619526,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -244,9 +244,9 @@\n   .ico.form {\n     background-image: url(${icoForm});\n   }\n \n-  li:hover,\n+  .ico.home:hover,\n   .on .ico.home {\n     background-image: url(${icoHomeHover});\n   }\n   .ico.user:hover,\n"
+                },
+                {
+                    "date": 1641725676539,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -244,8 +244,14 @@\n   .ico.form {\n     background-image: url(${icoForm});\n   }\n \n+  li:hover {\n+    .ico.home {\n+      background-image: url(${icoHomeHover});\n+    }\n+  }\n+\n   .ico.home:hover,\n   .on .ico.home {\n     background-image: url(${icoHomeHover});\n   }\n"
+                },
+                {
+                    "date": 1641725729828,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -248,23 +248,28 @@\n   li:hover {\n     .ico.home {\n       background-image: url(${icoHomeHover});\n     }\n+    .ico.user {\n+      background-image: url(${icoUserHover});\n+    }\n+    .ico.file {\n+      background-image: url(${icoFileHover});\n+    }\n+    .ico.form {\n+      background-image: url(${icoFormHover});\n+    }\n   }\n \n-  .ico.home:hover,\n   .on .ico.home {\n     background-image: url(${icoHomeHover});\n   }\n-  .ico.user:hover,\n   .on .ico.user {\n     background-image: url(${icoUserHover});\n   }\n-  .ico.file:hover,\n   .on .ico.file {\n     background-image: url(${icoFileHover});\n   }\n-  .ico.form:hover,\n   .on .ico.form {\n     background-image: url(${icoFormHover});\n   }\n \n"
+                },
+                {
+                    "date": 1641725820096,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -226,13 +226,8 @@\n const NavList = styled.ul`\n   margin-top: 34px;\n   height: 100%;\n \n-  .on {\n-    background: #1d58ff;\n-    color: #fff;\n-  }\n-\n   .ico.home {\n     background-image: url(${icoHome});\n   }\n   .ico.user {\n@@ -259,21 +254,25 @@\n       background-image: url(${icoFormHover});\n     }\n   }\n \n-  .on .ico.home {\n-    background-image: url(${icoHomeHover});\n+  .on {\n+    background: #1d58ff;\n+    color: #fff;\n+\n+    .ico.home {\n+      background-image: url(${icoHomeHover});\n+    }\n+    .ico.user {\n+      background-image: url(${icoUserHover});\n+    }\n+    .ico.file {\n+      background-image: url(${icoFileHover});\n+    }\n+    .ico.form {\n+      background-image: url(${icoFormHover});\n+    }\n   }\n-  .on .ico.user {\n-    background-image: url(${icoUserHover});\n-  }\n-  .on .ico.file {\n-    background-image: url(${icoFileHover});\n-  }\n-  .on .ico.form {\n-    background-image: url(${icoFormHover});\n-  }\n-\n   li {\n     position: relative;\n     margin: 8px 0;\n     list-style: none;\n"
+                },
+                {
+                    "date": 1641725849414,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -271,8 +271,9 @@\n     .ico.form {\n       background-image: url(${icoFormHover});\n     }\n   }\n+\n   li {\n     position: relative;\n     margin: 8px 0;\n     list-style: none;\n"
+                },
+                {
+                    "date": 1641725879485,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -239,23 +239,8 @@\n   .ico.form {\n     background-image: url(${icoForm});\n   }\n \n-  li:hover {\n-    .ico.home {\n-      background-image: url(${icoHomeHover});\n-    }\n-    .ico.user {\n-      background-image: url(${icoUserHover});\n-    }\n-    .ico.file {\n-      background-image: url(${icoFileHover});\n-    }\n-    .ico.form {\n-      background-image: url(${icoFormHover});\n-    }\n-  }\n-\n   .on {\n     background: #1d58ff;\n     color: #fff;\n \n"
+                },
+                {
+                    "date": 1641725985582,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -181,10 +181,8 @@\n       top: 106px;\n       z-index: 1;\n       width: 30px;\n       height: 30px;\n-      background: url(${({ state }) => (state ? closeBtn : openBtn)}) no-repeat\n-        center;\n     }\n   }\n `;\n \n@@ -239,8 +237,23 @@\n   .ico.form {\n     background-image: url(${icoForm});\n   }\n \n+  li:hover {\n+    .ico.home {\n+      background-image: url(${icoHomeHover});\n+    }\n+    .ico.user {\n+      background-image: url(${icoUserHover});\n+    }\n+    .ico.file {\n+      background-image: url(${icoFileHover});\n+    }\n+    .ico.form {\n+      background-image: url(${icoFormHover});\n+    }\n+  }\n+\n   .on {\n     background: #1d58ff;\n     color: #fff;\n \n"
+                },
+                {
+                    "date": 1641726401619,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -178,11 +178,13 @@\n     .btn-lnb-close {\n       position: absolute;\n       right: -15px;\n       top: 106px;\n-      z-index: 1;\n+      z-index: 1000;\n       width: 30px;\n       height: 30px;\n+      background: url(${({ state }) => (state ? closeBtn : openBtn)}) no-repeat\n+        center;\n     }\n   }\n `;\n \n"
+                },
+                {
+                    "date": 1641726413507,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -178,10 +178,10 @@\n     .btn-lnb-close {\n       position: absolute;\n       right: -15px;\n       top: 106px;\n-      z-index: 1000;\n-      width: 30px;\n+      z-index: 1;\n+      width: 300px;\n       height: 30px;\n       background: url(${({ state }) => (state ? closeBtn : openBtn)}) no-repeat\n         center;\n     }\n"
+                },
+                {
+                    "date": 1641726444518,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -179,9 +179,9 @@\n       position: absolute;\n       right: -15px;\n       top: 106px;\n       z-index: 1;\n-      width: 300px;\n+      width: 30px;\n       height: 30px;\n       background: url(${({ state }) => (state ? closeBtn : openBtn)}) no-repeat\n         center;\n     }\n@@ -226,54 +226,8 @@\n const NavList = styled.ul`\n   margin-top: 34px;\n   height: 100%;\n \n-  .ico.home {\n-    background-image: url(${icoHome});\n-  }\n-  .ico.user {\n-    background-image: url(${icoUser});\n-  }\n-  .ico.file {\n-    background-image: url(${icoFile});\n-  }\n-  .ico.form {\n-    background-image: url(${icoForm});\n-  }\n-\n-  li:hover {\n-    .ico.home {\n-      background-image: url(${icoHomeHover});\n-    }\n-    .ico.user {\n-      background-image: url(${icoUserHover});\n-    }\n-    .ico.file {\n-      background-image: url(${icoFileHover});\n-    }\n-    .ico.form {\n-      background-image: url(${icoFormHover});\n-    }\n-  }\n-\n-  .on {\n-    background: #1d58ff;\n-    color: #fff;\n-\n-    .ico.home {\n-      background-image: url(${icoHomeHover});\n-    }\n-    .ico.user {\n-      background-image: url(${icoUserHover});\n-    }\n-    .ico.file {\n-      background-image: url(${icoFileHover});\n-    }\n-    .ico.form {\n-      background-image: url(${icoFormHover});\n-    }\n-  }\n-\n   li {\n     position: relative;\n     margin: 8px 0;\n     list-style: none;\n"
+                },
+                {
+                    "date": 1641726450278,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -226,8 +226,54 @@\n const NavList = styled.ul`\n   margin-top: 34px;\n   height: 100%;\n \n+  .ico.home {\n+    background-image: url(${icoHome});\n+  }\n+  .ico.user {\n+    background-image: url(${icoUser});\n+  }\n+  .ico.file {\n+    background-image: url(${icoFile});\n+  }\n+  .ico.form {\n+    background-image: url(${icoForm});\n+  }\n+\n+  li:hover {\n+    .ico.home {\n+      background-image: url(${icoHomeHover});\n+    }\n+    .ico.user {\n+      background-image: url(${icoUserHover});\n+    }\n+    .ico.file {\n+      background-image: url(${icoFileHover});\n+    }\n+    .ico.form {\n+      background-image: url(${icoFormHover});\n+    }\n+  }\n+\n+  .on {\n+    background: #1d58ff;\n+    color: #fff;\n+\n+    .ico.home {\n+      background-image: url(${icoHomeHover});\n+    }\n+    .ico.user {\n+      background-image: url(${icoUserHover});\n+    }\n+    .ico.file {\n+      background-image: url(${icoFileHover});\n+    }\n+    .ico.form {\n+      background-image: url(${icoFormHover});\n+    }\n+  }\n+\n   li {\n     position: relative;\n     margin: 8px 0;\n     list-style: none;\n@@ -242,12 +288,7 @@\n     background: #02164f;\n   }\n `;\n \n-const Btm = styled.ul`\n-  li:hover {\n-    background: rgba(255, 255, 255, 0.26);\n-    border-radius: 25px;\n-  }\n-`;\n+const Btm = styled.ul``;\n \n export default SideBar;\n"
+                },
+                {
+                    "date": 1641726660645,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -173,19 +173,19 @@\n       transition: 0.4s;\n       opacity: ${({ state }) => (state ? 1 : 0)};\n       ${({ state }) => state && \"pointer-events: auto\"};\n     }\n+  }\n \n-    .btn-lnb-close {\n-      position: absolute;\n-      right: -15px;\n-      top: 106px;\n-      z-index: 1;\n-      width: 30px;\n-      height: 30px;\n-      background: url(${({ state }) => (state ? closeBtn : openBtn)}) no-repeat\n-        center;\n-    }\n+  .btn-lnb-close {\n+    position: absolute;\n+    right: -15px;\n+    top: 106px;\n+    z-index: 1;\n+    width: 30px;\n+    height: 30px;\n+    background: url(${({ state }) => (state ? closeBtn : openBtn)}) no-repeat\n+      center;\n   }\n `;\n \n const LogoDetail = styled.div`\n@@ -288,7 +288,12 @@\n     background: #02164f;\n   }\n `;\n \n-const Btm = styled.ul``;\n+const Btm = styled.ul`\n+  li:hover {\n+    background: rgba(255, 255, 255, 0.26);\n+    border-radius: 25px;\n+  }\n+`;\n \n export default SideBar;\n"
+                },
+                {
+                    "date": 1641733890194,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -239,8 +239,23 @@\n   .ico.form {\n     background-image: url(${icoForm});\n   }\n \n+  li {\n+    position: relative;\n+    margin: 8px 0;\n+    list-style: none;\n+\n+    display: flex;\n+    width: ${({ state }) => (state ? \"100%\" : \"42px\")};\n+    height: 42px;\n+    border-radius: 8px;\n+    align-items: center;\n+    text-decoration: none;\n+    transition: all 0.4s ease;\n+    background: #02164f;\n+  }\n+\n   li:hover {\n     .ico.home {\n       background-image: url(${icoHomeHover});\n     }\n@@ -271,23 +286,8 @@\n     .ico.form {\n       background-image: url(${icoFormHover});\n     }\n   }\n-\n-  li {\n-    position: relative;\n-    margin: 8px 0;\n-    list-style: none;\n-\n-    display: flex;\n-    width: ${({ state }) => (state ? \"100%\" : \"42px\")};\n-    height: 42px;\n-    border-radius: 8px;\n-    align-items: center;\n-    text-decoration: none;\n-    transition: all 0.4s ease;\n-    background: #02164f;\n-  }\n `;\n \n const Btm = styled.ul`\n   li:hover {\n"
+                },
+                {
+                    "date": 1641736791157,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,12 +51,9 @@\n     history.push(`${path}`);\n   };\n \n   return (\n-    <Sidebar\n-      state={sidebarState}\n-      className={sidebarState ? \"sidebar open\" : \"sidebar\"}\n-    >\n+    <Sidebar state={sidebarState}>\n       <LogoDetail state={sidebarState}>\n         <button type=\"button\" className=\"btn-side-open\" onClick={handleSidebar}>\n           <img src={logoMark} alt=\"오더체크\" />\n         </button>\n"
+                },
+                {
+                    "date": 1641736808714,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,12 @@\n     history.push(`${path}`);\n   };\n \n   return (\n-    <Sidebar state={sidebarState}>\n+    <Sidebar\n+      state={sidebarState}\n+      className={sidebarState ? \"sidebar open\" : \"sidebar\"}\n+    >\n       <LogoDetail state={sidebarState}>\n         <button type=\"button\" className=\"btn-side-open\" onClick={handleSidebar}>\n           <img src={logoMark} alt=\"오더체크\" />\n         </button>\n"
+                },
+                {
+                    "date": 1641736972166,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,10 @@\n \n import icoForm from \"../../resource/images/nav/ico_form.png\";\n import icoFormHover from \"../../resource/images/nav/ico_form-hover.png\";\n \n+import setting from \"../../resource/images/nav/ico_setting.png\";\n+\n const SideBar = (props) => {\n   const history = useHistory();\n   const location = useLocation();\n \n"
+                },
+                {
+                    "date": 1641737146090,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,10 @@\n \n import icoForm from \"../../resource/images/nav/ico_form.png\";\n import icoFormHover from \"../../resource/images/nav/ico_form-hover.png\";\n \n-import setting from \"../../resource/images/nav/ico_setting.png\";\n+import icoHelp from \"../../resource/images/nav/ico_help.png\";\n+import icoSetting from \"../../resource/images/nav/ico_setting.png\";\n \n const SideBar = (props) => {\n   const history = useHistory();\n   const location = useLocation();\n"
+                },
+                {
+                    "date": 1641737171378,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -296,7 +296,14 @@\n   li:hover {\n     background: rgba(255, 255, 255, 0.26);\n     border-radius: 25px;\n   }\n+\n+  .ico.help {\n+    background-image: url(../images/nav/ico_help.png);\n+  }\n+  .ico.setting {\n+    background-image: url(../images/nav/ico_setting.png);\n+  }\n `;\n \n export default SideBar;\n"
+                },
+                {
+                    "date": 1641737209542,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -298,12 +298,12 @@\n     border-radius: 25px;\n   }\n \n   .ico.help {\n-    background-image: url(../images/nav/ico_help.png);\n+    background-image: url(${icoHelp});\n   }\n   .ico.setting {\n-    background-image: url(../images/nav/ico_setting.png);\n+    background-image: url(${icoSetting});\n   }\n `;\n \n export default SideBar;\n"
+                },
+                {
+                    "date": 1641737223411,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,12 +54,9 @@\n     history.push(`${path}`);\n   };\n \n   return (\n-    <Sidebar\n-      state={sidebarState}\n-      className={sidebarState ? \"sidebar open\" : \"sidebar\"}\n-    >\n+    <Sidebar state={sidebarState}>\n       <LogoDetail state={sidebarState}>\n         <button type=\"button\" className=\"btn-side-open\" onClick={handleSidebar}>\n           <img src={logoMark} alt=\"오더체크\" />\n         </button>\n"
+                },
+                {
+                    "date": 1641737427126,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,9 +54,12 @@\n     history.push(`${path}`);\n   };\n \n   return (\n-    <Sidebar state={sidebarState}>\n+    <Sidebar\n+      state={sidebarState}\n+      className={sidebarState ? \"sidebar open\" : \"sidebar\"}\n+    >\n       <LogoDetail state={sidebarState}>\n         <button type=\"button\" className=\"btn-side-open\" onClick={handleSidebar}>\n           <img src={logoMark} alt=\"오더체크\" />\n         </button>\n"
+                },
+                {
+                    "date": 1641793839350,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,9 +54,9 @@\n     history.push(`${path}`);\n   };\n \n   return (\n-    <Sidebar\n+    <SidebarWrap\n       state={sidebarState}\n       className={sidebarState ? \"sidebar open\" : \"sidebar\"}\n     >\n       <LogoDetail state={sidebarState}>\n@@ -126,13 +126,13 @@\n       </Btm>\n       <button type=\"button\" className=\"btn-lnb-close\" onClick={handleSidebar}>\n         <span className=\"hide\">메뉴 닫기</span>\n       </button>\n-    </Sidebar>\n+    </SidebarWrap>\n   );\n };\n \n-const Sidebar = styled.div`\n+const SidebarWrap = styled.div`\n   position: fixed;\n   width: ${({ state }) => (state ? \"218px\" : \"80px\")};\n   height: 100%;\n   top: 0;\n"
                 }
             ],
             "date": 1641554524665,

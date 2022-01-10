@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 22,
+            "activePatchIndex": 89,
             "patches": [
                 {
                     "date": 1641553653075,
@@ -96,6 +96,274 @@
                 {
                     "date": 1641566426625,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n import profile from \"../../resource/images/profile.jpg\";\n \n const Header = (props) => {\n   return (\n-    <header id=\"header\" className=\"header\">\n+    <div id=\"header\" className=\"header\">\n       <h2 className=\"title\">프로필 설정</h2>\n       <ul className=\"menu\">\n         <li>\n           <div className=\"searchbox\">\n@@ -62,9 +62,9 @@\n             <i className=\"ico alarm\"></i>\n           </button>\n         </li>\n       </ul>\n-    </header>\n+    </div>\n   );\n };\n \n export default Header;\n"
+                },
+                {
+                    "date": 1641793671423,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import React from \"react\";\n+import styled from \"styled-components\";\n \n import \"../../resource/css/layout.css\";\n import \"../../resource/css/contents.css\";\n import \"../../resource/css/vendor/daterangepicker.css\";\n@@ -66,5 +67,10 @@\n     </div>\n   );\n };\n \n+const Header = styled.div`\n+  .ico {\n+  }\n+`;\n+\n export default Header;\n"
+                },
+                {
+                    "date": 1641793685206,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,8 +69,17 @@\n };\n \n const Header = styled.div`\n   .ico {\n+    display: inline-block;\n+    min-width: 42px;\n+    width: 42px;\n+    /* min-width: 48px; */\n+    /* width: 48px; */\n+    height: 42px;\n+    background-repeat: no-repeat;\n+    background-position: center;\n+    transition: all 0.5s;\n   }\n `;\n \n export default Header;\n"
+                },
+                {
+                    "date": 1641793697643,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n import profile from \"../../resource/images/profile.jpg\";\n \n const Header = (props) => {\n   return (\n-    <div id=\"header\" className=\"header\">\n+    <Header id=\"header\" className=\"header\">\n       <h2 className=\"title\">프로필 설정</h2>\n       <ul className=\"menu\">\n         <li>\n           <div className=\"searchbox\">\n@@ -63,9 +63,9 @@\n             <i className=\"ico alarm\"></i>\n           </button>\n         </li>\n       </ul>\n-    </div>\n+    </Header>\n   );\n };\n \n const Header = styled.div`\n"
+                },
+                {
+                    "date": 1641793712082,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n import profile from \"../../resource/images/profile.jpg\";\n \n const Header = (props) => {\n   return (\n-    <Header id=\"header\" className=\"header\">\n+    <HeaderWrap id=\"header\" className=\"header\">\n       <h2 className=\"title\">프로필 설정</h2>\n       <ul className=\"menu\">\n         <li>\n           <div className=\"searchbox\">\n@@ -63,13 +63,13 @@\n             <i className=\"ico alarm\"></i>\n           </button>\n         </li>\n       </ul>\n-    </Header>\n+    </HeaderWrap>\n   );\n };\n \n-const Header = styled.div`\n+const HeaderWrap = styled.div`\n   .ico {\n     display: inline-block;\n     min-width: 42px;\n     width: 42px;\n"
+                },
+                {
+                    "date": 1641795125009,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,8 +68,15 @@\n   );\n };\n \n const HeaderWrap = styled.div`\n+  position: relative; /*min-width:1842px;*/\n+  background: #f7f8fb;\n+  min-height: 100vh;\n+  top: 0;\n+  left: 80px;\n+  width: calc(100% - 80px);\n+  z-index: 2;\n   .ico {\n     display: inline-block;\n     min-width: 42px;\n     width: 42px;\n"
+                },
+                {
+                    "date": 1641795152627,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,9 +70,8 @@\n \n const HeaderWrap = styled.div`\n   position: relative; /*min-width:1842px;*/\n   background: #f7f8fb;\n-  min-height: 100vh;\n   top: 0;\n   left: 80px;\n   width: calc(100% - 80px);\n   z-index: 2;\n"
+                },
+                {
+                    "date": 1641795199814,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -74,8 +74,9 @@\n   top: 0;\n   left: 80px;\n   width: calc(100% - 80px);\n   z-index: 2;\n+\n   .ico {\n     display: inline-block;\n     min-width: 42px;\n     width: 42px;\n"
+                },
+                {
+                    "date": 1641795332569,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -73,8 +73,9 @@\n   background: #f7f8fb;\n   top: 0;\n   left: 80px;\n   width: calc(100% - 80px);\n+  height: 70px;\n   z-index: 2;\n \n   .ico {\n     display: inline-block;\n"
+                },
+                {
+                    "date": 1641795704620,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,7 @@\n import React from \"react\";\n import styled from \"styled-components\";\n \n-import \"../../resource/css/layout.css\";\n-import \"../../resource/css/contents.css\";\n-import \"../../resource/css/vendor/daterangepicker.css\";\n-\n import profile from \"../../resource/images/profile.jpg\";\n \n const Header = (props) => {\n   return (\n"
+                },
+                {
+                    "date": 1641796507942,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,8 +72,19 @@\n   width: calc(100% - 80px);\n   height: 70px;\n   z-index: 2;\n \n+  h2{\n+    display: block;\n+    font-size: 1.5em;\n+    margin-block-start: 0.83em;\n+    margin-block-end: 0.83em;\n+    margin-inline-start: 0px;\n+    margin-inline-end: 0px;\n+    font-weight: bold;\n+}\n+  }\n+\n   .ico {\n     display: inline-block;\n     min-width: 42px;\n     width: 42px;\n"
+                },
+                {
+                    "date": 1641796557561,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,17 +72,24 @@\n   width: calc(100% - 80px);\n   height: 70px;\n   z-index: 2;\n \n-  h2{\n+  .title {\n+    display: inline-block;\n+    color: #41495e;\n+    line-height: 32px;\n+    font-size: 22px;\n+    font-weight: 700;\n+  }\n+\n+  h2 {\n     display: block;\n     font-size: 1.5em;\n     margin-block-start: 0.83em;\n     margin-block-end: 0.83em;\n     margin-inline-start: 0px;\n     margin-inline-end: 0px;\n     font-weight: bold;\n-}\n   }\n \n   .ico {\n     display: inline-block;\n"
+                },
+                {
+                    "date": 1641796565896,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,16 +72,8 @@\n   width: calc(100% - 80px);\n   height: 70px;\n   z-index: 2;\n \n-  .title {\n-    display: inline-block;\n-    color: #41495e;\n-    line-height: 32px;\n-    font-size: 22px;\n-    font-weight: 700;\n-  }\n-\n   h2 {\n     display: block;\n     font-size: 1.5em;\n     margin-block-start: 0.83em;\n"
+                },
+                {
+                    "date": 1641796573600,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,16 +72,14 @@\n   width: calc(100% - 80px);\n   height: 70px;\n   z-index: 2;\n \n-  h2 {\n-    display: block;\n-    font-size: 1.5em;\n-    margin-block-start: 0.83em;\n-    margin-block-end: 0.83em;\n-    margin-inline-start: 0px;\n-    margin-inline-end: 0px;\n-    font-weight: bold;\n+  .title {\n+    display: inline-block;\n+    color: #41495e;\n+    line-height: 32px;\n+    font-size: 22px;\n+    font-weight: 700;\n   }\n \n   .ico {\n     display: inline-block;\n"
+                },
+                {
+                    "date": 1641796713068,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,8 +70,9 @@\n   top: 0;\n   left: 80px;\n   width: calc(100% - 80px);\n   height: 70px;\n+  padding: 0px 30px;\n   z-index: 2;\n \n   .title {\n     display: inline-block;\n"
+                },
+                {
+                    "date": 1641796744251,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,8 +72,11 @@\n   width: calc(100% - 80px);\n   height: 70px;\n   padding: 0px 30px;\n   z-index: 2;\n+  isplay: flex;\n+  justify-content: space-between;\n+  align-items: center;\n \n   .title {\n     display: inline-block;\n     color: #41495e;\n"
+                },
+                {
+                    "date": 1641796800237,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,12 +72,15 @@\n   width: calc(100% - 80px);\n   height: 70px;\n   padding: 0px 30px;\n   z-index: 2;\n-  isplay: flex;\n-  justify-content: space-between;\n-  align-items: center;\n \n+  .header {\n+    display: flex;\n+    justify-content: space-between;\n+    align-items: center;\n+  }\n+\n   .title {\n     display: inline-block;\n     color: #41495e;\n     line-height: 32px;\n"
+                },
+                {
+                    "date": 1641799395194,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,9 +68,9 @@\n   position: relative; /*min-width:1842px;*/\n   background: #f7f8fb;\n   top: 0;\n   left: 80px;\n-  width: calc(100% - 80px);\n+  width: calc(100% - 140px);\n   height: 70px;\n   padding: 0px 30px;\n   z-index: 2;\n \n"
+                },
+                {
+                    "date": 1641799450958,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n \n const Header = (props) => {\n   return (\n     <HeaderWrap id=\"header\" className=\"header\">\n-      <h2 className=\"title\">프로필 설정</h2>\n+      <h2 className=\"title\">고객 관리</h2>\n       <ul className=\"menu\">\n         <li>\n           <div className=\"searchbox\">\n             <i className=\"ico search\"></i>\n"
+                },
+                {
+                    "date": 1641799557782,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -89,10 +89,8 @@\n   }\n \n   .ico {\n     display: inline-block;\n-    min-width: 42px;\n-    width: 42px;\n     /* min-width: 48px; */\n     /* width: 48px; */\n     height: 42px;\n     background-repeat: no-repeat;\n"
+                },
+                {
+                    "date": 1641800446728,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -96,7 +96,11 @@\n     background-repeat: no-repeat;\n     background-position: center;\n     transition: all 0.5s;\n   }\n+\n+  .mail {\n+    margin-left: 14px;\n+  }\n `;\n \n export default Header;\n"
+                },
+                {
+                    "date": 1641800706516,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -97,8 +97,12 @@\n     background-position: center;\n     transition: all 0.5s;\n   }\n \n+  .btn-menu {\n+    margin: 0px;\n+  }\n+\n   .mail {\n     margin-left: 14px;\n   }\n `;\n"
+                },
+                {
+                    "date": 1641800733850,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -98,9 +98,9 @@\n     transition: all 0.5s;\n   }\n \n   .btn-menu {\n-    margin: 0px;\n+    width: fit-content;\n   }\n \n   .mail {\n     margin-left: 14px;\n"
+                },
+                {
+                    "date": 1641800810163,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -97,12 +97,8 @@\n     background-position: center;\n     transition: all 0.5s;\n   }\n \n-  .btn-menu {\n-    width: fit-content;\n-  }\n-\n   .mail {\n     margin-left: 14px;\n   }\n `;\n"
+                },
+                {
+                    "date": 1641800860299,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -97,8 +97,20 @@\n     background-position: center;\n     transition: all 0.5s;\n   }\n \n+  .btn-menu[data-info=\"alarm\"].on:after {\n+    position: absolute;\n+    top: 4px;\n+    right: 4px;\n+    width: 6px;\n+    height: 6px;\n+    background: #ff8159;\n+    border: 1px solid #fff;\n+    border-radius: 50%;\n+    content: \"\";\n+  }\n+\n   .mail {\n     margin-left: 14px;\n   }\n `;\n"
+                },
+                {
+                    "date": 1641801738695,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,12 +3,19 @@\n \n import profile from \"../../resource/images/profile.jpg\";\n \n const Header = (props) => {\n+  const [input, setInput] = React.useState(\"\");\n   return (\n     <HeaderWrap id=\"header\" className=\"header\">\n       <h2 className=\"title\">고객 관리</h2>\n       <ul className=\"menu\">\n+        <input\n+          value={input}\n+          onChange={(e) => {\n+            setInput(e);\n+          }}\n+        />\n         <li>\n           <div className=\"searchbox\">\n             <i className=\"ico search\"></i>\n             <input type=\"text\" placeholder=\"검색해보세요.\" />\n"
+                },
+                {
+                    "date": 1641801749970,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n import profile from \"../../resource/images/profile.jpg\";\n \n const Header = (props) => {\n-  const [input, setInput] = React.useState(\"\");\n+  const [input, setInput] = React.useState(\"홍길동\");\n   return (\n     <HeaderWrap id=\"header\" className=\"header\">\n       <h2 className=\"title\">고객 관리</h2>\n       <ul className=\"menu\">\n"
+                },
+                {
+                    "date": 1641801774832,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n       <ul className=\"menu\">\n         <input\n           value={input}\n           onChange={(e) => {\n-            setInput(e);\n+            setInput(e.target.valse);\n           }}\n         />\n         <li>\n           <div className=\"searchbox\">\n"
+                },
+                {
+                    "date": 1641801804114,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,19 +3,12 @@\n \n import profile from \"../../resource/images/profile.jpg\";\n \n const Header = (props) => {\n-  const [input, setInput] = React.useState(\"홍길동\");\n   return (\n     <HeaderWrap id=\"header\" className=\"header\">\n       <h2 className=\"title\">고객 관리</h2>\n       <ul className=\"menu\">\n-        <input\n-          value={input}\n-          onChange={(e) => {\n-            setInput(e.target.valse);\n-          }}\n-        />\n         <li>\n           <div className=\"searchbox\">\n             <i className=\"ico search\"></i>\n             <input type=\"text\" placeholder=\"검색해보세요.\" />\n"
+                },
+                {
+                    "date": 1641802064964,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -97,8 +97,12 @@\n     background-position: center;\n     transition: all 0.5s;\n   }\n \n+  .button[class*=\"btn\"] {\n+    display: inline-block;\n+  }\n+\n   .btn-menu[data-info=\"alarm\"].on:after {\n     position: absolute;\n     top: 4px;\n     right: 4px;\n"
+                },
+                {
+                    "date": 1641802201400,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -91,9 +91,9 @@\n   .ico {\n     display: inline-block;\n     /* min-width: 48px; */\n     /* width: 48px; */\n-    height: 42px;\n+    /* height: 42px; */\n     background-repeat: no-repeat;\n     background-position: center;\n     transition: all 0.5s;\n   }\n"
+                },
+                {
+                    "date": 1641802241288,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -90,9 +90,9 @@\n \n   .ico {\n     display: inline-block;\n     /* min-width: 48px; */\n-    /* width: 48px; */\n+    width: 48px;\n     /* height: 42px; */\n     background-repeat: no-repeat;\n     background-position: center;\n     transition: all 0.5s;\n"
+                },
+                {
+                    "date": 1641802294401,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -90,9 +90,9 @@\n \n   .ico {\n     display: inline-block;\n     /* min-width: 48px; */\n-    width: 48px;\n+    width: 30px;\n     /* height: 42px; */\n     background-repeat: no-repeat;\n     background-position: center;\n     transition: all 0.5s;\n@@ -112,11 +112,7 @@\n     border: 1px solid #fff;\n     border-radius: 50%;\n     content: \"\";\n   }\n-\n-  .mail {\n-    margin-left: 14px;\n-  }\n `;\n \n export default Header;\n"
+                },
+                {
+                    "date": 1641802304979,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -90,9 +90,9 @@\n \n   .ico {\n     display: inline-block;\n     /* min-width: 48px; */\n-    width: 30px;\n+    /* width: 30px; */\n     /* height: 42px; */\n     background-repeat: no-repeat;\n     background-position: center;\n     transition: all 0.5s;\n"
+                },
+                {
+                    "date": 1641802692899,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -101,9 +101,9 @@\n   .button[class*=\"btn\"] {\n     display: inline-block;\n   }\n \n-  .btn-menu[data-info=\"alarm\"].on:after {\n+  .btn-menu {\n     position: absolute;\n     top: 4px;\n     right: 4px;\n     width: 6px;\n"
+                },
+                {
+                    "date": 1641802698798,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -102,17 +102,8 @@\n     display: inline-block;\n   }\n \n   .btn-menu {\n-    position: absolute;\n-    top: 4px;\n-    right: 4px;\n-    width: 6px;\n-    height: 6px;\n-    background: #ff8159;\n-    border: 1px solid #fff;\n-    border-radius: 50%;\n-    content: \"\";\n   }\n `;\n \n export default Header;\n"
+                },
+                {
+                    "date": 1641802729182,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -102,8 +102,9 @@\n     display: inline-block;\n   }\n \n   .btn-menu {\n+    width: 30px;\n   }\n `;\n \n export default Header;\n"
+                },
+                {
+                    "date": 1641802780702,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,18 +48,20 @@\n               </ul>\n             </div>\n           </div>\n         </li>\n-        <li>\n-          <button type=\"button\" className=\"btn-menu\" data-info=\"mail\">\n-            <i className=\"ico mail\"></i>\n-          </button>\n-        </li>\n-        <li>\n-          <button type=\"button\" className=\"btn-menu\" data-info=\"alarm\">\n-            <i className=\"ico alarm\"></i>\n-          </button>\n-        </li>\n+        <div>\n+          <li>\n+            <button type=\"button\" className=\"btn-menu\" data-info=\"mail\">\n+              <i className=\"ico mail\"></i>\n+            </button>\n+          </li>\n+          <li>\n+            <button type=\"button\" className=\"btn-menu\" data-info=\"alarm\">\n+              <i className=\"ico alarm\"></i>\n+            </button>\n+          </li>\n+        </div>\n       </ul>\n     </HeaderWrap>\n   );\n };\n"
+                },
+                {
+                    "date": 1641802787193,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,20 +48,18 @@\n               </ul>\n             </div>\n           </div>\n         </li>\n-        <div>\n-          <li>\n-            <button type=\"button\" className=\"btn-menu\" data-info=\"mail\">\n-              <i className=\"ico mail\"></i>\n-            </button>\n-          </li>\n-          <li>\n-            <button type=\"button\" className=\"btn-menu\" data-info=\"alarm\">\n-              <i className=\"ico alarm\"></i>\n-            </button>\n-          </li>\n-        </div>\n+        <li>\n+          <button type=\"button\" className=\"btn-menu\" data-info=\"mail\">\n+            <i className=\"ico mail\"></i>\n+          </button>\n+        </li>\n+        <li>\n+          <button type=\"button\" className=\"btn-menu\" data-info=\"alarm\">\n+            <i className=\"ico alarm\"></i>\n+          </button>\n+        </li>\n       </ul>\n     </HeaderWrap>\n   );\n };\n"
+                },
+                {
+                    "date": 1641802842186,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,9 @@\n               </ul>\n             </div>\n           </div>\n         </li>\n-        <li>\n+        <li className=\"header-btn\">\n           <button type=\"button\" className=\"btn-menu\" data-info=\"mail\">\n             <i className=\"ico mail\"></i>\n           </button>\n         </li>\n@@ -101,8 +101,12 @@\n   .button[class*=\"btn\"] {\n     display: inline-block;\n   }\n \n+  .header-btn {\n+    width: 30px;\n+  }\n+\n   .btn-menu {\n     width: 30px;\n   }\n `;\n"
+                },
+                {
+                    "date": 1641802922747,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,14 +48,14 @@\n               </ul>\n             </div>\n           </div>\n         </li>\n-        <li className=\"header-btn\">\n+        <li className=\"mail-btn\">\n           <button type=\"button\" className=\"btn-menu\" data-info=\"mail\">\n             <i className=\"ico mail\"></i>\n           </button>\n         </li>\n-        <li>\n+        <li className=\"alarm-btn\">\n           <button type=\"button\" className=\"btn-menu\" data-info=\"alarm\">\n             <i className=\"ico alarm\"></i>\n           </button>\n         </li>\n"
+                },
+                {
+                    "date": 1641802928718,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -101,9 +101,9 @@\n   .button[class*=\"btn\"] {\n     display: inline-block;\n   }\n \n-  .header-btn {\n+  .mail-btn {\n     width: 30px;\n   }\n \n   .btn-menu {\n"
+                },
+                {
+                    "date": 1641802954059,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -105,8 +105,12 @@\n   .mail-btn {\n     width: 30px;\n   }\n \n+  .alarm-btn {\n+    width: 33px;\n+  }\n+\n   .btn-menu {\n     width: 30px;\n   }\n `;\n"
+                },
+                {
+                    "date": 1641803071272,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,14 +48,14 @@\n               </ul>\n             </div>\n           </div>\n         </li>\n-        <li className=\"mail-btn\">\n+        <li>\n           <button type=\"button\" className=\"btn-menu\" data-info=\"mail\">\n             <i className=\"ico mail\"></i>\n           </button>\n         </li>\n-        <li className=\"alarm-btn\">\n+        <li>\n           <button type=\"button\" className=\"btn-menu\" data-info=\"alarm\">\n             <i className=\"ico alarm\"></i>\n           </button>\n         </li>\n@@ -106,9 +106,9 @@\n     width: 30px;\n   }\n \n   .alarm-btn {\n-    width: 33px;\n+    width: 44px;\n   }\n \n   .btn-menu {\n     width: 30px;\n"
+                },
+                {
+                    "date": 1641803078124,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -101,16 +101,8 @@\n   .button[class*=\"btn\"] {\n     display: inline-block;\n   }\n \n-  .mail-btn {\n-    width: 30px;\n-  }\n-\n-  .alarm-btn {\n-    width: 44px;\n-  }\n-\n   .btn-menu {\n     width: 30px;\n   }\n `;\n"
+                },
+                {
+                    "date": 1641803254852,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -89,14 +89,12 @@\n   }\n \n   .ico {\n     display: inline-block;\n-    /* min-width: 48px; */\n-    /* width: 30px; */\n-    /* height: 42px; */\n-    background-repeat: no-repeat;\n-    background-position: center;\n-    transition: all 0.5s;\n+    min-width: 30px;\n+    width: 30px;\n+    height: 30px;\n+    vertical-align: middle;\n   }\n \n   .button[class*=\"btn\"] {\n     display: inline-block;\n"
+                },
+                {
+                    "date": 1641803271377,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -88,8 +88,13 @@\n     font-weight: 700;\n   }\n \n   .ico {\n+    /* min-width: 48px; */\n+    /* width: 30px; */\n+    /* height: 42px; */\n+    background-repeat: no-repeat;\n+    background-position: center;\n     display: inline-block;\n     min-width: 30px;\n     width: 30px;\n     height: 30px;\n"
+                },
+                {
+                    "date": 1641803306189,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -107,7 +107,11 @@\n \n   .btn-menu {\n     width: 30px;\n   }\n+\n+  .btn-menu > * {\n+    position: relative;\n+  }\n `;\n \n export default Header;\n"
+                },
+                {
+                    "date": 1641803315190,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -107,11 +107,7 @@\n \n   .btn-menu {\n     width: 30px;\n   }\n-\n-  .btn-menu > * {\n-    position: relative;\n-  }\n `;\n \n export default Header;\n"
+                },
+                {
+                    "date": 1641803336074,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -105,9 +105,9 @@\n     display: inline-block;\n   }\n \n   .btn-menu {\n-    width: 30px;\n+    margin: 0 10px;\n   }\n `;\n \n export default Header;\n"
+                },
+                {
+                    "date": 1641803364601,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -73,8 +73,13 @@\n   height: 70px;\n   padding: 0px 30px;\n   z-index: 2;\n \n+  .menu {\n+    display: flex;\n+    align-items: center;\n+  }\n+\n   .header {\n     display: flex;\n     justify-content: space-between;\n     align-items: center;\n"
+                },
+                {
+                    "date": 1641803427952,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -110,9 +110,8 @@\n     display: inline-block;\n   }\n \n   .btn-menu {\n-    margin: 0 10px;\n   }\n `;\n \n export default Header;\n"
+                },
+                {
+                    "date": 1641804337823,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,9 @@\n               </ul>\n             </div>\n           </div>\n         </li>\n-        <li>\n+        <li style={{ width: \"30px\" }}>\n           <button type=\"button\" className=\"btn-menu\" data-info=\"mail\">\n             <i className=\"ico mail\"></i>\n           </button>\n         </li>\n"
+                },
+                {
+                    "date": 1641804364978,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n           <button type=\"button\" className=\"btn-menu\" data-info=\"mail\">\n             <i className=\"ico mail\"></i>\n           </button>\n         </li>\n-        <li>\n+        <li style={{ width: \"44px\" }}>\n           <button type=\"button\" className=\"btn-menu\" data-info=\"alarm\">\n             <i className=\"ico alarm\"></i>\n           </button>\n         </li>\n"
+                },
+                {
+                    "date": 1641804402877,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -96,9 +96,9 @@\n   .ico {\n     /* min-width: 48px; */\n     /* width: 30px; */\n     /* height: 42px; */\n-    background-repeat: no-repeat;\n+    /* background-repeat: no-repeat; */\n     background-position: center;\n     display: inline-block;\n     min-width: 30px;\n     width: 30px;\n"
+                },
+                {
+                    "date": 1641804409722,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -96,9 +96,9 @@\n   .ico {\n     /* min-width: 48px; */\n     /* width: 30px; */\n     /* height: 42px; */\n-    /* background-repeat: no-repeat; */\n+    background-repeat: no-repeat;\n     background-position: center;\n     display: inline-block;\n     min-width: 30px;\n     width: 30px;\n"
+                },
+                {
+                    "date": 1641804416778,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -102,9 +102,9 @@\n     display: inline-block;\n     min-width: 30px;\n     width: 30px;\n     height: 30px;\n-    vertical-align: middle;\n+    /* vertical-align: middle; */\n   }\n \n   .button[class*=\"btn\"] {\n     display: inline-block;\n"
+                },
+                {
+                    "date": 1641806655332,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,14 +48,14 @@\n               </ul>\n             </div>\n           </div>\n         </li>\n-        <li style={{ width: \"30px\" }}>\n+        <li>\n           <button type=\"button\" className=\"btn-menu\" data-info=\"mail\">\n             <i className=\"ico mail\"></i>\n           </button>\n         </li>\n-        <li style={{ width: \"44px\" }}>\n+        <li>\n           <button type=\"button\" className=\"btn-menu\" data-info=\"alarm\">\n             <i className=\"ico alarm\"></i>\n           </button>\n         </li>\n@@ -102,9 +102,9 @@\n     display: inline-block;\n     min-width: 30px;\n     width: 30px;\n     height: 30px;\n-    /* vertical-align: middle; */\n+    vertical-align: middle;\n   }\n \n   .button[class*=\"btn\"] {\n     display: inline-block;\n"
+                },
+                {
+                    "date": 1641806681508,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n           <button type=\"button\" className=\"btn-menu\" data-info=\"mail\">\n             <i className=\"ico mail\"></i>\n           </button>\n         </li>\n-        <li>\n+        <li style={{marginLeft='14px'}}>\n           <button type=\"button\" className=\"btn-menu\" data-info=\"alarm\">\n             <i className=\"ico alarm\"></i>\n           </button>\n         </li>\n"
+                },
+                {
+                    "date": 1641806886081,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n           <button type=\"button\" className=\"btn-menu\" data-info=\"mail\">\n             <i className=\"ico mail\"></i>\n           </button>\n         </li>\n-        <li style={{marginLeft='14px'}}>\n+        <li style={{ marginLeft: \"14px\" }}>\n           <button type=\"button\" className=\"btn-menu\" data-info=\"alarm\">\n             <i className=\"ico alarm\"></i>\n           </button>\n         </li>\n"
+                },
+                {
+                    "date": 1641806983583,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,10 @@\n \n import profile from \"../../resource/images/profile.jpg\";\n \n const Header = (props) => {\n+  const HeaderText = (path) => {};\n+\n   return (\n     <HeaderWrap id=\"header\" className=\"header\">\n       <h2 className=\"title\">고객 관리</h2>\n       <ul className=\"menu\">\n"
+                },
+                {
+                    "date": 1641807051788,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,15 @@\n \n import profile from \"../../resource/images/profile.jpg\";\n \n const Header = (props) => {\n-  const HeaderText = (path) => {};\n+  const HeaderText = (path) => {\n+    if (path === \"/custom_manage\") {\n+      return \"고객 관리\";\n+    } else if (path === \"/file_storage\") {\n+      return \"\";\n+    }\n+  };\n \n   return (\n     <HeaderWrap id=\"header\" className=\"header\">\n       <h2 className=\"title\">고객 관리</h2>\n"
+                },
+                {
+                    "date": 1641807095136,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,11 @@\n   const HeaderText = (path) => {\n     if (path === \"/custom_manage\") {\n       return \"고객 관리\";\n     } else if (path === \"/file_storage\") {\n-      return \"\";\n+      return \"파일보관함\";\n+    } else if (path === \"/consulting_form\") {\n+      return;\n     }\n   };\n \n   return (\n"
+                },
+                {
+                    "date": 1641807108032,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n       return \"고객 관리\";\n     } else if (path === \"/file_storage\") {\n       return \"파일보관함\";\n     } else if (path === \"/consulting_form\") {\n-      return;\n+      return \"상담 신청폼\";\n     }\n   };\n \n   return (\n"
+                },
+                {
+                    "date": 1641807149628,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,13 @@\n import React from \"react\";\n import styled from \"styled-components\";\n+import { useLocation } from \"react-router\";\n \n import profile from \"../../resource/images/profile.jpg\";\n \n const Header = (props) => {\n+  const location = useLocation();\n+\n   const HeaderText = (path) => {\n     if (path === \"/custom_manage\") {\n       return \"고객 관리\";\n     } else if (path === \"/file_storage\") {\n@@ -15,9 +18,9 @@\n   };\n \n   return (\n     <HeaderWrap id=\"header\" className=\"header\">\n-      <h2 className=\"title\">고객 관리</h2>\n+      <h2 className=\"title\">{HeaderText(location.pathname)}</h2>\n       <ul className=\"menu\">\n         <li>\n           <div className=\"searchbox\">\n             <i className=\"ico search\"></i>\n"
+                },
+                {
+                    "date": 1641807234057,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,10 @@\n       return \"상담 신청폼\";\n     }\n   };\n \n+  {location.pathname === '/' && return}\n+\n   return (\n     <HeaderWrap id=\"header\" className=\"header\">\n       <h2 className=\"title\">{HeaderText(location.pathname)}</h2>\n       <ul className=\"menu\">\n"
+                },
+                {
+                    "date": 1641807269197,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,11 @@\n       return \"상담 신청폼\";\n     }\n   };\n \n-  {location.pathname === '/' && return}\n+  if (location.pathname === \"/\") {\n+    return;\n+  }\n \n   return (\n     <HeaderWrap id=\"header\" className=\"header\">\n       <h2 className=\"title\">{HeaderText(location.pathname)}</h2>\n"
+                },
+                {
+                    "date": 1641807278389,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n     }\n   };\n \n   if (location.pathname === \"/\") {\n-    return;\n+    return null;\n   }\n \n   return (\n     <HeaderWrap id=\"header\" className=\"header\">\n"
                 }
             ],
             "date": 1641553653075,

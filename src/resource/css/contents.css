@@ -603,9 +603,7 @@
 .menu .dropdown-wrap {
   margin: 0 20px 0 30px;
 }
-.menu .btn-menu {
-  margin: 0 10px;
-}
+
 .menu .btn-menu > * {
   position: relative;
 }

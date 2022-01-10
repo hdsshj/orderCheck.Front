@@ -3,11 +3,19 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 2,
             "patches": [
                 {
                     "date": 1641555448418,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1641717816346,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,11 +14,9 @@\n   background: #02164f;\n   padding: 6px 16px;\n   box-sizing: border-box;\n }\n-.sidebar.open {\n-  width: 218px;\n-}\n+\n .sidebar .logo-details {\n   height: 60px;\n   display: flex;\n   align-items: center;\n"
+                },
+                {
+                    "date": 1641717858565,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,18 +5,8 @@\n   z-index: 99;\n   transition: all 0.4s ease;\n }\n \n-.sidebar {\n-  position: fixed;\n-  width: 80px;\n-  height: 100%;\n-  left: 0;\n-  background: #02164f;\n-  padding: 6px 16px;\n-  box-sizing: border-box;\n-}\n-\n .sidebar .logo-details {\n   height: 60px;\n   display: flex;\n   align-items: center;\n"
                 }
             ],
             "date": 1641555448418,
