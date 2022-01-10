@@ -1,14 +1,11 @@
 import React from "react";
-
-import "../../resource/css/layout.css";
-import "../../resource/css/contents.css";
-import "../../resource/css/vendor/daterangepicker.css";
+import styled from "styled-components";
 
 import profile from "../../resource/images/profile.jpg";
 
 const Header = (props) => {
   return (
-    <div id="header" className="header">
+    <HeaderWrap id="header" className="header">
       <h2 className="title">프로필 설정</h2>
       <ul className="menu">
         <li>
@@ -63,8 +60,30 @@ const Header = (props) => {
           </button>
         </li>
       </ul>
-    </div>
+    </HeaderWrap>
   );
 };
+
+const HeaderWrap = styled.div`
+  position: relative; /*min-width:1842px;*/
+  background: #f7f8fb;
+  top: 0;
+  left: 80px;
+  width: calc(100% - 80px);
+  height: 70px;
+  z-index: 2;
+
+  .ico {
+    display: inline-block;
+    min-width: 42px;
+    width: 42px;
+    /* min-width: 48px; */
+    /* width: 48px; */
+    height: 42px;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 0.5s;
+  }
+`;
 
 export default Header;

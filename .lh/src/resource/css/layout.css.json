@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 106,
+            "activePatchIndex": 136,
             "patches": [
                 {
                     "date": 1641557904069,
@@ -432,6 +432,126 @@
                 {
                     "date": 1641622201465,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2221,13 +2221,28 @@\n }\n .ico.form {\n   background-image: url(../images/nav/ico_form.png);\n }\n-\n+.ico.home:hover,\n+.on .ico.home {\n+  background-image: url(../images/nav/ico_home-hover.png);\n+}\n+.ico.user:hover,\n+.on .ico.user {\n+  background-image: url(../images/nav/ico_user-hover.png);\n+}\n+.ico.file:hover,\n+.on .ico.file {\n+  background-image: url(../images/nav/ico_file-hover.png);\n+}\n .ico.chat:hover,\n .on .ico.chat {\n   background-image: url(../images/nav/ico_chat-hover.png);\n }\n+.ico.form:hover,\n+.on .ico.form {\n+  background-image: url(../images/nav/ico_form-hover.png);\n+}\n \n .ico.help {\n   background-image: url(../images/nav/ico_help.png);\n }\n"
+                },
+                {
+                    "date": 1641718967593,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2221,28 +2221,13 @@\n }\n .ico.form {\n   background-image: url(../images/nav/ico_form.png);\n }\n-.ico.home:hover,\n-.on .ico.home {\n-  background-image: url(../images/nav/ico_home-hover.png);\n-}\n-.ico.user:hover,\n-.on .ico.user {\n-  background-image: url(../images/nav/ico_user-hover.png);\n-}\n-.ico.file:hover,\n-.on .ico.file {\n-  background-image: url(../images/nav/ico_file-hover.png);\n-}\n+\n .ico.chat:hover,\n .on .ico.chat {\n   background-image: url(../images/nav/ico_chat-hover.png);\n }\n-.ico.form:hover,\n-.on .ico.form {\n-  background-image: url(../images/nav/ico_form-hover.png);\n-}\n \n .ico.help {\n   background-image: url(../images/nav/ico_help.png);\n }\n"
+                },
+                {
+                    "date": 1641718982670,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2221,13 +2221,28 @@\n }\n .ico.form {\n   background-image: url(../images/nav/ico_form.png);\n }\n-\n+.ico.home:hover,\n+.on .ico.home {\n+  background-image: url(../images/nav/ico_home-hover.png);\n+}\n+.ico.user:hover,\n+.on .ico.user {\n+  background-image: url(../images/nav/ico_user-hover.png);\n+}\n+.ico.file:hover,\n+.on .ico.file {\n+  background-image: url(../images/nav/ico_file-hover.png);\n+}\n .ico.chat:hover,\n .on .ico.chat {\n   background-image: url(../images/nav/ico_chat-hover.png);\n }\n+.ico.form:hover,\n+.on .ico.form {\n+  background-image: url(../images/nav/ico_form-hover.png);\n+}\n \n .ico.help {\n   background-image: url(../images/nav/ico_help.png);\n }\n"
+                },
+                {
+                    "date": 1641719044928,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2221,12 +2221,9 @@\n }\n .ico.form {\n   background-image: url(../images/nav/ico_form.png);\n }\n-.ico.home:hover,\n-.on .ico.home {\n-  background-image: url(../images/nav/ico_home-hover.png);\n-}\n+\n .ico.user:hover,\n .on .ico.user {\n   background-image: url(../images/nav/ico_user-hover.png);\n }\n"
+                },
+                {
+                    "date": 1641719054094,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2223,9 +2223,9 @@\n   background-image: url(../images/nav/ico_form.png);\n }\n \n .ico.user:hover,\n-.on .ico.user {\n+.on.ico.user {\n   background-image: url(../images/nav/ico_user-hover.png);\n }\n .ico.file:hover,\n .on .ico.file {\n"
+                },
+                {
+                    "date": 1641719141387,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2221,11 +2221,14 @@\n }\n .ico.form {\n   background-image: url(../images/nav/ico_form.png);\n }\n-\n+.ico.home:hover,\n+.on .ico.home {\n+  background-image: url(../images/nav/ico_home-hover.png);\n+}\n .ico.user:hover,\n-.on.ico.user {\n+.on .ico.user {\n   background-image: url(../images/nav/ico_user-hover.png);\n }\n .ico.file:hover,\n .on .ico.file {\n"
+                },
+                {
+                    "date": 1641723752053,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2221,28 +2221,8 @@\n }\n .ico.form {\n   background-image: url(../images/nav/ico_form.png);\n }\n-.ico.home:hover,\n-.on .ico.home {\n-  background-image: url(../images/nav/ico_home-hover.png);\n-}\n-.ico.user:hover,\n-.on .ico.user {\n-  background-image: url(../images/nav/ico_user-hover.png);\n-}\n-.ico.file:hover,\n-.on .ico.file {\n-  background-image: url(../images/nav/ico_file-hover.png);\n-}\n-.ico.chat:hover,\n-.on .ico.chat {\n-  background-image: url(../images/nav/ico_chat-hover.png);\n-}\n-.ico.form:hover,\n-.on .ico.form {\n-  background-image: url(../images/nav/ico_form-hover.png);\n-}\n \n .ico.help {\n   background-image: url(../images/nav/ico_help.png);\n }\n"
+                },
+                {
+                    "date": 1641723814938,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2221,8 +2221,28 @@\n }\n .ico.form {\n   background-image: url(../images/nav/ico_form.png);\n }\n+.ico.home:hover,\n+.on .ico.home {\n+  background-image: url(../images/nav/ico_home-hover.png);\n+}\n+.ico.user:hover,\n+.on .ico.user {\n+  background-image: url(../images/nav/ico_user-hover.png);\n+}\n+.ico.file:hover,\n+.on .ico.file {\n+  background-image: url(../images/nav/ico_file-hover.png);\n+}\n+.ico.chat:hover,\n+.on .ico.chat {\n+  background-image: url(../images/nav/ico_chat-hover.png);\n+}\n+.ico.form:hover,\n+.on .ico.form {\n+  background-image: url(../images/nav/ico_form-hover.png);\n+}\n \n .ico.help {\n   background-image: url(../images/nav/ico_help.png);\n }\n"
+                },
+                {
+                    "date": 1641723877604,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2221,21 +2221,9 @@\n }\n .ico.form {\n   background-image: url(../images/nav/ico_form.png);\n }\n-.ico.home:hover,\n-.on .ico.home {\n-  background-image: url(../images/nav/ico_home-hover.png);\n-}\n-.ico.user:hover,\n-.on .ico.user {\n-  background-image: url(../images/nav/ico_user-hover.png);\n-}\n-.ico.file:hover,\n-.on .ico.file {\n-  background-image: url(../images/nav/ico_file-hover.png);\n-}\n-.ico.chat:hover,\n+. .ico.chat:hover,\n .on .ico.chat {\n   background-image: url(../images/nav/ico_chat-hover.png);\n }\n .ico.form:hover,\n"
+                },
+                {
+                    "date": 1641723915797,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2221,16 +2221,12 @@\n }\n .ico.form {\n   background-image: url(../images/nav/ico_form.png);\n }\n-. .ico.chat:hover,\n+.ico.chat:hover,\n .on .ico.chat {\n   background-image: url(../images/nav/ico_chat-hover.png);\n }\n-.ico.form:hover,\n-.on .ico.form {\n-  background-image: url(../images/nav/ico_form-hover.png);\n-}\n \n .ico.help {\n   background-image: url(../images/nav/ico_help.png);\n }\n"
+                },
+                {
+                    "date": 1641724240102,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2206,23 +2206,14 @@\n }\n /* ico */\n .ico {\n }\n-.ico.home {\n-  background-image: url(../images/nav/ico_home.png);\n+\n }\n-.ico.user {\n-  background-image: url(../images/nav/ico_user.png);\n-}\n-.ico.file {\n-  background-image: url(../images/nav/ico_file.png);\n-}\n .ico.chat {\n   background-image: url(../images/nav/ico_chat.png);\n }\n-.ico.form {\n-  background-image: url(../images/nav/ico_form.png);\n-}\n+\n .ico.chat:hover,\n .on .ico.chat {\n   background-image: url(../images/nav/ico_chat-hover.png);\n }\n"
+                },
+                {
+                    "date": 1641725518252,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2055,9 +2055,9 @@\n   left: 218px;\n   width: calc(100% - 218px);\n }\n .sidebar .btm li.on a,\n-.sidebar .btm li a:hover {\n+.sidebar .btm li:hover {\n   background: rgba(255, 255, 255, 0.26);\n   border-radius: 25px;\n }\n /* .side-form.left.open+ aside +.content-section {min-width:1536px; left: 300px; width: calc(100% - 300px);}\n@@ -2207,9 +2207,8 @@\n /* ico */\n .ico {\n }\n \n-}\n .ico.chat {\n   background-image: url(../images/nav/ico_chat.png);\n }\n \n"
+                },
+                {
+                    "date": 1641725538168,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2055,12 +2055,9 @@\n   left: 218px;\n   width: calc(100% - 218px);\n }\n .sidebar .btm li.on a,\n-.sidebar .btm li:hover {\n-  background: rgba(255, 255, 255, 0.26);\n-  border-radius: 25px;\n-}\n+.sidebar .btm \n /* .side-form.left.open+ aside +.content-section {min-width:1536px; left: 300px; width: calc(100% - 300px);}\n .side-form.right.open+.content-section { min-width:1566px;width: calc(100% - 270px); right:270px;}\n .side-form.left.open+ aside.open+.content-section { min-width:1266px;width: calc(100% - 570px); right:270px;} */\n .form-list-wrap {\n"
+                },
+                {
+                    "date": 1641725548491,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2055,9 +2055,8 @@\n   left: 218px;\n   width: calc(100% - 218px);\n }\n .sidebar .btm li.on a,\n-.sidebar .btm \n /* .side-form.left.open+ aside +.content-section {min-width:1536px; left: 300px; width: calc(100% - 300px);}\n .side-form.right.open+.content-section { min-width:1566px;width: calc(100% - 270px); right:270px;}\n .side-form.left.open+ aside.open+.content-section { min-width:1266px;width: calc(100% - 570px); right:270px;} */\n .form-list-wrap {\n"
+                },
+                {
+                    "date": 1641726524975,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2050,13 +2050,36 @@\n }\n \n /* nav */\n .sidebar,\n+.side-form {\n+  top: 0;\n+  height: 100%;\n+  z-index: 99;\n+  transition: all 0.4s ease;\n+}\n+\n+.sidebar.open {\n+  width: 218px;\n+}\n+\n+.sidebar .logo-details .ico {\n+  opacity: 0;\n+  transition: all 0.5s ease;\n+}\n+\n+.sidebar li a .sidebar.open li a {\n+  width: 100%;\n+}\n .sidebar.open ~ .content-section {\n   left: 218px;\n   width: calc(100% - 218px);\n }\n .sidebar .btm li.on a,\n+.sidebar .btm li a:hover {\n+  background: rgba(255, 255, 255, 0.26);\n+  border-radius: 25px;\n+}\n /* .side-form.left.open+ aside +.content-section {min-width:1536px; left: 300px; width: calc(100% - 300px);}\n .side-form.right.open+.content-section { min-width:1566px;width: calc(100% - 270px); right:270px;}\n .side-form.left.open+ aside.open+.content-section { min-width:1266px;width: calc(100% - 570px); right:270px;} */\n .form-list-wrap {\n@@ -2102,8 +2125,22 @@\n   width: 270px;\n   right: 0;\n }\n \n+.btn-lnb-close {\n+  width: 30px;\n+  height: 30px;\n+  background: url(../images/nav/ico_lnb-open.png) no-repeat center;\n+}\n+.open .btn-lnb-close {\n+  background-image: url(../images/nav/ico_lnb-close.png);\n+}\n+.sidebar .btn-lnb-close {\n+  position: absolute;\n+  right: -15px;\n+  top: 106px;\n+  z-index: 1;\n+}\n /* .input input {  padding: 0 20px 0 50px;  width: 100%;  height: 50px;  border-radius: 12px;  transition: all 0.5s ease;  background: #1d1b31;  font-weight: 400;  font-size: 15px;  color: #fff;} */\n /* search box */\n .searchbox {\n   padding: 0 18px;\n@@ -2201,18 +2238,51 @@\n   right: 127px;\n }\n /* ico */\n .ico {\n+  display: inline-block;\n+  min-width: 48px;\n+  width: 48px;\n+  height: 42px;\n+  background-repeat: no-repeat;\n+  background-position: center;\n+  transition: all 0.5s;\n }\n-\n+.ico.home {\n+  background-image: url(../images/nav/ico_home.png);\n+}\n+.ico.user {\n+  background-image: url(../images/nav/ico_user.png);\n+}\n+.ico.file {\n+  background-image: url(../images/nav/ico_file.png);\n+}\n .ico.chat {\n   background-image: url(../images/nav/ico_chat.png);\n }\n-\n+.ico.form {\n+  background-image: url(../images/nav/ico_form.png);\n+}\n+.ico.home:hover,\n+.on .ico.home {\n+  background-image: url(../images/nav/ico_home-hover.png);\n+}\n+.ico.user:hover,\n+.on .ico.user {\n+  background-image: url(../images/nav/ico_user-hover.png);\n+}\n+.ico.file:hover,\n+.on .ico.file {\n+  background-image: url(../images/nav/ico_file-hover.png);\n+}\n .ico.chat:hover,\n .on .ico.chat {\n   background-image: url(../images/nav/ico_chat-hover.png);\n }\n+.ico.form:hover,\n+.on .ico.form {\n+  background-image: url(../images/nav/ico_form-hover.png);\n+}\n \n .ico.help {\n   background-image: url(../images/nav/ico_help.png);\n }\n@@ -2432,9 +2502,22 @@\n .sidebar.open .ico {\n   width: 28px;\n   height: 28px;\n }\n-\n+.sidebar li a .links_name {\n+  padding-left: 12px;\n+  color: #fff;\n+  font-size: 15px;\n+  font-weight: 400;\n+  white-space: nowrap;\n+  opacity: 0;\n+  pointer-events: none;\n+  transition: 0.4s;\n+}\n+.sidebar.open li a .links_name {\n+  opacity: 1;\n+  pointer-events: auto;\n+}\n .sidebar li a:hover .links_name {\n   transition: all 0.5s ease;\n }\n .sidebar .btm {\n"
+                },
+                {
+                    "date": 1641726534043,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2061,13 +2061,8 @@\n .sidebar.open {\n   width: 218px;\n }\n \n-.sidebar .logo-details .ico {\n-  opacity: 0;\n-  transition: all 0.5s ease;\n-}\n-\n .sidebar li a .sidebar.open li a {\n   width: 100%;\n }\n .sidebar.open ~ .content-section {\n"
+                },
+                {
+                    "date": 1641726539458,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2061,11 +2061,8 @@\n .sidebar.open {\n   width: 218px;\n }\n \n-.sidebar li a .sidebar.open li a {\n-  width: 100%;\n-}\n .sidebar.open ~ .content-section {\n   left: 218px;\n   width: calc(100% - 218px);\n }\n"
+                },
+                {
+                    "date": 1641726548221,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2061,17 +2061,17 @@\n .sidebar.open {\n   width: 218px;\n }\n \n+.sidebar li a .sidebar.open li a {\n+  width: 100%;\n+}\n .sidebar.open ~ .content-section {\n   left: 218px;\n   width: calc(100% - 218px);\n }\n .sidebar .btm li.on a,\n-.sidebar .btm li a:hover {\n-  background: rgba(255, 255, 255, 0.26);\n-  border-radius: 25px;\n-}\n+\n /* .side-form.left.open+ aside +.content-section {min-width:1536px; left: 300px; width: calc(100% - 300px);}\n .side-form.right.open+.content-section { min-width:1566px;width: calc(100% - 270px); right:270px;}\n .side-form.left.open+ aside.open+.content-section { min-width:1266px;width: calc(100% - 570px); right:270px;} */\n .form-list-wrap {\n"
+                },
+                {
+                    "date": 1641726568104,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2064,13 +2064,8 @@\n \n .sidebar li a .sidebar.open li a {\n   width: 100%;\n }\n-.sidebar.open ~ .content-section {\n-  left: 218px;\n-  width: calc(100% - 218px);\n-}\n-.sidebar .btm li.on a,\n \n /* .side-form.left.open+ aside +.content-section {min-width:1536px; left: 300px; width: calc(100% - 300px);}\n .side-form.right.open+.content-section { min-width:1566px;width: calc(100% - 270px); right:270px;}\n .side-form.left.open+ aside.open+.content-section { min-width:1266px;width: calc(100% - 570px); right:270px;} */\n"
+                },
+                {
+                    "date": 1641726590400,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2057,15 +2057,15 @@\n   z-index: 99;\n   transition: all 0.4s ease;\n }\n \n-.sidebar.open {\n-  width: 218px;\n-}\n-\n .sidebar li a .sidebar.open li a {\n   width: 100%;\n }\n+.sidebar.open ~ .content-section {\n+  left: 218px;\n+  width: calc(100% - 218px);\n+}\n \n /* .side-form.left.open+ aside +.content-section {min-width:1536px; left: 300px; width: calc(100% - 300px);}\n .side-form.right.open+.content-section { min-width:1566px;width: calc(100% - 270px); right:270px;}\n .side-form.left.open+ aside.open+.content-section { min-width:1266px;width: calc(100% - 570px); right:270px;} */\n@@ -2112,13 +2112,8 @@\n   width: 270px;\n   right: 0;\n }\n \n-.btn-lnb-close {\n-  width: 30px;\n-  height: 30px;\n-  background: url(../images/nav/ico_lnb-open.png) no-repeat center;\n-}\n .open .btn-lnb-close {\n   background-image: url(../images/nav/ico_lnb-close.png);\n }\n .sidebar .btn-lnb-close {\n"
+                },
+                {
+                    "date": 1641726644480,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2112,17 +2112,17 @@\n   width: 270px;\n   right: 0;\n }\n \n+.btn-lnb-close {\n+  width: 30px;\n+  height: 30px;\n+  background: url(../images/nav/ico_lnb-open.png) no-repeat center;\n+}\n .open .btn-lnb-close {\n   background-image: url(../images/nav/ico_lnb-close.png);\n }\n-.sidebar .btn-lnb-close {\n-  position: absolute;\n-  right: -15px;\n-  top: 106px;\n-  z-index: 1;\n-}\n+\n /* .input input {  padding: 0 20px 0 50px;  width: 100%;  height: 50px;  border-radius: 12px;  transition: all 0.5s ease;  background: #1d1b31;  font-weight: 400;  font-size: 15px;  color: #fff;} */\n /* search box */\n .searchbox {\n   padding: 0 18px;\n"
+                },
+                {
+                    "date": 1641726666056,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2112,17 +2112,8 @@\n   width: 270px;\n   right: 0;\n }\n \n-.btn-lnb-close {\n-  width: 30px;\n-  height: 30px;\n-  background: url(../images/nav/ico_lnb-open.png) no-repeat center;\n-}\n-.open .btn-lnb-close {\n-  background-image: url(../images/nav/ico_lnb-close.png);\n-}\n-\n /* .input input {  padding: 0 20px 0 50px;  width: 100%;  height: 50px;  border-radius: 12px;  transition: all 0.5s ease;  background: #1d1b31;  font-weight: 400;  font-size: 15px;  color: #fff;} */\n /* search box */\n .searchbox {\n   padding: 0 18px;\n"
+                },
+                {
+                    "date": 1641726791440,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2057,11 +2057,9 @@\n   z-index: 99;\n   transition: all 0.4s ease;\n }\n \n-.sidebar li a .sidebar.open li a {\n-  width: 100%;\n-}\n+  \n .sidebar.open ~ .content-section {\n   left: 218px;\n   width: calc(100% - 218px);\n }\n"
+                },
+                {
+                    "date": 1641726803123,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2057,9 +2057,8 @@\n   z-index: 99;\n   transition: all 0.4s ease;\n }\n \n-  \n .sidebar.open ~ .content-section {\n   left: 218px;\n   width: calc(100% - 218px);\n }\n"
+                },
+                {
+                    "date": 1641736837682,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2231,28 +2231,13 @@\n }\n .ico.form {\n   background-image: url(../images/nav/ico_form.png);\n }\n-.ico.home:hover,\n-.on .ico.home {\n-  background-image: url(../images/nav/ico_home-hover.png);\n-}\n-.ico.user:hover,\n-.on .ico.user {\n-  background-image: url(../images/nav/ico_user-hover.png);\n-}\n-.ico.file:hover,\n-.on .ico.file {\n-  background-image: url(../images/nav/ico_file-hover.png);\n-}\n+\n .ico.chat:hover,\n .on .ico.chat {\n   background-image: url(../images/nav/ico_chat-hover.png);\n }\n-.ico.form:hover,\n-.on .ico.form {\n-  background-image: url(../images/nav/ico_form-hover.png);\n-}\n \n .ico.help {\n   background-image: url(../images/nav/ico_help.png);\n }\n"
+                },
+                {
+                    "date": 1641736863343,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2207,17 +2207,9 @@\n   top: 0;\n   right: 127px;\n }\n /* ico */\n-.ico {\n-  display: inline-block;\n-  min-width: 48px;\n-  width: 48px;\n-  height: 42px;\n-  background-repeat: no-repeat;\n-  background-position: center;\n-  transition: all 0.5s;\n-}\n+\n .ico.home {\n   background-image: url(../images/nav/ico_home.png);\n }\n .ico.user {\n"
+                },
+                {
+                    "date": 1641736879484,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2208,23 +2208,11 @@\n   right: 127px;\n }\n /* ico */\n \n-.ico.home {\n-  background-image: url(../images/nav/ico_home.png);\n-}\n-.ico.user {\n-  background-image: url(../images/nav/ico_user.png);\n-}\n-.ico.file {\n-  background-image: url(../images/nav/ico_file.png);\n-}\n .ico.chat {\n   background-image: url(../images/nav/ico_chat.png);\n }\n-.ico.form {\n-  background-image: url(../images/nav/ico_form.png);\n-}\n \n .ico.chat:hover,\n .on .ico.chat {\n   background-image: url(../images/nav/ico_chat-hover.png);\n"
+                },
+                {
+                    "date": 1641736886426,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2217,14 +2217,8 @@\n .on .ico.chat {\n   background-image: url(../images/nav/ico_chat-hover.png);\n }\n \n-.ico.help {\n-  background-image: url(../images/nav/ico_help.png);\n-}\n-.ico.setting {\n-  background-image: url(../images/nav/ico_setting.png);\n-}\n .ico.search {\n   width: 18px;\n   height: 18px;\n   background-image: url(../images/common/ico_search.png);\n"
+                },
+                {
+                    "date": 1641737434195,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1826,9 +1826,9 @@\n }\n \n /*===== layer =====*/\n .layer-pop {\n-  display: none;\n+  /* display: none; */\n   width: 100%;\n   height: 100%;\n   position: fixed;\n   left: 0;\n@@ -2427,12 +2427,8 @@\n   background-image: url(../images/common/ico_info.png);\n   vertical-align: -2px;\n }\n \n-.sidebar.open .ico {\n-  width: 28px;\n-  height: 28px;\n-}\n .sidebar li a .links_name {\n   padding-left: 12px;\n   color: #fff;\n   font-size: 15px;\n"
+                },
+                {
+                    "date": 1641794771802,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2057,13 +2057,8 @@\n   z-index: 99;\n   transition: all 0.4s ease;\n }\n \n-.sidebar.open ~ .content-section {\n-  left: 218px;\n-  width: calc(100% - 218px);\n-}\n-\n /* .side-form.left.open+ aside +.content-section {min-width:1536px; left: 300px; width: calc(100% - 300px);}\n .side-form.right.open+.content-section { min-width:1566px;width: calc(100% - 270px); right:270px;}\n .side-form.left.open+ aside.open+.content-section { min-width:1266px;width: calc(100% - 570px); right:270px;} */\n .form-list-wrap {\n@@ -2427,8 +2422,12 @@\n   background-image: url(../images/common/ico_info.png);\n   vertical-align: -2px;\n }\n \n+.sidebar.open .ico {\n+  width: 28px;\n+  height: 28px;\n+}\n .sidebar li a .links_name {\n   padding-left: 12px;\n   color: #fff;\n   font-size: 15px;\n"
+                },
+                {
+                    "date": 1641794789625,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2057,8 +2057,13 @@\n   z-index: 99;\n   transition: all 0.4s ease;\n }\n \n+.sidebar.open ~ .content-section {\n+  left: 218px;\n+  width: calc(100% - 218px);\n+}\n+\n /* .side-form.left.open+ aside +.content-section {min-width:1536px; left: 300px; width: calc(100% - 300px);}\n .side-form.right.open+.content-section { min-width:1566px;width: calc(100% - 270px); right:270px;}\n .side-form.left.open+ aside.open+.content-section { min-width:1266px;width: calc(100% - 570px); right:270px;} */\n .form-list-wrap {\n"
                 }
             ],
             "date": 1641557904069,

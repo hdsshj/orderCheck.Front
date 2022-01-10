@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 22,
+            "activePatchIndex": 31,
             "patches": [
                 {
                     "date": 1641553653075,
@@ -96,6 +96,42 @@
                 {
                     "date": 1641566426625,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n import profile from \"../../resource/images/profile.jpg\";\n \n const Header = (props) => {\n   return (\n-    <header id=\"header\" className=\"header\">\n+    <div id=\"header\" className=\"header\">\n       <h2 className=\"title\">프로필 설정</h2>\n       <ul className=\"menu\">\n         <li>\n           <div className=\"searchbox\">\n@@ -62,9 +62,9 @@\n             <i className=\"ico alarm\"></i>\n           </button>\n         </li>\n       </ul>\n-    </header>\n+    </div>\n   );\n };\n \n export default Header;\n"
+                },
+                {
+                    "date": 1641793671423,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import React from \"react\";\n+import styled from \"styled-components\";\n \n import \"../../resource/css/layout.css\";\n import \"../../resource/css/contents.css\";\n import \"../../resource/css/vendor/daterangepicker.css\";\n@@ -66,5 +67,10 @@\n     </div>\n   );\n };\n \n+const Header = styled.div`\n+  .ico {\n+  }\n+`;\n+\n export default Header;\n"
+                },
+                {
+                    "date": 1641793685206,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,8 +69,17 @@\n };\n \n const Header = styled.div`\n   .ico {\n+    display: inline-block;\n+    min-width: 42px;\n+    width: 42px;\n+    /* min-width: 48px; */\n+    /* width: 48px; */\n+    height: 42px;\n+    background-repeat: no-repeat;\n+    background-position: center;\n+    transition: all 0.5s;\n   }\n `;\n \n export default Header;\n"
+                },
+                {
+                    "date": 1641793697643,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n import profile from \"../../resource/images/profile.jpg\";\n \n const Header = (props) => {\n   return (\n-    <div id=\"header\" className=\"header\">\n+    <Header id=\"header\" className=\"header\">\n       <h2 className=\"title\">프로필 설정</h2>\n       <ul className=\"menu\">\n         <li>\n           <div className=\"searchbox\">\n@@ -63,9 +63,9 @@\n             <i className=\"ico alarm\"></i>\n           </button>\n         </li>\n       </ul>\n-    </div>\n+    </Header>\n   );\n };\n \n const Header = styled.div`\n"
+                },
+                {
+                    "date": 1641793712082,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n import profile from \"../../resource/images/profile.jpg\";\n \n const Header = (props) => {\n   return (\n-    <Header id=\"header\" className=\"header\">\n+    <HeaderWrap id=\"header\" className=\"header\">\n       <h2 className=\"title\">프로필 설정</h2>\n       <ul className=\"menu\">\n         <li>\n           <div className=\"searchbox\">\n@@ -63,13 +63,13 @@\n             <i className=\"ico alarm\"></i>\n           </button>\n         </li>\n       </ul>\n-    </Header>\n+    </HeaderWrap>\n   );\n };\n \n-const Header = styled.div`\n+const HeaderWrap = styled.div`\n   .ico {\n     display: inline-block;\n     min-width: 42px;\n     width: 42px;\n"
+                },
+                {
+                    "date": 1641795125009,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,8 +68,15 @@\n   );\n };\n \n const HeaderWrap = styled.div`\n+  position: relative; /*min-width:1842px;*/\n+  background: #f7f8fb;\n+  min-height: 100vh;\n+  top: 0;\n+  left: 80px;\n+  width: calc(100% - 80px);\n+  z-index: 2;\n   .ico {\n     display: inline-block;\n     min-width: 42px;\n     width: 42px;\n"
+                },
+                {
+                    "date": 1641795152627,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,9 +70,8 @@\n \n const HeaderWrap = styled.div`\n   position: relative; /*min-width:1842px;*/\n   background: #f7f8fb;\n-  min-height: 100vh;\n   top: 0;\n   left: 80px;\n   width: calc(100% - 80px);\n   z-index: 2;\n"
+                },
+                {
+                    "date": 1641795199814,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -74,8 +74,9 @@\n   top: 0;\n   left: 80px;\n   width: calc(100% - 80px);\n   z-index: 2;\n+\n   .ico {\n     display: inline-block;\n     min-width: 42px;\n     width: 42px;\n"
+                },
+                {
+                    "date": 1641795332569,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -73,8 +73,9 @@\n   background: #f7f8fb;\n   top: 0;\n   left: 80px;\n   width: calc(100% - 80px);\n+  height: 70px;\n   z-index: 2;\n \n   .ico {\n     display: inline-block;\n"
+                },
+                {
+                    "date": 1641795704620,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,7 @@\n import React from \"react\";\n import styled from \"styled-components\";\n \n-import \"../../resource/css/layout.css\";\n-import \"../../resource/css/contents.css\";\n-import \"../../resource/css/vendor/daterangepicker.css\";\n-\n import profile from \"../../resource/images/profile.jpg\";\n \n const Header = (props) => {\n   return (\n"
                 }
             ],
             "date": 1641553653075,

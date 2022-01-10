@@ -2051,15 +2051,18 @@ body {
 
 /* nav */
 .sidebar,
+.side-form {
+  top: 0;
+  height: 100%;
+  z-index: 99;
+  transition: all 0.4s ease;
+}
+
 .sidebar.open ~ .content-section {
   left: 218px;
   width: calc(100% - 218px);
 }
-.sidebar .btm li.on a,
-.sidebar .btm li a:hover {
-  background: rgba(255, 255, 255, 0.26);
-  border-radius: 25px;
-}
+
 /* .side-form.left.open+ aside +.content-section {min-width:1536px; left: 300px; width: calc(100% - 300px);}
 .side-form.right.open+.content-section { min-width:1566px;width: calc(100% - 270px); right:270px;}
 .side-form.left.open+ aside.open+.content-section { min-width:1266px;width: calc(100% - 570px); right:270px;} */
@@ -2205,50 +2208,16 @@ body {
   right: 127px;
 }
 /* ico */
-.ico {
-}
-.ico.home {
-  background-image: url(../images/nav/ico_home.png);
-}
-.ico.user {
-  background-image: url(../images/nav/ico_user.png);
-}
-.ico.file {
-  background-image: url(../images/nav/ico_file.png);
-}
+
 .ico.chat {
   background-image: url(../images/nav/ico_chat.png);
 }
-.ico.form {
-  background-image: url(../images/nav/ico_form.png);
-}
-.ico.home:hover,
-.on .ico.home {
-  background-image: url(../images/nav/ico_home-hover.png);
-}
-.ico.user:hover,
-.on .ico.user {
-  background-image: url(../images/nav/ico_user-hover.png);
-}
-.ico.file:hover,
-.on .ico.file {
-  background-image: url(../images/nav/ico_file-hover.png);
-}
+
 .ico.chat:hover,
 .on .ico.chat {
   background-image: url(../images/nav/ico_chat-hover.png);
 }
-.ico.form:hover,
-.on .ico.form {
-  background-image: url(../images/nav/ico_form-hover.png);
-}
 
-.ico.help {
-  background-image: url(../images/nav/ico_help.png);
-}
-.ico.setting {
-  background-image: url(../images/nav/ico_setting.png);
-}
 .ico.search {
   width: 18px;
   height: 18px;
@@ -2463,7 +2432,20 @@ body {
   width: 28px;
   height: 28px;
 }
-
+.sidebar li a .links_name {
+  padding-left: 12px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s;
+}
+.sidebar.open li a .links_name {
+  opacity: 1;
+  pointer-events: auto;
+}
 .sidebar li a:hover .links_name {
   transition: all 0.5s ease;
 }

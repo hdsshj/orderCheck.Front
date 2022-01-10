@@ -4,14 +4,24 @@ import { useHistory, useLocation } from "react-router";
 
 import logoMark from "../../resource/images/common/ico_logo-mark.png";
 import logoName from "../../resource/images/common/ico_logo-name.png";
+
 import openBtn from "../../resource/images/nav/ico_lnb-open.png";
 import closeBtn from "../../resource/images/nav/ico_lnb-close.png";
+
+import icoHome from "../../resource/images/nav/ico_home.png";
 import icoHomeHover from "../../resource/images/nav/ico_home-hover.png";
+
+import icoFile from "../../resource/images/nav/ico_file.png";
 import icoFileHover from "../../resource/images/nav/ico_file-hover.png";
+
+import icoUser from "../../resource/images/nav/ico_user.png";
 import icoUserHover from "../../resource/images/nav/ico_user-hover.png";
+
+import icoForm from "../../resource/images/nav/ico_form.png";
 import icoFormHover from "../../resource/images/nav/ico_form-hover.png";
 
-// import "../../resource/css/layout.css";
+import icoHelp from "../../resource/images/nav/ico_help.png";
+import icoSetting from "../../resource/images/nav/ico_setting.png";
 
 const SideBar = (props) => {
   const history = useHistory();
@@ -20,7 +30,9 @@ const SideBar = (props) => {
   const [sidebarState, setSidebarState] = React.useState(false);
   const [selectPage, setSelectPage] = React.useState(location.pathname);
 
-  console.log(location.pathname);
+  React.useEffect(() => {
+    handleSelectPage(location.pathname);
+  }, []);
 
   const handleSidebar = () => {
     setSidebarState(!sidebarState);
@@ -29,6 +41,12 @@ const SideBar = (props) => {
   const handleSelectPage = (path) => {
     if (path === "/") {
       setSelectPage("home");
+    } else if (path === "/custom_manage") {
+      setSelectPage("user");
+    } else if (path === "/file_storage") {
+      setSelectPage("file");
+    } else if (path === "/consulting_form") {
+      setSelectPage("form");
     }
   };
 
@@ -37,7 +55,7 @@ const SideBar = (props) => {
   };
 
   return (
-    <Sidebar
+    <SidebarWrap
       state={sidebarState}
       className={sidebarState ? "sidebar open" : "sidebar"}
     >
@@ -52,45 +70,50 @@ const SideBar = (props) => {
 
       <NavList state={sidebarState} className="nav-list">
         <li
+          className={selectPage === "home" ? "on" : "off"}
           onClick={() => {
             moveToPage("/");
+            handleSelectPage("/");
           }}
         >
           <i className="ico home"></i>
           <span className="links_name">홈</span>
         </li>
         <li
-          className="on"
+          className={selectPage === "user" ? "on" : "off"}
           onClick={() => {
             moveToPage("/custom_manage");
+            handleSelectPage("/custom_manage");
           }}
         >
           <i className="ico user"></i>
           <span className="links_name">고객 관리</span>
         </li>
         <li
+          className={selectPage === "file" ? "on" : "off"}
           onClick={() => {
             moveToPage("/file_storage");
+            handleSelectPage("/file_storage");
           }}
         >
           <i className="ico file"></i>
           <span className="links_name">파일 보관함</span>
         </li>
         <li
+          className={selectPage === "form" ? "on" : "off"}
           onClick={() => {
             moveToPage("/consulting_form");
+            handleSelectPage("/consulting_form");
           }}
         >
           <i className="ico form"></i>
           <span className="links_name">상담 신청폼</span>
         </li>
       </NavList>
-      <ul className="btm">
+      <Btm className="btm">
         <li>
-          <a href="#">
-            <i className="ico help"></i>
-            <span className="links_name">자주 묻는 질문</span>
-          </a>
+          <i className="ico help"></i>
+          <span className="links_name">자주 묻는 질문</span>
         </li>
         <li
           onClick={() => {
@@ -100,15 +123,15 @@ const SideBar = (props) => {
           <i className="ico setting"></i>
           <span className="links_name">설정</span>
         </li>
-      </ul>
+      </Btm>
       <button type="button" className="btn-lnb-close" onClick={handleSidebar}>
         <span className="hide">메뉴 닫기</span>
       </button>
-    </Sidebar>
+    </SidebarWrap>
   );
 };
 
-const Sidebar = styled.div`
+const SidebarWrap = styled.div`
   position: fixed;
   width: ${({ state }) => (state ? "218px" : "80px")};
   height: 100%;
@@ -120,23 +143,12 @@ const Sidebar = styled.div`
   z-index: 99;
   transition: all 0.4s ease;
 
-  .btn-lnb-close {
-    position: absolute;
-    right: -15px;
-    top: 106px;
-    z-index: 1;
-    width: 30px;
-    height: 30px;
-    background: url(${({ state }) => (state ? closeBtn : openBtn)}) no-repeat
-      center;
-  }
-
   .ico {
-    /* min-width: 42px;
-    width: 42px; */
     display: inline-block;
-    min-width: 48px;
-    width: 48px;
+    min-width: 42px;
+    width: 42px;
+    /* min-width: 48px; */
+    /* width: 48px; */
     height: 42px;
     background-repeat: no-repeat;
     background-position: center;
@@ -144,6 +156,7 @@ const Sidebar = styled.div`
   }
 
   li {
+    cursor: pointer;
     display: flex;
     width: 42px;
     height: 42px;
@@ -164,27 +177,17 @@ const Sidebar = styled.div`
       opacity: ${({ state }) => (state ? 1 : 0)};
       ${({ state }) => state && "pointer-events: auto"};
     }
+  }
 
-    .ico.home {
-      &:hover {
-        background-image: url(${icoHomeHover});
-      }
-    }
-    .ico.file {
-      &:hover {
-        background-image: url(${icoFileHover});
-      }
-    }
-    .ico.user {
-      &:hover {
-        background-image: url(${icoUserHover});
-      }
-    }
-    .ico.form {
-      &:hover {
-        background-image: url(${icoFormHover});
-      }
-    }
+  .btn-lnb-close {
+    position: absolute;
+    right: -15px;
+    top: 106px;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+    background: url(${({ state }) => (state ? closeBtn : openBtn)}) no-repeat
+      center;
   }
 `;
 
@@ -227,9 +230,17 @@ const NavList = styled.ul`
   margin-top: 34px;
   height: 100%;
 
-  .on {
-    background: #1d58ff;
-    color: #fff;
+  .ico.home {
+    background-image: url(${icoHome});
+  }
+  .ico.user {
+    background-image: url(${icoUser});
+  }
+  .ico.file {
+    background-image: url(${icoFile});
+  }
+  .ico.form {
+    background-image: url(${icoForm});
   }
 
   li {
@@ -246,5 +257,53 @@ const NavList = styled.ul`
     transition: all 0.4s ease;
     background: #02164f;
   }
+
+  li:hover {
+    .ico.home {
+      background-image: url(${icoHomeHover});
+    }
+    .ico.user {
+      background-image: url(${icoUserHover});
+    }
+    .ico.file {
+      background-image: url(${icoFileHover});
+    }
+    .ico.form {
+      background-image: url(${icoFormHover});
+    }
+  }
+
+  .on {
+    background: #1d58ff;
+    color: #fff;
+
+    .ico.home {
+      background-image: url(${icoHomeHover});
+    }
+    .ico.user {
+      background-image: url(${icoUserHover});
+    }
+    .ico.file {
+      background-image: url(${icoFileHover});
+    }
+    .ico.form {
+      background-image: url(${icoFormHover});
+    }
+  }
 `;
+
+const Btm = styled.ul`
+  li:hover {
+    background: rgba(255, 255, 255, 0.26);
+    border-radius: 25px;
+  }
+
+  .ico.help {
+    background-image: url(${icoHelp});
+  }
+  .ico.setting {
+    background-image: url(${icoSetting});
+  }
+`;
+
 export default SideBar;
